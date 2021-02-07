@@ -5,7 +5,6 @@ using UnityEngine;
 namespace Cmd
 {
     public class Application_Folder : Application {
-        public File UpFile;
         public List<File> SubFiles;
 
         public override void Process()
@@ -18,12 +17,12 @@ namespace Cmd
         {
             string s = "/" + SourceFile.Key;
             Application_Folder Folder = this;
-            while (Folder && Folder.UpFile)
+            while (Folder && Folder.SourceFile.UpFile)
             {
-                s = "/" + Folder.UpFile.Key + s;
-                Folder = Folder.UpFile.GetComponent<Application_Folder>();
+                s = "/" + Folder.SourceFile.UpFile.Key + s;
+                Folder = Folder.SourceFile.UpFile.GetComponent<Application_Folder>();
             }
-            if (UpFile)
+            if (SourceFile.UpFile)
                 CmdControl.Main.NewLine("Load Folder: " + s);
             else
                 CmdControl.Main.NewLine("Directory: " + s);
@@ -67,9 +66,9 @@ namespace Cmd
             StartCoroutine(EmptyIE(Key));
         }
 
-        public IEnumerator BackIE()
+        public override IEnumerator BackIE()
         {
-            if (!UpFile)
+            if (!SourceFile.UpFile)
             {
                 CmdControl.Main.NewLine("Error: Directonary invalid");
                 yield return LineDelay(0.3f);
@@ -77,17 +76,14 @@ namespace Cmd
                 CmdControl.Main.NewLine(">{FieldActive{");
             }
             else
-                CmdControl.Main.LoadFile(UpFile);
+                CmdControl.Main.LoadFile(SourceFile.UpFile);
             yield return 0;
         }
 
-        public IEnumerator EmptyIE(string Key)
+        public override IEnumerator EmptyIE(string Key)
         {
-            CmdControl.Main.NewLine("Error: Invalid command '" + Key + "'");
-            yield return LineDelay(0.3f);
-            CmdControl.Main.NewLine("");
+            yield return base.EmptyIE(Key);
             CmdControl.Main.NewLine(">{FieldActive{");
-            yield return 0;
         }
     }
 }

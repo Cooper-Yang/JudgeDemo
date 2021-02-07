@@ -4,11 +4,8 @@ using UnityEngine;
 
 namespace Cmd
 {
-    public class File : MonoBehaviour {
-        public string Key;
-        public string Type;
-        public File UpFile;
-        public Application App;
+    public class Application_Document_Page : MonoBehaviour {
+        public List<string> Lines;
 
         // Start is called before the first frame update
         void Start()

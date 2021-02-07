@@ -38,5 +38,26 @@ namespace Cmd
                 a += Time.deltaTime;
             }
         }
+
+        public virtual IEnumerator BackIE()
+        {
+            if (!SourceFile.UpFile)
+            {
+                CmdControl.Main.NewLine("Error: Directonary invalid");
+                yield return LineDelay(0.3f);
+                CmdControl.Main.NewLine("");
+                CmdControl.Main.NewLine(">{FieldActive{");
+            }
+            else
+                CmdControl.Main.LoadFile(SourceFile.UpFile);
+            yield return 0;
+        }
+
+        public virtual IEnumerator EmptyIE(string Key)
+        {
+            CmdControl.Main.NewLine("Error: Invalid command '" + Key + "'");
+            yield return LineDelay(0.3f);
+            CmdControl.Main.NewLine("");
+        }
     }
 }
