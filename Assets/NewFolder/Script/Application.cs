@@ -5,7 +5,12 @@ using UnityEngine;
 namespace Cmd
 {
     public class Application : MonoBehaviour {
-        public File SourceFile;
+        [HideInInspector] public File SourceFile;
+
+        public virtual void Awake()
+        {
+            SourceFile = GetComponent<File>();
+        }
 
         // Start is called before the first frame update
         public virtual void Start()
