@@ -10,6 +10,7 @@ namespace Cmd
         public TMP_InputField Field;
         public float FieldPosition;
         public bool InputActive;
+        public bool AlreadyDead;
 
         public void Ini(string Text, bool FieldActive, string FieldText)
         {
@@ -41,7 +42,7 @@ namespace Cmd
 
         public void InputUpdate()
         {
-            InputActive = Field.gameObject.activeInHierarchy && this == CmdControl.Main.LRs[CmdControl.Main.LRs.Count - 1];
+            InputActive = Field.gameObject.activeInHierarchy && CmdControl.Main.LRs.Count > 0 && this == CmdControl.Main.LRs[CmdControl.Main.LRs.Count - 1];
             Field.readOnly = !InputActive;
 
             if (InputActive && Input.GetKeyDown(KeyCode.Return))
@@ -49,6 +50,14 @@ namespace Cmd
                 CmdControl.Main.OnInput(Field.text);
                 Field.DeactivateInputField();
             }
+        }
+
+        public void Death()
+        {
+            AlreadyDead = true;
+            TEXT.text = "";
+            Field.text = "";
+            Destroy(gameObject, 0.5f);
         }
     }
 }
