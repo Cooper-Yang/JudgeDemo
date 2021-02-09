@@ -7,13 +7,14 @@ public class NoteManager : MonoBehaviour
 {
     public bool inPreview;
 
-    public bool inView;
+    public bool inView;//this is used if we want "when u put the cursor on the notebook edge, only a bit shows up"
+                        //when u press the notebook, the whole book come out.
 
     public float timeElapsed;
 
     public float lerpDuration;
 
-    public bool canLerp;
+    public bool canLerp;// this is used for an older version of the lerpnig, could be used differently
 
     public GameObject noteBook;
 
@@ -26,7 +27,7 @@ public class NoteManager : MonoBehaviour
     //public bool isLerping;
     
     private Vector3 originVec;
-    private Vector3 previewVec;
+    private Vector3 previewVec;// not used for now.
     private Vector3 finalVec;
     // Start is called before the first frame update
     void Start()
