@@ -538,7 +538,7 @@ GameObject:
   - component: {fileID: 1269714251}
   m_Layer: 0
   m_Name: Hank Note Space Holder
-  m_TagString: NoteBook Trigger
+  m_TagString: Undefined
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
