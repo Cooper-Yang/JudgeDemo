@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Cmd
 {
@@ -13,6 +14,9 @@ namespace Cmd
         [Space]
         public List<LineRenderer> LRs;
         public LineRenderer ActiveLR;
+        [Space]
+        public Image ImageRenderer;
+        public FadeControl PixelFade;
         [Space]
         public File StartFile;
         public File CurrentFile;
@@ -50,6 +54,11 @@ namespace Cmd
 
         public void NewLine(string Text)
         {
+            NewLine(Text, -1);
+        }
+
+        public void NewLine(string Text, int Index)
+        {
             string C = "";
             string S = Text;
             bool FieldActive = false;
@@ -70,7 +79,10 @@ namespace Cmd
                     Execute(Key);
             }
             C += S;
-            AddLine(C, FieldActive, "");
+            if (Index == -1)
+                AddLine(C, FieldActive, "");
+            else
+                AddLine(C, FieldActive, "", Index);
         }
 
         public void AddLine(string Text, bool FieldActive, string FieldText)
@@ -79,6 +91,13 @@ namespace Cmd
             LRs.Add(LR);
             LR.Ini(Text, FieldActive, FieldText);
             UpdateLRPositions();
+        }
+
+        public void AddLine(string Text, bool FieldActive, string FieldText, int Index)
+        {
+            while (LRs.Count < Index)
+                AddLine("", false, "");
+            AddLine(Text, FieldActive, FieldText);
         }
 
         public void UpdateLRPositions()
@@ -97,6 +116,15 @@ namespace Cmd
                     else
                         LRs[LRs.Count - i].transform.localPosition = new Vector3(9990, 9990, 0);
                 }
+            }
+        }
+
+        public void ClearLines()
+        {
+            for (int i = LRs.Count - 1; i >= 0; i--)
+            {
+                LRs[i].Death();
+                LRs.RemoveAt(i);
             }
         }
 
