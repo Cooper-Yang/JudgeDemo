@@ -24,7 +24,7 @@ public class FadeControl : MonoBehaviour
 
     }
 
-    IEnumerator FadeIn()
+    public IEnumerator FadeIn()
     {
         Started = true;
         yield return null;
@@ -39,7 +39,7 @@ public class FadeControl : MonoBehaviour
 
     }
 
-    IEnumerator FadeOut()
+    public IEnumerator FadeOut()
     {
 
         yield return null;
