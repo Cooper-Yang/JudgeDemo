@@ -17,6 +17,8 @@ namespace Cmd
         [Space]
         public Image ImageRenderer;
         public FadeControl PixelFade;
+        public AudioSource AS;
+        public Camera AudioCamera;
         [Space]
         public File StartFile;
         public File CurrentFile;
@@ -95,9 +97,17 @@ namespace Cmd
 
         public void AddLine(string Text, bool FieldActive, string FieldText, int Index)
         {
-            while (LRs.Count < Index)
-                AddLine("", false, "");
-            AddLine(Text, FieldActive, FieldText);
+            if (LRs.Count <= Index)
+            {
+                while (LRs.Count < Index)
+                    AddLine("", false, "");
+                AddLine(Text, FieldActive, FieldText);
+            }
+            else
+            {
+                LineRenderer LR = LRs[Index];
+                LR.Ini(Text, FieldActive, FieldText);
+            }
         }
 
         public void UpdateLRPositions()
