@@ -22,6 +22,7 @@ public class EviToRep : MonoBehaviour
     [Header("Test Only")]
     public GameObject book;
     public Dictionary<string, string> evidRepo;
+    public GameObject[] arrayofRepo;
     void Start()
     {
         count = 0;
@@ -46,6 +47,11 @@ public class EviToRep : MonoBehaviour
     {
         if (count != choosenList.Count)
         {
+            arrayofRepo = GameObject.FindGameObjectsWithTag("Repo");
+            for(int i = 0; i < arrayofRepo.Length; i++)
+            {
+                Destroy(arrayofRepo[i].gameObject);
+            }
             for (int i = 0; i < choosenList.Count; i++)
             {
                 TextMeshProUGUI repoText = Instantiate(Repo, new Vector3(book.transform.position.x + leftSpace,
