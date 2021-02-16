@@ -8,7 +8,10 @@ public class MiniGame1 : MonoBehaviour
     public Vector3 playerIniPosition;
 
     public bool paused = false;
+    public GameObject GamePlay;
     public GameObject PauseSign;
+    public GameObject LoseSign;
+    public GameObject WinSign;
 
     public float localTime = 1;
     public float maxTime = 4;
@@ -17,6 +20,10 @@ public class MiniGame1 : MonoBehaviour
     public float baseCounter = 0;
     public int SpawnUnit = 4;
     public int SpawnCounter = 0;
+
+    public int winNum = 20;
+    public int winCount = 0;
+    public bool gameOver = false;
 
     public GameObject EnemyOrigin;
     public GameObject[] EnemySpawn = new GameObject[3];
@@ -30,7 +37,7 @@ public class MiniGame1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!paused)
+        if (!paused&&!gameOver)
         {
             PauseSign.SetActive(false);
 
@@ -42,14 +49,16 @@ public class MiniGame1 : MonoBehaviour
                 SpawnCounter++;
                 foreach(GameObject enemy in Enemies)
                 {
-                    enemy.transform.Translate(0, -50, 0);
+                    enemy.transform.localPosition = new Vector3(enemy.transform.localPosition.x, enemy.transform.localPosition.y - 50, enemy.transform.localPosition.z);
                 }
             }
             foreach (GameObject enemy in Enemies)
             {
                 if (enemy.transform.position == player.transform.position)
                 {
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
+                    Destroy(player);
+                    gameOver = true;
                 }
 
                 if (enemy.transform.localPosition.y < -125)
@@ -58,6 +67,7 @@ public class MiniGame1 : MonoBehaviour
                     Destroy(enemy);
                     Enemies.Remove(enemy);
                     localTime += accTime;
+                    winCount++;
                     localTime = Mathf.Min(localTime, maxTime);
                 }
             }
@@ -67,18 +77,33 @@ public class MiniGame1 : MonoBehaviour
                 GameObject spawn1 = EnemySpawn[Random.Range(0, 3)];
                 GameObject spawn2 = EnemySpawn[Random.Range(0, 3)];
                 while (spawn2 == spawn1) { spawn2 = EnemySpawn[Random.Range(0, 3)]; }
-                Enemies.Add(Instantiate(EnemyOrigin, spawn1.transform.position, spawn1.transform.rotation, gameObject.transform));
-                Enemies.Add(Instantiate(EnemyOrigin, spawn2.transform.position, spawn2.transform.rotation, gameObject.transform));
+                Enemies.Add(Instantiate(EnemyOrigin, spawn1.transform.position, spawn1.transform.rotation, GamePlay.transform));
+                Enemies.Add(Instantiate(EnemyOrigin, spawn2.transform.position, spawn2.transform.rotation, GamePlay.transform));
+                /*GameObject spawned1 = Instantiate(EnemyOrigin, spawn1.transform.position, spawn1.transform.rotation, GamePlay.transform);
+                GameObject spawned2 = Instantiate(EnemyOrigin, spawn2.transform.position, spawn2.transform.rotation, GamePlay.transform);
+                spawned1.transform.localPosition = spawn1.transform.localPosition;
+                spawned2.transform.localPosition = spawn2.transform.localPosition;
+                Enemies.Add(spawned1); Enemies.Add(spawned2);*/
             }
+
+            if (winCount >= winNum)
+            {
+                gameOver = true;
+            }
+        }
+        else if(paused)
+        {
+            PauseSign.SetActive(true);
         }
         else
         {
-            PauseSign.SetActive(true);
+            WinSign.SetActive(winCount >= winNum);
+            LoseSign.SetActive(winCount < winNum);
         }
     }
     public void PlayAndPause()
     {
-        paused = !paused;
+        paused = false;
     }
 
     void CheckPlayerInput()
