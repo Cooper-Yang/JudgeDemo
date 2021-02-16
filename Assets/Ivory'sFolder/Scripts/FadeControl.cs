@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FadeControl : MonoBehaviour
 {
@@ -15,7 +16,10 @@ public class FadeControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        List<Material> a = new List<Material>();
+        PixelMaterial = a[0];
         SetSize();
+        StartCoroutine("FadeIn");
     }
 
     // Update is called once per frame
@@ -24,7 +28,7 @@ public class FadeControl : MonoBehaviour
 
     }
 
-    IEnumerator FadeIn()
+    public IEnumerator FadeIn()
     {
         Started = true;
         yield return null;
@@ -39,7 +43,7 @@ public class FadeControl : MonoBehaviour
 
     }
 
-    IEnumerator FadeOut()
+    public IEnumerator FadeOut()
     {
 
         yield return null;
