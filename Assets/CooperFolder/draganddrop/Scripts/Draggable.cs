@@ -32,6 +32,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnDrag(PointerEventData eventData) {
         this.transform.position = eventData.position;
+        //this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 0);
 
         if (placeHolder.transform.parent != placeHolderParent)
         {
@@ -42,7 +43,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         for (int i = 0; i < placeHolderParent.childCount; i++)
         {
-            if (this.transform.position.x < placeHolderParent.GetChild(i).position.x)
+            if (this.transform.localPosition.x < placeHolderParent.GetChild(i).position.x)
             {
                 newSiblingIndex = i;
 
