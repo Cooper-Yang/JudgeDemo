@@ -3,106 +3,128 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class Email : MonoBehaviour
 {
-    enum EmailStatus { Normal, New, Urgent, Flagged, Done }
     RectTransform myTransform;
+    EmailManager emailManager;
 
-    [SerializeField] int EmailNumber;
-    [SerializeField] bool isSelected;
+    //enum EmailStatus { Normal, Urgent, Flagged, Done }
 
-    [Space(10)]
-
-    [SerializeField] TextAsset EmailTxt;
-
+    [Header("Email Information")]
     [SerializeField] Sprite portrait_sprite;
+    [SerializeField] Sprite blankSquare;
     [SerializeField] string contact;
     [SerializeField] string address;
     [SerializeField] string subject;
     [SerializeField] string date;
-    [SerializeField] EmailStatus status;
+    [SerializeField] string status;
+    [SerializeField] bool isUnread;
+    [SerializeField] string bodyString; 
+    [SerializeField] string[] body;
+    [SerializeField] bool hasAttachment;
+    [SerializeField] string AttachmentPath;
 
-    [Space(10)]
+    public TextMeshProUGUI tempArea;
 
+    [Header("UI Elements")]
     [SerializeField] Image portrait_Image;
     [SerializeField] TextMeshProUGUI contactText;
     [SerializeField] TextMeshProUGUI addressText;
     [SerializeField] TextMeshProUGUI subjectText;
     [SerializeField] TextMeshProUGUI dateText;
     [SerializeField] Image statusIcon;
-
-
-    // in EMAIL MANAGER ***
-    [Space(10)]
-    public Color normalStatus;
-    public Color newStatus;
-    public Color urgentStatus;
-    public Color flaggedStatus;
-    public Color doneStatus;
-
-
-
-    //Image thisEmailItem;
+    [SerializeField] Image background;
+    [SerializeField] Button clickableButton;
+    [SerializeField] Color unreadColor;
+    [SerializeField] Color readColor;
 
     private void Awake()
     {
-        //thisEmailItem = this.GetComponent<Image>();
+        emailManager = FindObjectOfType<EmailManager>();
         myTransform = this.GetComponent<RectTransform>();
+        clickableButton.onClick.AddListener(() => InspectThis());
+        AttachmentPath = "Assets/Nick_Folder/Emails/Attachments/AttachmentSprites/";
+    }
 
-        portrait_Image.sprite = portrait_sprite;
+    private void InspectThis()
+    {
+        emailManager.InspectEmail(this);
+        if (isUnread)
+        {
+            isUnread = false;
+            background.color = readColor;
+        }
+    }
+
+    private void Start()
+    {
+        DisplayEmailInfo();
+        background.color = unreadColor;
+    }
+
+    private void DisplayEmailInfo()
+    {
         contactText.text = contact;
         addressText.text = address;
         subjectText.text = subject;
         dateText.text = date;
+
+        // CONTACT PICTURE
+        portrait_Image.sprite = portrait_sprite;
+        background.sprite = blankSquare;
+
         SetStatusColor();
     }
 
     private void SetStatusColor()
     {
-        switch (status.ToString())
+        switch (status)
         {
-            case "Normal":
-                statusIcon.color = normalStatus;
+            case "1":
+                statusIcon.color = emailManager.urgentStatusColor;
                 break;
-            case "New":
-                statusIcon.color = newStatus;
+            case "2":
+                statusIcon.color = emailManager.flaggedStatusColor;
                 break;
-            case "Urgent":
-                statusIcon.color = urgentStatus;
+            case "3":
+                statusIcon.color = emailManager.doneStatusColor;
                 break;
-            case "Flagged":
-                statusIcon.color = flaggedStatus;
-                break;
-            case "Done":
-                statusIcon.color = doneStatus;
+            default:
+                statusIcon.color = emailManager.normalStatusColor;
                 break;
         }
     }
 
-    public void SetNumber(int x)
+
+    // Setters
+    public void SetPortrait(Sprite s) { portrait_sprite = s; }
+    public void SetContact(string s) { contact = s; }
+    public void SetAddress(string s) { address = s; }
+    public void SetSubject(string s) { subject = s; }
+    public void SetDate(string s) { date = s; }
+    public void SetStatus(string s) { status = s; }
+    public void SetUnread(bool b) { isUnread = b; }
+    public void SetBody(string s) { bodyString = s; }
+    public void SetAttachment(string path)
     {
-        EmailNumber = x;
+        if (path != "!")
+        {
+            hasAttachment = true;
+            AttachmentPath += path;
+        }
     }
 
-    public void SetY()
-    {
-        int tempY = -50 * EmailNumber;
-        myTransform.localPosition = new Vector3(0, tempY, 0);
-    }
-
+    //Getters
+    public Sprite GetPortrait() { return portrait_sprite; }
     public string GetContact() { return contact; }
     public string GetAddress() { return address; }
     public string GetSubject() { return subject; }
     public string GetDate() { return date; }
-    public Sprite GetPortrait() { return portrait_sprite; }
-    public string GetBody()
-    {
-        if (EmailTxt != null)
-            return EmailTxt.text;
-        else
-            return "- - -";
-    }
-
+    public string GetStatus() { return status; }
+    public string GetBody() { return bodyString; }
+    public bool HasAttachment() { return hasAttachment; }
+    public string GetAttachmentPath() { return AttachmentPath; }
 
 }
