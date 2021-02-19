@@ -9,6 +9,8 @@ TagManager:
   - Sephere
   - NoteBook Trigger
   - Canvas
+  - Computer
+  - Notebook
   layers:
   - Default
   - TransparentFX
