@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MiniGame1 : MonoBehaviour
+public class MiniGame1 : MiniGame
 {
     public GameObject player;
     public Vector3 playerIniPosition;
@@ -23,7 +23,6 @@ public class MiniGame1 : MonoBehaviour
 
     public int winNum = 20;
     public int winCount = 0;
-    public bool gameOver = false;
 
     public GameObject EnemyOrigin;
     public GameObject[] EnemySpawn = new GameObject[3];
@@ -98,6 +97,7 @@ public class MiniGame1 : MonoBehaviour
         else
         {
             WinSign.SetActive(winCount >= winNum);
+            win = (winCount >= winNum);
             LoseSign.SetActive(winCount < winNum);
         }
     }
