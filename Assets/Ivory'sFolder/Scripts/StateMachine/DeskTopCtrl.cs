@@ -24,6 +24,10 @@ public class DeskTopCtrl : MonoBehaviour
     public StateBase DeskState = new DeskState();
     public StateBase ComputerState = new ComputerState();
 
+    [Header("Orthographic Cam Settings")]
+    public int OrthoSizeDesk;
+    public int OrthoSizeComputer;
+
 
     //have different state here
     //be able to change state
@@ -64,6 +68,9 @@ public class DeskTopCtrl : MonoBehaviour
         while (timer < lerpTime)
         {
             Vector3 LerpValue = Vector3.Lerp(currentCamPos, LerpGoal, timer / lerpTime);
+
+            // LERP ORTHOGRAPHIC SIZE
+
             mainCamera.transform.position = LerpValue;
             timer += Time.deltaTime;
             if(Monitor.GetComponent<HighLight>().enabled == true)
