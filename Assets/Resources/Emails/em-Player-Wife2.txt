@@ -5,7 +5,7 @@
 #When are you coming home?#
 #11/10#
 #3#
-#Photo_2.jpg#
+#Photo_2#
 #What time are you coming home?
 
 I needed to talk to you about something.#

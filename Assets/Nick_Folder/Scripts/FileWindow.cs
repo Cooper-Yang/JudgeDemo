@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEditor;
 
 public class FileWindow : MonoBehaviour
 {
@@ -23,7 +22,8 @@ public class FileWindow : MonoBehaviour
 
     public void ReadFile(string path)
     {
-        Sprite s = (Sprite)AssetDatabase.LoadAssetAtPath(path, typeof(Sprite));
+        Sprite s = Resources.Load<Sprite>(path);
+        Debug.Log(path);
 
         ContentImage.sprite = s;
 

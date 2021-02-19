@@ -45,7 +45,7 @@ public class Email : MonoBehaviour
         emailManager = FindObjectOfType<EmailManager>();
         myTransform = this.GetComponent<RectTransform>();
         clickableButton.onClick.AddListener(() => InspectThis());
-        AttachmentPath = "Assets/Nick_Folder/Emails/Attachments/AttachmentSprites/";
+        AttachmentPath = "Emails/Attachments/AttachmentSprites/";
     }
 
     private void InspectThis()
