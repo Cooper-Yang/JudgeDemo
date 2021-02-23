@@ -1,0 +1,24 @@
+//Input information in between HASHTAG signs (Do not delete it!)
+
+//CONTACT NAME [My Name %^*$ ] (if empty, leave EmailAddress)
+# #
+//EMAIL ADDRESS [example@web.com] (if no contact, leave blank)
+# #
+//SUBJECT LINE [String --> This is the Subject!]
+# #
+//DATE ARRIVED [Day mm/dd  --> Mon 11/04
+# #
+//STATUS [0 = Normal, 1 = Urgent, 2 = Flagged, 3 = Complete]
+#0#
+//ATTACHMENT PATH [Example:: Image2.png --> If no attachment, MUST mark as "!"]
+#!#
+//BODY
+#Body Text
+
+Can be long
+and have multiple lines
+
+Start && End with HASHTAG
+
+From,
+   Name#
