@@ -51,7 +51,7 @@ public class TimeManage : MonoBehaviour
 
         dayButton.SetActive(hour == endHour);
 
-        timeText.SetText(month.ToString().PadLeft(2, '0') + "/"+date.ToString().PadLeft(2, '0') + "/"+year+" - "+hour.ToString().PadLeft(2, '0') + ":"+min.ToString().PadLeft(2,'0'));
+        timeText.SetText(month.ToString().PadLeft(2, '0') + "/"+date.ToString().PadLeft(2, '0') + "/"+year+" - "+hour.ToString().PadLeft(2, '0') + ":"+((min/5)*5).ToString().PadLeft(2,'0'));
     }
 
     public void endDay()
