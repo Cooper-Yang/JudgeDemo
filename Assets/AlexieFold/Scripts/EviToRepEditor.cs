@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor (typeof(EviToRep))]
+/*
+[CustomEditor (typeof(ContactBook))]
 [CanEditMultipleObjects]
 public class EviToRepEditor : Editor
 {
@@ -23,4 +24,4 @@ public class EviToRepEditor : Editor
         }
         DrawDefaultInspector();
     }
-}
+}*/
