@@ -36,7 +36,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         if (placeHolder.transform.parent != placeHolderParent)
         {
-            placeHolder.transform.SetParent(placeHolderParent);
+            //placeHolder.transform.SetParent(placeHolderParent);
+            placeHolder.GetComponent<RectTransform>().SetParent(placeHolderParent);
         }
         
         int newSiblingIndex = placeHolderParent.childCount;
