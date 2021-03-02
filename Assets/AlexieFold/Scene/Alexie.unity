@@ -291,14 +291,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64d18cd1fa70764399297a2488b7135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temp:
-    name: 
-    email: 
   contactList: []
-  contacter: []
+  book: {fileID: 1598138403}
   textPrefab: {fileID: 460332984}
-  textPool: []
-  book: {fileID: 0}
   topSpace: 0.1
   leftSpace: 0.5
   lineSpace: 0.1
