@@ -1,0 +1,6 @@
+lastname,firstname,section,contactinfo
+Chirico,Nick,champion,ncc314@nyu.edu
+lastname,firstname,section,contactinfo
+lastname,firstname,section,contactinfo
+Xiao,Xin,Target,xinxiao@gov.ch
+lastname,firstname,section,contactinfo
