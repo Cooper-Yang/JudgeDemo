@@ -54,11 +54,14 @@ public class ContactBook : MonoBehaviour
         //This is the printing part. Will be changed.
         for (int i = 0;i < contactList.Count; i++)
         {
-            textPool[i].transform.position = new Vector3(book.transform.position.x - book.transform.localScale.x / 2 + leftSpace,
-                                           book.transform.position.y + book.transform.localScale.y / 2
-                                           - i * (textPrefab.transform.localScale.y + lineSpace) - topSpace, 0);
-            textPool[i].text = contactList[i].name + "      " + contactList[i].email + "      " + contactList[i].phone;
-            textPool[i].gameObject.SetActive(true);
+            if(textPool[i].gameObject.activeSelf == false)
+            {
+                textPool[i].transform.position = new Vector3(book.transform.position.x - book.transform.localScale.x / 2 + leftSpace,
+                               book.transform.position.y + book.transform.localScale.y / 2
+                               - i * (textPrefab.transform.localScale.y + lineSpace) - topSpace, 0);
+                textPool[i].text = contactList[i].name + "      " + contactList[i].email + "      " + contactList[i].phone;
+                textPool[i].gameObject.SetActive(true);
+            }
         }
     }
 
@@ -68,7 +71,7 @@ public class ContactBook : MonoBehaviour
         
     }
 
-    //This is Class version
+    //This is Class version of Adding contacters
     public void AddContacter(string name, string email, string phone)
     {
         Contact someone = new Contact();
@@ -78,7 +81,7 @@ public class ContactBook : MonoBehaviour
         SearchContact(someone);
         contactList.Add(someone);
     }
-    //This is Search and then add part. While you already know the name
+    //This is Search for the same name/email/phone
     public void SearchContact(Contact someone)
     {
         for (int i = 0; i < contactList.Count; i++)
