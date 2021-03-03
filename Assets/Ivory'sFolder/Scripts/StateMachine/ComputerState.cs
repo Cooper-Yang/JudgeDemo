@@ -9,7 +9,7 @@ public class ComputerState : StateBase
         //Zoom in to Computer
         //Enable Computer Script?
         //Disable Desktop Script
-        DeskTop.StartCoroutine(DeskTop.LerpCamPos(DeskTop.ComputerCamPos));
+        DeskTop.StartCoroutine(DeskTop.LerpCamPos(DeskTop.ComputerCamPos, DeskTop.CompCamSize));
         DeskTop.Monitor.gameObject.SetActive(false);
 
     }

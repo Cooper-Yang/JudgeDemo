@@ -10,7 +10,7 @@ public class DeskState : StateBase
         //Zoom out to desk top
         //Disable Computer Stuf
         //Enable DeskTop stuff
-        DeskTop.StartCoroutine(DeskTop.LerpCamPos(DeskTop.DeskTopCamPos));
+        DeskTop.StartCoroutine(DeskTop.LerpCamPos(DeskTop.DeskTopCamPos, DeskTop.DeskCamSize));
         DeskTop.Monitor.gameObject.SetActive(true);
     }
 
