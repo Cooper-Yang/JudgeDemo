@@ -12,6 +12,7 @@ public class ComputerState : StateBase
         DeskTop.StartCoroutine(DeskTop.LerpCamPos(DeskTop.ComputerCamPos, DeskTop.CompCamSize));
         DeskTop.MonitorHitbox.gameObject.SetActive(false);
         DeskTop.BoardHitbox.gameObject.SetActive(false);
+        DeskTop.NotebookHitbox.gameObject.SetActive(false);
 
     }
 

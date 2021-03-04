@@ -27,7 +27,8 @@ public class HighLight : MonoBehaviour
         }
         else if(this.gameObject.tag == "Notebook")
         {
-
+            this.GetComponent<Renderer>().material.color = StartColor;
+            deskcon.ChangeState(deskcon.NotebookState);
         }
         else if (this.gameObject.tag == "Bboard")
         {

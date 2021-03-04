@@ -11,9 +11,14 @@ public class DeskState : StateBase
         //Disable Computer Stuf
         //Enable DeskTop stuff
         DeskTop.StartCoroutine(DeskTop.LerpCamPos(DeskTop.DeskTopCamPos, DeskTop.DeskCamSize));
+
         DeskTop.MonitorHitbox.gameObject.SetActive(true);
         DeskTop.BoardHitbox.gameObject.SetActive(true);
+        DeskTop.NotebookHitbox.gameObject.SetActive(true);
+
         DeskTop.BulBoard.SetActive(false);
+        DeskTop.NoteBook.SetActive(false);
+
         DeskTop.ImageAfterLerp = false;
     }
 

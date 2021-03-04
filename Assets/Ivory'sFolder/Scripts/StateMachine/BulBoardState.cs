@@ -10,6 +10,7 @@ public class BulBoardState : StateBase
         DeskTop.StartCoroutine(DeskTop.LerpCamPos(DeskTop.BulBoardCamPos, DeskTop.BulBoardCamSize));
         DeskTop.BoardHitbox.gameObject.SetActive(false);
         DeskTop.MonitorHitbox.gameObject.SetActive(false);
+        DeskTop.NotebookHitbox.gameObject.SetActive(false);
     }
 
     public override void StayOnState(DeskTopCtrl DeskTop)

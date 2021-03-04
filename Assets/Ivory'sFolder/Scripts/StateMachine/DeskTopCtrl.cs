@@ -26,10 +26,13 @@ public class DeskTopCtrl : MonoBehaviour
     public Vector3 BulBoardCamPos = new Vector3(137, 54, -10);
     public GameObject BulBoard;
     [Header("Notebook Setting")]
+    public float NotebookCamSize = 75;
     public Vector3 NotebookCamPos;
+    public GameObject NoteBook;
     [Header("Hit Box")]
     public GameObject MonitorHitbox;
     public GameObject BoardHitbox;
+    public GameObject NotebookHitbox;
 
     public bool ImageAfterLerp = false;
 
@@ -37,6 +40,7 @@ public class DeskTopCtrl : MonoBehaviour
     public StateBase DeskState = new DeskState();
     public StateBase ComputerState = new ComputerState();
     public StateBase BulboardState = new BulBoardState();
+    public StateBase NotebookState = new NoteBookState();
 
 
 
