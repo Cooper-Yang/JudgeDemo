@@ -13,6 +13,8 @@ public class DeskTopCtrl : MonoBehaviour
     //Mouse Pos
 
     public Camera mainCamera;
+    public float DeskCamSize = 235;
+    public float CompCamSize = 8;
     public Vector3 DeskTopCamPos = new Vector3(0, 0, -10);
     public Vector3 ComputerCamPos = new Vector3(0, 0.6f, -3.6f);
     public Vector3 NotebookCamPos;
@@ -60,17 +62,18 @@ public class DeskTopCtrl : MonoBehaviour
         currentState.StayOnState(this);
     }
 
-    public IEnumerator LerpCamPos(Vector3 LerpGoal)
+    public IEnumerator LerpCamPos(Vector3 LerpGoal, float LerpCamSize)
     {
         float lerpTime = 0.3f;
         float timer = 0;
         Vector3 currentCamPos = mainCamera.transform.position;
+        float currentCamSize = mainCamera.orthographicSize;
         while (timer < lerpTime)
         {
             Vector3 LerpValue = Vector3.Lerp(currentCamPos, LerpGoal, timer / lerpTime);
+            float CamSize = Mathf.Lerp(currentCamSize, LerpCamSize, timer / lerpTime);
 
-            // LERP ORTHOGRAPHIC SIZE
-
+            mainCamera.orthographicSize = CamSize;
             mainCamera.transform.position = LerpValue;
             timer += Time.deltaTime;
             if(Monitor.GetComponent<HighLight>().enabled == true)
