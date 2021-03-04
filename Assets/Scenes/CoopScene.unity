@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602232454}
+      - m_Target: {fileID: 0}
         m_MethodName: InspectEmail
         m_Mode: 2
         m_Arguments:
@@ -987,7 +987,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602232453}
+      - m_Target: {fileID: 0}
         m_MethodName: ToggleWindow
         m_Mode: 2
         m_Arguments:
@@ -1674,7 +1674,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602232454}
+      - m_Target: {fileID: 0}
         m_MethodName: InspectEmail
         m_Mode: 2
         m_Arguments:
@@ -1804,7 +1804,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602232453}
+      - m_Target: {fileID: 0}
         m_MethodName: CloseWindow
         m_Mode: 2
         m_Arguments:
@@ -3226,7 +3226,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602232454}
+      - m_Target: {fileID: 0}
         m_MethodName: InspectEmail
         m_Mode: 2
         m_Arguments:
@@ -3939,7 +3939,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 49.3, y: -1.3}
+  m_AnchoredPosition: {x: 49.300003, y: -1.3}
   m_SizeDelta: {x: 27, y: 27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532536820
@@ -5557,6 +5557,7 @@ MonoBehaviour:
   parentToReturnTo: {fileID: 0}
   parentToReturnToCompare: {fileID: 0}
   originalAnchor: {x: 0, y: 0}
+  originalParent: {fileID: 0}
   placeHolderParent: {fileID: 0}
   dragTransform: {fileID: 0}
   canvas: {fileID: 0}
@@ -6102,7 +6103,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602232453}
+      - m_Target: {fileID: 0}
         m_MethodName: ToggleWindow
         m_Mode: 2
         m_Arguments:
@@ -7076,6 +7077,7 @@ MonoBehaviour:
   parentToReturnTo: {fileID: 0}
   parentToReturnToCompare: {fileID: 0}
   originalAnchor: {x: 0, y: 0}
+  originalParent: {fileID: 0}
   placeHolderParent: {fileID: 0}
   dragTransform: {fileID: 0}
   canvas: {fileID: 0}
@@ -7898,7 +7900,7 @@ RectTransform:
   - {fileID: 1434700780}
   - {fileID: 1734617975}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8436,7 +8438,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1396198416
 GameObject:
@@ -9885,124 +9887,6 @@ MonoBehaviour:
   UserName: Tarzan
   Password: password
   caseOpen: 1
---- !u!1 &1602232452
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1602232456}
-  - component: {fileID: 1602232455}
-  - component: {fileID: 1602232453}
-  - component: {fileID: 1602232454}
-  m_Layer: 0
-  m_Name: CONTROL
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1602232453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602232452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f4e8aadb2e7db42bf89ffe43343549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EmailWindow: {fileID: 465978679}
-  ConsoleWindow: {fileID: 1964135411}
---- !u!114 &1602232454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602232452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8c88f7f781e5548944720fd793c262, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TopOfInbox: {fileID: 288318423}
-  emailHeight: 50
-  inboxCapacity: 20
-  emailCount: 0
-  EmailPrefab: {fileID: 0}
-  PlayerAllFiles: []
-  BossAllFiles: []
-  HitchcockAllFiles: []
-  PlayerInboxFiles: []
-  BossInboxFiles: []
-  HitchcockInboxFiles: []
-  InboxEmails: []
-  ActiveEmail: {fileID: 0}
-  BodyPanel: {fileID: 1171134678}
-  emptyColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  portraitIMG: {fileID: 299876503}
-  contactTMP: {fileID: 530576751}
-  addressTMP: {fileID: 1719873875}
-  dateTMP: {fileID: 1282946803}
-  subjectTMP: {fileID: 1963743002}
-  statusTMP: {fileID: 0}
-  bodyTMP: {fileID: 773003149}
-  MainPanel: {fileID: 0}
-  UsernameText: {fileID: 0}
-  LogOutButton: {fileID: 0}
-  LoginPanel: {fileID: 0}
-  LogInButton: {fileID: 0}
-  OpenAttachmentButton: {fileID: 0}
-  loadingBar: {fileID: 0}
-  loginResultText: {fileID: 0}
-  usernameInput: {fileID: 0}
-  passwordInput: {fileID: 0}
-  usernameArray: []
-  passwordArray: []
-  loadingSprites: []
-  NewWindowPrefab: {fileID: 0}
-  ComputerPanel: {fileID: 0}
-  normalStatusColor: {r: 0, g: 0, b: 0, a: 0}
-  newStatusColor: {r: 0, g: 0, b: 0, a: 0}
-  urgentStatusColor: {r: 0, g: 0, b: 0, a: 0}
-  flaggedStatusColor: {r: 0, g: 0, b: 0, a: 0}
-  doneStatusColor: {r: 0, g: 0, b: 0, a: 0}
-  currentUser: 0
---- !u!114 &1602232455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602232452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a52699232e9754a902ecc646fc76aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LinesOnScreen: 0
-  startFile: {fileID: 2113007129}
-  currentFile: {fileID: 0}
---- !u!4 &1602232456
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602232452}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2887282, z: 90}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1652333041
 GameObject:
   m_ObjectHideFlags: 0
@@ -11179,7 +11063,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602232454}
+      - m_Target: {fileID: 0}
         m_MethodName: InspectEmail
         m_Mode: 2
         m_Arguments:
@@ -11439,7 +11323,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602232453}
+      - m_Target: {fileID: 0}
         m_MethodName: CloseWindow
         m_Mode: 2
         m_Arguments:
@@ -12744,7 +12628,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602232453}
+      - m_Target: {fileID: 0}
         m_MethodName: ToggleWindow
         m_Mode: 2
         m_Arguments:
@@ -14382,7 +14266,7 @@ Transform:
   m_Children:
   - {fileID: 1563227506}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2130508047
 GameObject:
@@ -14466,7 +14350,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602232453}
+      - m_Target: {fileID: 0}
         m_MethodName: CloseWindow
         m_Mode: 2
         m_Arguments:
