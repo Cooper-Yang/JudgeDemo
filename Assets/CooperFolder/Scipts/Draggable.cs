@@ -12,6 +12,28 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     private GameObject placeHolder = null;
 
+    
+    [SerializeField] private RectTransform dragTransform;
+    [SerializeField] private Canvas canvas;
+
+    private void Awake()
+    {
+        if (dragTransform == null)
+        {
+            dragTransform = this.transform.GetComponent<RectTransform>();
+        }
+        if (canvas == null)
+        {
+            Transform testCanvasTransform = transform.parent;
+            while (testCanvasTransform != null)
+            {
+                canvas = testCanvasTransform.GetComponent<Canvas>();
+                if (canvas != null)
+                    break;
+                testCanvasTransform = testCanvasTransform.parent;
+            }
+        }
+    }
     public void OnBeginDrag(PointerEventData eventData) {
         placeHolder = new GameObject();
         placeHolder.transform.SetParent( this.transform.parent );
@@ -31,13 +53,14 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     }
 
     public void OnDrag(PointerEventData eventData) {
-        this.transform.position = eventData.position;
+        dragTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        
+        //this.transform.position = eventData.position;
         //this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 0);
 
         if (placeHolder.transform.parent != placeHolderParent)
         {
-            //placeHolder.transform.SetParent(placeHolderParent);
-            placeHolder.GetComponent<RectTransform>().SetParent(placeHolderParent);
+            placeHolder.transform.SetParent(placeHolderParent);
         }
         
         int newSiblingIndex = placeHolderParent.childCount;
