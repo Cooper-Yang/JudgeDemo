@@ -1614,7 +1614,7 @@ MonoBehaviour:
   urgentStatusColor: {r: 1, g: 0, b: 0, a: 1}
   flaggedStatusColor: {r: 0.8962264, g: 0.5213393, b: 0.08877714, a: 1}
   doneStatusColor: {r: 0.015574936, g: 0.6603774, b: 0.16584668, a: 1}
-  currentUser: 3
+  currentUser: 0
 --- !u!114 &346007968
 MonoBehaviour:
   m_ObjectHideFlags: 0
