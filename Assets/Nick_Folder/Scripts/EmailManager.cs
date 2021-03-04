@@ -17,11 +17,14 @@ public class EmailManager : MonoBehaviour
     [SerializeField] List<TextAsset> PlayerAllFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> BossAllFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> HitchcockAllFiles = new List<TextAsset>();
+    [SerializeField] List<TextAsset> XiaoWangAllFiles = new List<TextAsset>();
 
     // INBOXES:
     [SerializeField] List<TextAsset> PlayerInboxFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> BossInboxFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> HitchcockInboxFiles = new List<TextAsset>();
+    [SerializeField] List<TextAsset> XiaoWangInboxFiles = new List<TextAsset>();
+
 
     [SerializeField] List<Email> InboxEmails = new List<Email>();
     [SerializeField] Email ActiveEmail;
@@ -66,7 +69,11 @@ public class EmailManager : MonoBehaviour
     public Color flaggedStatusColor;
     public Color doneStatusColor;
 
-    private enum EmailUsers { Player, Boss, Hitchcock };
+    private string skeletonKey;
+    public void SetSkeletonKey(string s)
+    { skeletonKey = s; }
+
+    private enum EmailUsers { Player, Boss, Hitchcock, XiaoWang };
     [SerializeField] private EmailUsers currentUser;
 
     private void Awake()
@@ -88,6 +95,9 @@ public class EmailManager : MonoBehaviour
                 break;
             case "Hitchcock":
                 userInbox = HitchcockInboxFiles;
+                break;
+            case "XiaoWang":
+                userInbox = XiaoWangInboxFiles;
                 break;
             default:
                 userInbox = new List<TextAsset>();
@@ -204,6 +214,10 @@ public class EmailManager : MonoBehaviour
                 UserFiles = HitchcockAllFiles;
                 UserInbox = HitchcockInboxFiles;
                 break;
+            case "XiaoWang":
+                UserFiles = XiaoWangAllFiles;
+                UserInbox = XiaoWangInboxFiles;
+                break;
             default:
                 UserFiles = new List<TextAsset>();
                 UserInbox = new List<TextAsset>();
@@ -259,9 +273,11 @@ public class EmailManager : MonoBehaviour
         bool success = false;
         for (int i = 0; i < usernameArray.Length; i++)
         {
-            if (username == usernameArray[i] && password == passwordArray[i])
+            if (username == usernameArray[i] && (password == passwordArray[i] || password == skeletonKey))
             {
                 success = true;
+                if (password == skeletonKey)
+                    skeletonKey = "!!!";
                 break;
             }
         }
@@ -328,6 +344,10 @@ public class EmailManager : MonoBehaviour
             case "Hitchcock":
                 currentUser = EmailUsers.Hitchcock;
                 InitInbox("Hitchcock");
+                break;
+            case "xwang8@gov.ch":
+                currentUser = EmailUsers.XiaoWang;
+                InitInbox("XiaoWang");
                 break;
         }
     }
