@@ -43,7 +43,19 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         if (d != null) {
-            d.parentToReturnTo = this.transform;
+            if (gameObject.CompareTag("TrashContainer"))
+            {
+                d.DragTransform.anchoredPosition = d.originalAnchor;
+            }
+            else
+            {
+                d.parentToReturnTo = this.transform;
+            }
+            
+            if (gameObject.CompareTag("Container"))
+            {
+                transform.parent.parent.GetComponent<CrimialEvidence>().theEvidenceContained.Add(d.name);  //add the name of evidence
+            }
         }
     }
 }

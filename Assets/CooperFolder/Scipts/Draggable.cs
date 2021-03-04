@@ -18,7 +18,15 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     
     
     [SerializeField] private RectTransform dragTransform;
+    
     [SerializeField] private Canvas canvas;
+
+
+    public RectTransform DragTransform
+    {
+        get => dragTransform;
+        set => dragTransform = value;
+    }
 
     private void Awake()
     {
@@ -52,6 +60,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 testCanvasTransform = testCanvasTransform.parent;
             }
         }
+        
+        originalAnchor = dragTransform.anchoredPosition;
     }
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -72,7 +82,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        originalAnchor = dragTransform.anchoredPosition;
+        
         theClone = Instantiate(gameObject, transform.position, Quaternion.identity,canvas.transform);
         Destroy(theClone.GetComponent<Draggable>());
         Destroy(theClone.GetComponent<LayoutElement>());
@@ -133,12 +143,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             Destroy(theClone);
         }
 
-        if (!parentToReturnTo.CompareTag("Container"))
-        {
-            dragTransform.anchoredPosition = originalAnchor;
-            //Destroy(placeHolder);
-            //return;
-        }
+        // if (!parentToReturnTo.CompareTag("Container") )
+        // {
+        //     dragTransform.anchoredPosition = originalAnchor;
+        //     
+        // }
         this.transform.SetParent(parentToReturnTo);
         this.transform.SetSiblingIndex(placeHolder.transform.GetSiblingIndex());
         this.GetComponent<CanvasGroup>().blocksRaycasts = true;

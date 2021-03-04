@@ -50,12 +50,18 @@ public class EvidenceManager : MonoBehaviour
     {
         int k = dropDown.value;
         List<string> thisEvidence = new List<string>();
-        bool ifCorrect = false;
+        int containedEvidenceNumber = 0;  //this number is used to calculate how right or wrong the evidence submitted are
         if (theEvidence.TryGetValue(suspectList[k].name,out thisEvidence))
         {
             foreach (string s in thisEvidence)
             {
-                
+                foreach (string g in suspectList[k].GetComponent<CrimialEvidence>().theEvidenceContained)
+                {
+                    if (s.Equals(g))
+                    {
+                        containedEvidenceNumber += 1;
+                    }
+                }
             }
         }
         
