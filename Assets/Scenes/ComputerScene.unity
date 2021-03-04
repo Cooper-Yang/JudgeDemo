@@ -1554,19 +1554,22 @@ MonoBehaviour:
   HitchcockAllFiles:
   - {fileID: 4900000, guid: 478bf9ab98dd69446bf29b17d7f32358, type: 3}
   - {fileID: 4900000, guid: 846d3b7bf09907447985d82496c461f1, type: 3}
-  XiaoAllFiles: []
+  XiaoWangAllFiles: []
   PlayerInboxFiles:
   - {fileID: 4900000, guid: 7ff3cd262bf5c5e47a1ede3f24b27cf8, type: 3}
   BossInboxFiles:
   - {fileID: 4900000, guid: 20e0f5988ec680a43b51def604fdd3b9, type: 3}
   HitchcockInboxFiles:
   - {fileID: 4900000, guid: 478bf9ab98dd69446bf29b17d7f32358, type: 3}
-  XiaoInboxFiles:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  XiaoWangInboxFiles:
+  - {fileID: 4900000, guid: 6327de8fb71c982458b9f9b63d9c92a2, type: 3}
+  - {fileID: 4900000, guid: c6d4d05ca4987c74b8e2826089d32ae2, type: 3}
+  - {fileID: 4900000, guid: c3119572260e99e4cb269088181aeac6, type: 3}
+  - {fileID: 4900000, guid: 5a071c5e3ceccb346b4bfef90c1c25e8, type: 3}
+  - {fileID: 4900000, guid: 351a1dbbf70b7574cbefb683abee98c7, type: 3}
+  - {fileID: 4900000, guid: 41cf80c2dd116c84ebb4525c9445c430, type: 3}
+  - {fileID: 4900000, guid: 16dcc2e851861ad48bf0d263a6e44493, type: 3}
+  - {fileID: 4900000, guid: e2cf5e2e6a2f72e4fb6ea77207b81f20, type: 3}
   InboxEmails: []
   ActiveEmail: {fileID: 5838394530521102446, guid: 0482fdbd4d079e945a68b16a2d981b2f,
     type: 3}
@@ -1611,7 +1614,7 @@ MonoBehaviour:
   urgentStatusColor: {r: 1, g: 0, b: 0, a: 1}
   flaggedStatusColor: {r: 0.8962264, g: 0.5213393, b: 0.08877714, a: 1}
   doneStatusColor: {r: 0.015574936, g: 0.6603774, b: 0.16584668, a: 1}
-  currentUser: 0
+  currentUser: 3
 --- !u!114 &346007968
 MonoBehaviour:
   m_ObjectHideFlags: 0
