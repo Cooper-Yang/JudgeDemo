@@ -9,7 +9,17 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         if (eventData.pointerDrag == null)
             return;
 
+        if (transform.childCount > 0)
+        {
+            return;
+        }
+        
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
+        // if (gameObject.CompareTag("TrashContainer"))
+        // {
+        //     d.placeHolderParent = d.originalParent;
+        // }
+        // else 
         if (d != null)
         {
             d.placeHolderParent = this.transform;
@@ -20,7 +30,12 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
         if (eventData.pointerDrag == null)
             return;
-
+        
+        if (transform.childCount > 0)
+        {
+            return;
+        }
+        
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         if (d != null && d.placeHolderParent == this.transform)
         {
@@ -32,8 +47,14 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         Debug.Log(eventData.pointerDrag.name + " dropped on " + gameObject.name);
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
+        
+        
         if (d != null) {
             d.parentToReturnTo = this.transform;
+            if (gameObject.CompareTag("Container"))
+            {
+                transform.parent.parent.GetComponent<CrimialEvidence>().theEvidenceContained.Add(d.name);  //add the name of evidence
+            }
         }
     }
 }

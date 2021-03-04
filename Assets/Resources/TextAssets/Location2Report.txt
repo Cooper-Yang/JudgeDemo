@@ -1,7 +1,6 @@
-List of Border Crossings at "Main Terminal" Office
+Border Crossings History at "Main Terminal" Office
 (from text file)
-- item 1
-- item 2
-- item 3
-- item 4
-- item 5
+- Time: 12:24	Date: 10/14	ID: #ABC-9
+- Time: 18:04	Date: 11/04	ID: #CZH-7
+- Time: 12:24	Date: 10/14	ID: #ABC-9
+- Time: 18:04	Date: 11/04	ID: #CZH-7

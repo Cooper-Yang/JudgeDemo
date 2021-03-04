@@ -2,15 +2,19 @@
 
 #Boss#
 #theboss@web.com#
-#Case is late!#
+#Xiao Wang has escaped!#
 #11/11#
 #0#
 #!#
-#Mr. Anderson, 
+#Comrade Yao,
 
-I needed the Braddock case filed yesterday! What do I pay you for?!
-You need to get cases in on time or else bad things will happen.
+A secretary of mine, Xiao Wang, hasn't shown up for a couple weeks. 
+I believed he has betrayed our fatherland and plans to flee.
 
-Don't forget to submit a report!
+- Xiao Wang's govermnent email account is < xwang8@gov.ch >
 
-- Boss#
+- Use the Terminal on your computer to Access the Personnel database and Generate a Skeleton Key to log into his Email.
+
+You must find out where he and his family are!
+
+   -Section Chief#
