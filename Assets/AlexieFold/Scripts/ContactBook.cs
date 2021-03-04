@@ -18,6 +18,9 @@ public class ContactBook : MonoBehaviour
     private Contact temp;
     private List<string> contacter;
     private Dictionary<string, string> contactDic;
+
+    private int count;
+
     //Contacter part
     [Header("Contacter")]
     public List<Contact> contactList;
@@ -42,33 +45,45 @@ public class ContactBook : MonoBehaviour
             textPool[i] = textbar;
             textbar.gameObject.SetActive(false);
         }
-
-        //This is the Contacter list we are using. Add contacter and printing them as shown.
-        //There's one problem that is you add null after adding a full info, the null will replace the full info.
-        AddContacter("Ivory", null, null);
-        AddContacter("Ivory", "Iemail", "Iphone");
-        //AddContacter("Ivory", null, null);
-        AddContacter("Papaya", "Pemail", "Pphone");
-        AddContacter("Andy", "AndyEmail", "AndyPhone");
-
-        //This is the printing part. Will be changed.
-        for (int i = 0;i < contactList.Count; i++)
-        {
-            if(textPool[i].gameObject.activeSelf == false)
-            {
-                textPool[i].transform.position = new Vector3(book.transform.position.x - book.transform.localScale.x / 2 + leftSpace,
-                               book.transform.position.y + book.transform.localScale.y / 2
-                               - i * (textPrefab.transform.localScale.y + lineSpace) - topSpace, 0);
-                textPool[i].text = contactList[i].name + "      " + contactList[i].email + "      " + contactList[i].phone;
-                textPool[i].gameObject.SetActive(true);
-            }
-        }
     }
 
 
     void Update()
     {
-        
+        //This is the Contacter list we are using. Add contacter and printing them as shown.
+        //There's one problem that is you add null after adding a full info, the null will replace the full info.
+
+        if (Input.GetKeyDown(KeyCode.P))//This is for testing
+        {
+            AddContacter("Ivory", null, null);
+            AddContacter("Ivory", "Iemail", "Iphone");
+            AddContacter("Papaya", "Pemail", "Pphone");
+            AddContacter("Andy", "AndyEmail", "AndyPhone");
+            AddContacter("Coop", "Cphone", null);
+        }
+        if (Input.GetKeyDown(KeyCode.L)) { AddContacter("Coop", null, null); }//This is for testing
+
+        //This is the printing part. Will be changed.
+        if(count != contactList.Count && contactList.Count > 0)
+        {
+            for(int i = 0; i < contactList.Count; i++)
+            {
+                textPool[i].gameObject.SetActive(false);
+            }
+            for (int i = 0; i < contactList.Count; i++)
+            {
+                if (textPool[i].gameObject.activeSelf == false)
+                {
+                    textPool[i].transform.position = new Vector3(book.transform.position.x - book.transform.localScale.x / 2 + leftSpace,
+                                   book.transform.position.y + book.transform.localScale.y / 2
+                                   - i * (textPrefab.transform.localScale.y + lineSpace) - topSpace, 0);
+                    textPool[i].text = contactList[i].name + "      " + contactList[i].email + "      " + contactList[i].phone;
+                    textPool[i].gameObject.SetActive(true);
+                }
+            }
+        }
+
+
     }
 
     //This is Class version of Adding contacters
@@ -78,32 +93,51 @@ public class ContactBook : MonoBehaviour
         someone.name = name;
         someone.email = email;
         someone.phone = phone;
-        SearchContact(someone);
-        contactList.Add(someone);
+        SearchContactAndAdd(someone);
+        count += 1;
     }
     //This is Search for the same name/email/phone
-    public void SearchContact(Contact someone)
+    public void SearchContactAndAdd(Contact someone)
     {
-        for (int i = 0; i < contactList.Count; i++)
+        Debug.Log("In searching");
+        if(contactList.Count > 0)
         {
-            if (contactList[i].name == someone.name)
+            Debug.Log("Search");
+            bool notFound = true;
+            for (int i = 0; i < contactList.Count; i++)
             {
-                contactList.Remove(contactList[i]);
+                if (contactList[i].name == someone.name)
+                {
+                    Debug.Log("Found name");
+                    contactList.Remove(contactList[i]);
+                    contactList.Insert(i, someone);
+                    notFound = false;
+                    break;
+                }
+                else if (contactList[i].email == someone.email)
+                {
+                    Debug.Log("Found email");
+                    contactList.Remove(contactList[i]);
+                    contactList.Insert(i, someone);
+                    notFound = false;
+                    break;
+                }
+                else if (contactList[i].phone == someone.phone)
+                {
+                    Debug.Log("Found phone");
+                    contactList.Remove(contactList[i]);
+                    contactList.Insert(i, someone);
+                    notFound = false;
+                    break;
+                }
             }
+            if (notFound)
+                contactList.Add(someone);
         }
-        for (int i = 0; i < contactList.Count; i++)
+        else
         {
-            if (contactList[i].email == someone.email)
-            {
-                contactList.Remove(contactList[i]);
-            }
-        }
-        for (int i = 0; i < contactList.Count; i++)
-        {
-            if (contactList[i].phone == someone.phone)
-            {
-                contactList.Remove(contactList[i]);
-            }
+            contactList.Add(someone);
+            Debug.Log("Null");
         }
     }
     //This is dictionary version
