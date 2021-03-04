@@ -294,7 +294,7 @@ MonoBehaviour:
   contactList: []
   book: {fileID: 1598138403}
   textPrefab: {fileID: 460332984}
-  topSpace: 0.1
+  topSpace: 0.5
   leftSpace: 0.5
   lineSpace: 0.1
 --- !u!224 &1067510193 stripped
@@ -800,6 +800,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1836734685}
     m_Modifications:
+    - target: {fileID: 5888115564643516652, guid: d55e2699096c5fd4780350281beab8f0,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -637.7575
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888115564643516652, guid: d55e2699096c5fd4780350281beab8f0,
+        type: 3}
+      propertyPath: m_uvLineOffset
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888115564643516652, guid: d55e2699096c5fd4780350281beab8f0,
+        type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888115564643516652, guid: d55e2699096c5fd4780350281beab8f0,
+        type: 3}
+      propertyPath: m_verticalMapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888115564643516652, guid: d55e2699096c5fd4780350281beab8f0,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888115564643516652, guid: d55e2699096c5fd4780350281beab8f0,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888115564643516652, guid: d55e2699096c5fd4780350281beab8f0,
+        type: 3}
+      propertyPath: m_horizontalMapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888115564643516652, guid: d55e2699096c5fd4780350281beab8f0,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5888115564643516658, guid: d55e2699096c5fd4780350281beab8f0,
         type: 3}
       propertyPath: m_Name
@@ -893,7 +933,7 @@ PrefabInstance:
     - target: {fileID: 5888115564643516659, guid: d55e2699096c5fd4780350281beab8f0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 492
+      value: -479
       objectReference: {fileID: 0}
     - target: {fileID: 5888115564643516659, guid: d55e2699096c5fd4780350281beab8f0,
         type: 3}
@@ -909,6 +949,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8282631529012027193, guid: d55e2699096c5fd4780350281beab8f0,
+        type: 3}
+      propertyPath: m_VerticalFit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8282631529012027193, guid: d55e2699096c5fd4780350281beab8f0,
+        type: 3}
+      propertyPath: m_HorizontalFit
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d55e2699096c5fd4780350281beab8f0, type: 3}
