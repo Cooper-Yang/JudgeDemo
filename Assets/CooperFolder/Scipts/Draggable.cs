@@ -9,6 +9,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public Transform parentToReturnTo = null;
     public Transform parentToReturnToCompare = null;
     public Vector2 originalAnchor;
+    public Transform originalParent;
     [HideInInspector]
     public Transform placeHolderParent = null;
 
@@ -62,6 +63,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
         
         originalAnchor = dragTransform.anchoredPosition;
+        originalParent = this.transform.parent;
     }
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -138,16 +140,16 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        if (parentToReturnTo == parentToReturnToCompare || parentToReturnTo.CompareTag("Container"))
+        if (parentToReturnTo == parentToReturnToCompare || parentToReturnTo.CompareTag("Container") || parentToReturnTo.CompareTag("TrashContainer") )
         {
             Destroy(theClone);
         }
 
-        // if (!parentToReturnTo.CompareTag("Container") )
-        // {
-        //     dragTransform.anchoredPosition = originalAnchor;
-        //     
-        // }
+        if (!parentToReturnTo.CompareTag("Container") )
+        {
+            dragTransform.anchoredPosition = originalAnchor;
+            
+        }
         this.transform.SetParent(parentToReturnTo);
         this.transform.SetSiblingIndex(placeHolder.transform.GetSiblingIndex());
         this.GetComponent<CanvasGroup>().blocksRaycasts = true;
