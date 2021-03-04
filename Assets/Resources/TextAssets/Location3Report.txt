@@ -1,7 +1,7 @@
-List of Border Crossings at "Zeng Outpost" Office
+Border Crossings History at "Zeng Outpost" Office
 (from text file)
-- item 1
-- item 2
-- item 3
-- item 4
-- item 5
+- Time: 09:31	Date: 11/01	ID: #RLP-1
+- Time: 14:22	Date: 11/03	ID: #ZOR-2
+- Time: 16:01	Date: 11/03	ID: #ZRV-2
+- Time: 12:24	Date: 10/14	ID: #ABC-9
+- Time: 18:04	Date: 11/04	ID: #CZH-7
