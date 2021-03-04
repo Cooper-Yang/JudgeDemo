@@ -1554,12 +1554,22 @@ MonoBehaviour:
   HitchcockAllFiles:
   - {fileID: 4900000, guid: 478bf9ab98dd69446bf29b17d7f32358, type: 3}
   - {fileID: 4900000, guid: 846d3b7bf09907447985d82496c461f1, type: 3}
+  XiaoWangAllFiles: []
   PlayerInboxFiles:
   - {fileID: 4900000, guid: 7ff3cd262bf5c5e47a1ede3f24b27cf8, type: 3}
   BossInboxFiles:
   - {fileID: 4900000, guid: 20e0f5988ec680a43b51def604fdd3b9, type: 3}
   HitchcockInboxFiles:
   - {fileID: 4900000, guid: 478bf9ab98dd69446bf29b17d7f32358, type: 3}
+  XiaoWangInboxFiles:
+  - {fileID: 4900000, guid: 6327de8fb71c982458b9f9b63d9c92a2, type: 3}
+  - {fileID: 4900000, guid: c6d4d05ca4987c74b8e2826089d32ae2, type: 3}
+  - {fileID: 4900000, guid: c3119572260e99e4cb269088181aeac6, type: 3}
+  - {fileID: 4900000, guid: 5a071c5e3ceccb346b4bfef90c1c25e8, type: 3}
+  - {fileID: 4900000, guid: 351a1dbbf70b7574cbefb683abee98c7, type: 3}
+  - {fileID: 4900000, guid: 41cf80c2dd116c84ebb4525c9445c430, type: 3}
+  - {fileID: 4900000, guid: 16dcc2e851861ad48bf0d263a6e44493, type: 3}
+  - {fileID: 4900000, guid: e2cf5e2e6a2f72e4fb6ea77207b81f20, type: 3}
   InboxEmails: []
   ActiveEmail: {fileID: 5838394530521102446, guid: 0482fdbd4d079e945a68b16a2d981b2f,
     type: 3}
@@ -1629,6 +1639,9 @@ MonoBehaviour:
   lineHeight: 25
   scrollVelocity: 600
   currentDirectory: 0
+  NewWindowPrefab: {fileID: 836217817, guid: 313e5db4e571e3f428acce1e99bf0c3b, type: 3}
+  ComputerPanel: {fileID: 1547384001}
+  CustomsLocation: 0
 --- !u!114 &346007969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2746,7 +2759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0997d6ccc3bcb77409cb0cbb66163c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CorrespondingWindow: {fileID: 1880095797}
+  CorrespondingWindow: {fileID: 680354231}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
   openColor: {r: 0.8490566, g: 0.3448919, b: 0, a: 1}
 --- !u!1 &446832788
@@ -2767,7 +2780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &446832789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5227,7 +5240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.98742, y: 107.50192}
+  m_AnchoredPosition: {x: -79.987434, y: 107.50192}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &943935870
@@ -13298,7 +13311,7 @@ MonoBehaviour:
         m_MethodName: ToggleWindow
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1880095797}
+          m_ObjectArgument: {fileID: 680354231}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0

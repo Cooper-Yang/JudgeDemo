@@ -138,3 +138,7 @@ Desktop.ini
 ehthumbs.db
 Local/*
 Packages/
+
+ProjectSettings/PackageManagerSettings.asset
+
+ProjectSettings/ProjectVersion.txt

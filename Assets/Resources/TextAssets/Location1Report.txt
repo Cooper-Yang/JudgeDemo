@@ -1,7 +1,5 @@
-List of Border Crossings at "Water Bridge" Office
+Border Crossings History at "Water Bridge" Office
 (from text file)
-- item 1
-- item 2
-- item 3
-- item 4
-- item 5
+- Time: 12:24	Date: 10/29	ID: #ADC-8
+- Time: 10:24	Date: 11/02	ID: #KKP-3
+- Time: 17:49	Date: 11/04	ID: #XIA-4

@@ -11,6 +11,9 @@ TagManager:
   - Canvas
   - Computer
   - Notebook
+  - Repo
+  - Container
+  - TrashContainer
   - Bboard
   layers:
   - Default
