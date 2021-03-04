@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class TerminalControl : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class TerminalControl : MonoBehaviour
 
     float charPixelWidth = 6.15f; // for size 18 font. MANUALLY CHANGE FOR FONT SIZE
     float dirPixelOffset = 14f; // for size 18 font. Offset after string's lenght is accounted for
+
+    public FileWindow NewWindowPrefab;
+    public GameObject ComputerPanel;
 
     public Location CustomsLocation;
 
@@ -165,5 +169,40 @@ public class TerminalControl : MonoBehaviour
     {
         CustomsLocation = loc;
         return CustomsLocation;
+    }
+
+    public string GenerateKey()
+    {
+        EmailManager manager = this.GetComponent<EmailManager>();
+        System.Random rand = new System.Random();
+        string key = string.Format("{0:X5}", rand.Next(0x100000)); // = "#A197B9"
+        manager.SetSkeletonKey(key);
+        return key;
+    }
+
+    public void OpenPassportWindows(object[] array)
+    {
+        Sprite[] sprites = new Sprite[array.Length];
+        for (int x = 0; x < array.Length; x++)
+        {
+            sprites[x] = (Sprite)array[x];
+        }
+
+        StartCoroutine(StaggerCreatePassportWindows(sprites, 0.2f));
+    }
+
+    IEnumerator StaggerCreatePassportWindows(Sprite[] sprites, float delay)
+    {
+        int offset = 32;
+        int i = 0;
+        foreach (Sprite s in sprites)
+        {
+            FileWindow newWindow = Instantiate(NewWindowPrefab, ComputerPanel.transform);
+            newWindow.LoadContents(s, s.name);
+            newWindow.Stagger(i, offset);
+            newWindow.transform.SetAsLastSibling();
+            i++;
+            yield return new WaitForSeconds(delay);
+        }
     }
 }
