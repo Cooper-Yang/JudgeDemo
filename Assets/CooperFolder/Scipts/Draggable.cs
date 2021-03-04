@@ -3,21 +3,40 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 
-public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
+public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler ,IPointerDownHandler{
 
     [HideInInspector]
     public Transform parentToReturnTo = null;
+    public Transform parentToReturnToCompare = null;
+    public Vector2 originalAnchor;
     [HideInInspector]
     public Transform placeHolderParent = null;
 
     private GameObject placeHolder = null;
 
+    private GameObject theClone;
+    
     
     [SerializeField] private RectTransform dragTransform;
     [SerializeField] private Canvas canvas;
 
     private void Awake()
     {
+        if (GetComponent<LayoutElement>() == null)
+        {
+            LayoutElement lE = gameObject.AddComponent<LayoutElement>();
+            lE.preferredWidth = 100;
+            lE.preferredHeight = 100;
+            lE.flexibleHeight = 0;
+            lE.flexibleWidth = 0;
+            lE.layoutPriority = 1;
+        }
+
+        if (GetComponent<CanvasGroup>() == null)
+        {
+            gameObject.AddComponent<CanvasGroup>();
+        }
+        
         if (dragTransform == null)
         {
             dragTransform = this.transform.GetComponent<RectTransform>();
@@ -34,7 +53,31 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             }
         }
     }
-    public void OnBeginDrag(PointerEventData eventData) {
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        // RectTransform t = dragTransform;
+        // while (t.parent != null)
+        // {
+        //     if (t.parent.CompareTag(" "))
+        //     {
+        //         break;
+        //     }
+        //     t = t.parent.GetComponent<RectTransform>();
+        // }
+        
+        //this for the set as last sibling 
+        
+        
+        dragTransform.SetAsLastSibling();
+    }
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        originalAnchor = dragTransform.anchoredPosition;
+        theClone = Instantiate(gameObject, transform.position, Quaternion.identity,canvas.transform);
+        Destroy(theClone.GetComponent<Draggable>());
+        Destroy(theClone.GetComponent<LayoutElement>());
+        Destroy(theClone.GetComponent<CanvasGroup>());
+        Debug.Log("instante!");
         placeHolder = new GameObject();
         placeHolder.transform.SetParent( this.transform.parent );
         LayoutElement le = placeHolder.AddComponent<LayoutElement>();
@@ -46,6 +89,9 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         placeHolder.transform.SetSiblingIndex(this.transform.GetSiblingIndex() );
 
         parentToReturnTo = this.transform.parent;
+        
+        parentToReturnToCompare = this.transform.parent;
+        
         placeHolderParent = parentToReturnTo;
         this.transform.SetParent(this.transform.parent.parent);
 
@@ -82,6 +128,17 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     }
 
     public void OnEndDrag(PointerEventData eventData) {
+        if (parentToReturnTo == parentToReturnToCompare || parentToReturnTo.CompareTag("Container"))
+        {
+            Destroy(theClone);
+        }
+
+        if (!parentToReturnTo.CompareTag("Container"))
+        {
+            dragTransform.anchoredPosition = originalAnchor;
+            //Destroy(placeHolder);
+            //return;
+        }
         this.transform.SetParent(parentToReturnTo);
         this.transform.SetSiblingIndex(placeHolder.transform.GetSiblingIndex());
         this.GetComponent<CanvasGroup>().blocksRaycasts = true;

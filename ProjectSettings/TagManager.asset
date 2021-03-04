@@ -11,6 +11,8 @@ TagManager:
   - Canvas
   - Computer
   - Notebook
+  - Repo
+  - Container
   layers:
   - Default
   - TransparentFX
