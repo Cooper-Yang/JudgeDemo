@@ -11,6 +11,7 @@ TagManager:
   - Canvas
   - Computer
   - Notebook
+  - Bboard
   layers:
   - Default
   - TransparentFX

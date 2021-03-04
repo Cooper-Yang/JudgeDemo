@@ -5,33 +5,34 @@ using UnityEngine;
 public class HighLight : MonoBehaviour
 {
     public DeskTopCtrl deskcon;
-    private Color startcolor;
+    private Color StartColor = Color.white;
+    private Color HightlightColor = Color.yellow;
 
-    private void Start()
-    {
-        this.GetComponent<Renderer>().material.color = startcolor;
-    }
 
     void OnMouseEnter()
     {
-        startcolor = Color.white;
-        this.GetComponent<Renderer>().material.color = Color.yellow;
+        this.GetComponent<Renderer>().material.color = HightlightColor;
     }
     void OnMouseExit()
     {
-        this.GetComponent<Renderer>().material.color = startcolor;
+        this.GetComponent<Renderer>().material.color = StartColor;
     }
     private void OnMouseDown()
     {
         //call DeskTopCtrl to change state
         if(this.gameObject.tag == "Computer")
         {
-            this.GetComponent<Renderer>().material.color = startcolor;
+            this.GetComponent<Renderer>().material.color = StartColor;
             deskcon.ChangeState(deskcon.ComputerState);
         }
         else if(this.gameObject.tag == "Notebook")
         {
 
+        }
+        else if (this.gameObject.tag == "Bboard")
+        {
+            this.GetComponent<Renderer>().material.color = StartColor;
+            deskcon.ChangeState(deskcon.BulboardState);
         }
 
     }
