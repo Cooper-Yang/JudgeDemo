@@ -76,7 +76,7 @@ public class ContactBook : MonoBehaviour
                 {
                     textPool[i].transform.position = new Vector3(book.transform.position.x - book.transform.localScale.x / 2 + leftSpace,
                                    book.transform.position.y + book.transform.localScale.y / 2
-                                   - i * (textPrefab.transform.localScale.y + lineSpace) - topSpace, 0);
+                                   - i * (textPrefab.transform.localScale.y + lineSpace) - topSpace, 2);
                     textPool[i].text = contactList[i].name + "      " + contactList[i].email + "      " + contactList[i].phone;
                     textPool[i].gameObject.SetActive(true);
                 }
