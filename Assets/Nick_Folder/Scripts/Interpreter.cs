@@ -208,9 +208,8 @@ public class Interpreter : MonoBehaviour
                                 control.AddDirectoryLine(control.GetCurrentDirectory(), "<color=#C19C00><:Generating Skeleton Key:</color>");
                                 Output("Generated ONE TIME USE Login Key for email system.", colors["yellow"]);
                                 // TODO:
-                                // GenerateRandomKey(); --> Need to implement these!
-                                // OneTimeUseKey();
-                                OutputSplitLine("Key", ": ", "7DX990", colors["yellow"], colors["green"]);
+                                string serialKey = control.GenerateKey();
+                                OutputSplitLine("Key", ": ", serialKey, colors["yellow"], colors["green"]);
                                 break;
 
                             default:
@@ -271,31 +270,81 @@ public class Interpreter : MonoBehaviour
                                 break;
 
                             case "request":
+                                // If location is selected
+                                // If followed by "dates" or "passports"
+                                // Show dates or Show passports
+                                // else: "Must specify dates or passports"
+                                // else: "Must select a location"
+
+                                int index;
+                                if (args.Length > 1)
+                                {
+                                    switch (args[1])
+                                    {
+                                        case "history":
+                                            index = 1;
+                                            break;
+                                        case "passports":
+                                            index = 2;
+                                            break;
+                                        default:
+                                            index = -1;
+                                            Output("   Type \"request history\" for history of entires.", colors["yellow"]);
+                                            Output("Or Type \"request passports\" for list of passports.", colors["yellow"]);
+                                            break;
+                                    }
+                                }
+                                else
+                                {
+                                    Output("   Type \"request history\" for history of entires.", colors["yellow"]);
+                                    Output("Or Type \"request passports\" for list of passports.", colors["yellow"]);
+                                    break;
+                                }
+
                                 switch (currentLocation)
                                 {
                                     case TerminalControl.Location.WaterBridge:
-                                        OutputTextFile("Location1Report");
+                                        if (index == 1)
+                                            OutputTextFile("Location1Report", colors["light"]);
+                                        else if (index == 2)
+                                        {
+                                            Output("Opening Passport Photos from Water Bridge Database:", colors["purple"]);
+                                            control.OpenPassportWindows(Resources.LoadAll("Location1Passports", typeof(Sprite)));
+                                        }
                                         break;
+
                                     case TerminalControl.Location.MainTerminal:
-                                        OutputTextFile("Location2Report");
+                                        if (index == 1)
+                                            OutputTextFile("Location2Report", colors["light"]);
+                                        else if (index == 2)
+                                        {
+                                            Output("Opening Passport Photos from Main Terminal Database:", colors["purple"]);
+                                            control.OpenPassportWindows(Resources.LoadAll("Location2Passports", typeof(Sprite)));
+                                        }
                                         break;
+
                                     case TerminalControl.Location.ZengOutpost:
-                                        OutputTextFile("Location3Report");
+                                        if (index == 1)
+                                            OutputTextFile("Location3Report", colors["light"]);
+                                        else if (index == 2)
+                                        {
+                                            Output("Opening Passport Photos from Zeng Outpost Database:", colors["purple"]);
+                                            control.OpenPassportWindows(Resources.LoadAll("Location3Passports", typeof(Sprite)));
+                                        }
                                         break;
+
                                     case TerminalControl.Location.None:
-                                        Output("No Location Set. Type \"Location\" to select.", colors["white"]);
+                                        Output("No Location Set. Type \"Location\" to select one.", colors["yellow"]);
                                         break;
+
                                     default:
-                                        Output("   Type \"request email\" to receive email results.");
-                                        Output("Or Type \"request document\" to print results.");
-
-                                        Output("location: \"" + currentLocation.ToString() + "\"", colors["yellow"]);
-
+                                        Output("inspecting location: \"" + currentLocation.ToString() + "\"", colors["yellow"]);
                                         break;
                                 }
                                 break;
+
                             default:
-                                OutputSplitLine("Invalid.", " ", "\"List\" for commands in <Personnel>", colors["red"], colors["yellow"]);
+                                OutputSplitLine("Invalid.", " ", "\"List\" for commands in <Customs>", colors["red"], colors["yellow"]);
                                 break;
                         }
                         break;
@@ -463,12 +512,12 @@ public class Interpreter : MonoBehaviour
         
     }
 
-    private void OutputTextFile(string filename)
+    private void OutputTextFile(string filename, string colorCode)
     {
         string[] lines = TextAssetToStringArray(ReadTextAssetFromResources(filename));
         foreach (string line in lines)
         {
-            response.Add(line);
+            Output(line, colorCode);
         }
     }
 

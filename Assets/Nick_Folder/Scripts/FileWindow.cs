@@ -35,6 +35,19 @@ public class FileWindow : MonoBehaviour
         FileNameText.text = name;
     }
 
+    public void LoadContents(Sprite sprite, string fileName)
+    {
+        ContentImage.sprite = sprite;
+        FileNameText.text = fileName;
+    }
+
+    public void Stagger(int count, float amount)
+    {
+        float newX = amount * count;
+        float newY = amount * -count;
+        this.transform.localPosition = new Vector3(newX, newY, transform.localPosition.z);
+    }
+
     /*private void UpdateWindow()
     {
         //ContentImage.sprite = myFile.GetContentSprite();
