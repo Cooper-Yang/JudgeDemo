@@ -13,22 +13,35 @@ public class DeskTopCtrl : MonoBehaviour
     //Mouse Pos
 
     public Camera mainCamera;
+
+    [Header("Desktop Setting")]
     public float DeskCamSize = 235;
+    public Vector3 DeskTopCamPos = new Vector3(0, -25, -10);
+    
+    [Header("Computer Setting")]
     public float CompCamSize = 8;
-    public Vector3 DeskTopCamPos = new Vector3(0, 0, -10);
-    public Vector3 ComputerCamPos = new Vector3(0, 0.6f, -3.6f);
+    public Vector3 ComputerCamPos = new Vector3(0, 2, -10);
+    [Header("Bulletin Board Setting")]
+    public float BulBoardCamSize = 120;
+    public Vector3 BulBoardCamPos = new Vector3(137, 54, -10);
+    public GameObject BulBoard;
+    [Header("Notebook Setting")]
+    public float NotebookCamSize = 75;
     public Vector3 NotebookCamPos;
+    public GameObject NoteBook;
+    [Header("Hit Box")]
+    public GameObject MonitorHitbox;
+    public GameObject BoardHitbox;
+    public GameObject NotebookHitbox;
 
-    public GameObject Monitor;
-
+    public bool ImageAfterLerp = false;
 
     private StateBase currentState;
     public StateBase DeskState = new DeskState();
     public StateBase ComputerState = new ComputerState();
+    public StateBase BulboardState = new BulBoardState();
+    public StateBase NotebookState = new NoteBookState();
 
-    [Header("Orthographic Cam Settings")]
-    public int OrthoSizeDesk;
-    public int OrthoSizeComputer;
 
 
     //have different state here
@@ -49,18 +62,17 @@ public class DeskTopCtrl : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
 
         ChangeState(DeskState);
     }
 
-    // Update is called once per frame
     void Update()
     {
         currentState.StayOnState(this);
     }
+
 
     public IEnumerator LerpCamPos(Vector3 LerpGoal, float LerpCamSize)
     {
@@ -76,13 +88,14 @@ public class DeskTopCtrl : MonoBehaviour
             mainCamera.orthographicSize = CamSize;
             mainCamera.transform.position = LerpValue;
             timer += Time.deltaTime;
-            if(Monitor.GetComponent<HighLight>().enabled == true)
-            {
-                Monitor.GetComponent<HighLight>().enabled = false;
-            }
+            ImageAfterLerp = false;
             yield return null;
         }
         mainCamera.transform.position = LerpGoal;
+        if (currentState != DeskState)
+        {
+            ImageAfterLerp = true;
+        }
     }
 
 }
