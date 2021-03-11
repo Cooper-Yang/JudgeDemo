@@ -9,6 +9,6 @@ public class WindowSelect : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        WINDOW.SetAsLastSibling();
+        WINDOW.SetAsLastSibling();  
     }
 }
