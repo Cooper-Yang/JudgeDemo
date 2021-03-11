@@ -81,6 +81,16 @@ public class EmailManager : MonoBehaviour
         InitInbox(currentUser.ToString());
     }
 
+    public TextAsset test;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if(test != null)
+                CreateNewEmailToPlayer(test);
+        }
+    }
+
     private void InitInbox(string username) // USER parameter
     {
         UsernameText.text = username.ToString();
@@ -195,7 +205,7 @@ public class EmailManager : MonoBehaviour
     }
 
     public void CreateNewEmail()
-    {
+    {      
         List<TextAsset> UserFiles;
         List<TextAsset> UserInbox;
 
@@ -246,6 +256,18 @@ public class EmailManager : MonoBehaviour
             Debug.Log("No more email files !");
         }
     }
+
+    // Call from Evidence Manager
+    // Provide with TextAsset (.txt) to create new email object in player's inbox
+    // Can modify this method in the future to deliver emails to different user inboxes.
+    public void CreateNewEmailToPlayer(TextAsset textFile)
+    {
+        PlayerInboxFiles.Add(textFile);
+        Email emailTemp = CreateEmailFromFile(textFile);
+        InboxEmails.Add(emailTemp);
+        emailCount++;
+    }
+
 
     public void LogOut()
     {
@@ -367,6 +389,15 @@ public class EmailManager : MonoBehaviour
         else
         {
             Debug.Log("No Attachment Found...");
+        }
+    }
+
+    public void PrintEmail()
+    {
+        if (ActiveEmail != null)
+        {
+            Printer printerControl = this.GetComponent<Printer>();
+            printerControl.Print(ActiveEmail);
         }
     }
 }
