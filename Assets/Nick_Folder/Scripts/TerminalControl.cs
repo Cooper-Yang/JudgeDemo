@@ -24,6 +24,7 @@ public class TerminalControl : MonoBehaviour
 
     [SerializeField] private Directory currentDirectory;
     Interpreter interpreter;
+    EmailManager emailManager;
 
     float charPixelWidth = 6.15f; // for size 18 font. MANUALLY CHANGE FOR FONT SIZE
     float dirPixelOffset = 14f; // for size 18 font. Offset after string's lenght is accounted for
@@ -36,6 +37,8 @@ public class TerminalControl : MonoBehaviour
     private void Start()
     {
         interpreter = this.GetComponent<Interpreter>();
+        emailManager = this.GetComponent<EmailManager>();
+
     }
 
 
@@ -173,10 +176,9 @@ public class TerminalControl : MonoBehaviour
 
     public string GenerateKey()
     {
-        EmailManager manager = this.GetComponent<EmailManager>();
         System.Random rand = new System.Random();
         string key = string.Format("{0:X5}", rand.Next(0x100000)); // = "#A197B9"
-        manager.SetSkeletonKey(key);
+        emailManager.SetSkeletonKey(key);
         return key;
     }
 
