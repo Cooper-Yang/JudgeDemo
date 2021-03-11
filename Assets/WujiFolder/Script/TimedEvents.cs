@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 [System.Serializable]
 public struct tEvent{
+    public bool on;
     //the time the event is triggered
     public int year;
     public int month;
@@ -63,7 +64,7 @@ public class TimedEvents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //check when 5 min passes
+        //check when min passes
         if (lastMin != T.min)
         {
             lastMin = T.min;
@@ -71,7 +72,7 @@ public class TimedEvents : MonoBehaviour
             foreach (tEvent te in events)
             {
                 //if time matches
-                if (te.year==T.year&&te.month==T.month&&te.date == T.date && te.hour == T.hour && te.min == T.min)
+                if (te.year==T.year&&te.month==T.month&&te.date == T.date && te.hour == T.hour && te.min == T.min&&te.on)
                 {
                     //trigger the methods
                     if (te.trigger)
@@ -89,6 +90,44 @@ public class TimedEvents : MonoBehaviour
         
     }
 
+    public void switchEvent(int i)
+    {
+        //using this since cannot change directly
+        tEvent temp = events[i];
+        temp.on = !temp.on;
+        events[i] = temp;
+    }
+
+    //the methods for days latter event
+    public void triggerEvent_Next(int i, int days)
+    {
+        tEvent temp = events[i];
+        temp.on = true;
+        temp.date = T.date + days;
+        events[i] = temp;
+    }
+
+    //the methods for time waiting event
+    public void triggerEvent_Wait(int i, int mins)
+    {
+        
+        tEvent temp = events[i];
+        temp.on = true;
+
+        int hours = mins / 60;
+        mins = mins - hours * 60;
+        int days = hours / 24;
+        hours = hours - days * 24;
+        int month = days / 30;
+        days = days - month * 30;
+
+        temp.min = T.min + mins;
+        temp.hour = T.hour + hours;
+        temp.date = T.date + days;
+        temp.month = T.month + month;
+
+        events[i] = temp;
+    }
 }
 
 
