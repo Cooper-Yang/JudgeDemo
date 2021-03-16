@@ -15,7 +15,6 @@ public class DragWindow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     private float xOffset = 0;
     private bool isComputerWindow;
 
-    ,
     private void Awake()
     {
         if (canvas == null)
