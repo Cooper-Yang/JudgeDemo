@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1523603625439237987}
   - component: {fileID: 1523603625439237988}
   - component: {fileID: 1337596594658914968}
+  - component: {fileID: -8153794300941839054}
   m_Layer: 5
   m_Name: PrintDocument
   m_TagString: Untagged
@@ -115,3 +116,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PrintRow: {fileID: 8218224999373023614, guid: acbbf11c21b37e84fa24ee6cd1250981,
     type: 3}
+--- !u!114 &-8153794300941839054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523603625439237990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f370228de185fb64e8f19beddca315aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isComputerWindow: 1
