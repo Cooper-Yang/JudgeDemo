@@ -12,6 +12,10 @@ public class CameraZoomIn : MonoBehaviour
     private Vector3 tempPos;
     private bool zoomedIn;
 
+    private void Start()
+    {
+        m_Orthographic = Camera.main;
+    }
     void Update()
     {
         //var ct = Camera.main.transform;
@@ -19,7 +23,7 @@ public class CameraZoomIn : MonoBehaviour
         {
             tempPos = Camera.main.transform.position;
             Vector3 mousePos = Input.mousePosition;
-            Vector3 transferredMousePos = Camera.main.ScreenToWorldPoint(mousePos);
+            Vector3 transferredMousePos = m_Orthographic.ScreenToWorldPoint(mousePos);
             m_Orthographic.orthographicSize = m_Orthographic.orthographicSize * zoomInMag;
             m_Orthographic.transform.position = new Vector3(transferredMousePos.x, transferredMousePos.y, m_Orthographic.transform.position.z);
             zoomedIn = true;
