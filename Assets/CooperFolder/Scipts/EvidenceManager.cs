@@ -66,4 +66,19 @@ public class EvidenceManager : MonoBehaviour
         }
         
     }
+
+    public void SubmitReport()
+    {
+        string caseID = suspectList[dropDown.value].name;
+        Debug.Log(caseID);
+        foreach (OneCase cm in FindObjectsOfType<OneCase>())
+        {
+            if (cm.caseID.Equals(caseID))
+            {
+                cm.submitReport(suspectList[dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained);
+                Debug.Log("submitted");
+                break;
+            }
+        }
+    }
 }
