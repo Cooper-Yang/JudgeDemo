@@ -17,7 +17,7 @@ public class DeskState : StateBase
         DeskTop.BoardHitbox.gameObject.GetComponent<BoxCollider2D>().enabled = true;
         DeskTop.NotebookHitbox.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
 
-
+        DeskTop.NoteBook.gameObject.SetActive(false);
         DeskTop.ImageAfterLerp = false;
     }
 
