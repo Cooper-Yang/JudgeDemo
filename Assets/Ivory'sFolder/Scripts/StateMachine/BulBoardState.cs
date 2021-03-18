@@ -7,6 +7,7 @@ public class BulBoardState : StateBase
 
     public override void EnterState(DeskTopCtrl DeskTop)
     {
+       
         DeskTop.StartCoroutine(DeskTop.LerpCamPos(DeskTop.BulBoardCamPos, DeskTop.BulBoardCamSize));
         DeskTop.MonitorHitbox.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         DeskTop.BoardHitbox.gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -15,8 +16,9 @@ public class BulBoardState : StateBase
 
     public override void StayOnState(DeskTopCtrl DeskTop)
     {
-        if(DeskTop.ImageAfterLerp == true)
+        if (DeskTop.ImageAfterLerp == true)
         {
+            DeskTop.Back.gameObject.SetActive(true);
             DeskTop.BoardHitbox.GetComponent<SpriteRenderer>().sortingOrder = 12;
         }
 
