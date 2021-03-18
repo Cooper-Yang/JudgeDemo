@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragWindow : MonoBehaviour, IDragHandler
+public class DragWindow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    [SerializeField] private RectTransform dragBarTransform;
-    [SerializeField] private Canvas canvas;
+    [Header("Attach This To Any \"Drag\" Object")]
+    [Range(0, 0)] public int MustBeChildOfACanvas;
+
+    private Canvas canvas;
+    private RectTransform draggableTransform;
+    private RectTransform canvasRect;
+    private float yOffset = 0;
+    private float xOffset = 0;
+    private bool isComputerWindow;
 
     private void Awake()
     {
-        if (dragBarTransform == null)
-        {
-            dragBarTransform = this.transform.parent.GetComponent<RectTransform>();
-        }
         if (canvas == null)
         {
             Transform testCanvasTransform = transform.parent;
@@ -24,12 +27,51 @@ public class DragWindow : MonoBehaviour, IDragHandler
                     break;
                 testCanvasTransform = testCanvasTransform.parent;
             }
+            canvasRect = canvas.GetComponent<RectTransform>();
+        }
+
+        if (canvas.CompareTag("Computer"))
+            isComputerWindow = true;
+        else
+            isComputerWindow = false;
+
+        if (draggableTransform == null)
+        {
+            if (isComputerWindow)
+            {
+                draggableTransform = this.transform.parent.GetComponent<RectTransform>();
+                yOffset = (this.transform.GetComponent<RectTransform>().position - this.transform.parent.GetComponent<RectTransform>().position).y;
+            }
+            else
+            {
+                draggableTransform = this.transform.GetComponent<RectTransform>();
+                yOffset = 0;
+            }
         }
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public void OnBeginDrag(PointerEventData data)
     {
-        dragBarTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        Vector3 globalMousePos;
+        if (RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, data.position, data.pressEventCamera, out globalMousePos))
+        {
+            xOffset = draggableTransform.position.x - globalMousePos.x;
+        }
     }
 
+    public void OnDrag(PointerEventData data)
+    {
+        Vector3 globalMousePos;
+        if (RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, data.position, data.pressEventCamera, out globalMousePos))
+        {
+            Vector3 location = new Vector3(globalMousePos.x + xOffset, globalMousePos.y - yOffset, globalMousePos.z);
+            draggableTransform.position = location;
+            draggableTransform.rotation = canvasRect.rotation;
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        // END DRAGGING - Assign new canvas if dropped onto different canvas?
+    }
 }

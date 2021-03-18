@@ -29,7 +29,7 @@ public class CompUIManager : MonoBehaviour
     public void OpenWindow(Image window)
     {
         RectTransform rt = window.GetComponent<RectTransform>();
-        //rt.anchoredPosition = new Vector2(0, 0);
+        rt.anchoredPosition = new Vector2(0, 0);
         // 
         // RESET POSITION ON OPEN
         //
