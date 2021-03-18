@@ -18,16 +18,18 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private GameObject theClone;
     
     
-    [SerializeField] private RectTransform dragTransform;
+    private RectTransform draggableTransform;
+    private RectTransform canvasRect;
+    private float yOffset = 0;
+    private float xOffset = 0;
+    private bool isComputerWindow;
+    
+    
     
     [SerializeField] private Canvas canvas;
 
 
-    public RectTransform DragTransform
-    {
-        get => dragTransform;
-        set => dragTransform = value;
-    }
+
 
     private void Awake()
     {
@@ -46,10 +48,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             gameObject.AddComponent<CanvasGroup>();
         }
         
-        if (dragTransform == null)
-        {
-            dragTransform = this.transform.GetComponent<RectTransform>();
-        }
+        
         if (canvas == null)
         {
             Transform testCanvasTransform = transform.parent;
@@ -60,9 +59,28 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                     break;
                 testCanvasTransform = testCanvasTransform.parent;
             }
+            canvasRect = canvas.GetComponent<RectTransform>();
         }
-        
-        originalAnchor = dragTransform.anchoredPosition;
+
+        if (canvas.CompareTag("Computer"))
+            isComputerWindow = true;
+        else
+            isComputerWindow = false;
+
+        if (draggableTransform == null)
+        {
+            if (isComputerWindow)
+            {
+                draggableTransform = this.transform.parent.GetComponent<RectTransform>();
+                yOffset = (this.transform.GetComponent<RectTransform>().position - this.transform.parent.GetComponent<RectTransform>().position).y;
+            }
+            else
+            {
+                draggableTransform = this.transform.GetComponent<RectTransform>();
+                yOffset = 0;
+            }
+        }
+        originalAnchor = draggableTransform.anchoredPosition;
         originalParent = this.transform.parent;
     }
     public void OnPointerDown(PointerEventData eventData)
@@ -80,7 +98,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         //this for the set as last sibling 
         
         
-        dragTransform.SetAsLastSibling();
+        draggableTransform.SetAsLastSibling();
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -111,7 +129,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     }
 
     public void OnDrag(PointerEventData eventData) {
-        dragTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        draggableTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
         
         //this.transform.position = eventData.position;
         //this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 0);
@@ -147,7 +165,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         if (!parentToReturnTo.CompareTag("Container") )
         {
-            dragTransform.anchoredPosition = originalAnchor;
+            draggableTransform.anchoredPosition = originalAnchor;
             
         }
         this.transform.SetParent(parentToReturnTo);

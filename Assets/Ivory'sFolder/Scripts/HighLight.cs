@@ -12,7 +12,7 @@ public class HighLight : MonoBehaviour
     {
         if (transform.childCount > 0)
         {
-            GetComponentInChildren<Canvas>().sortingOrder = this.GetComponent<SpriteRenderer>().sortingOrder;
+            GetComponentInChildren<Canvas>().sortingOrder = this.GetComponent<SpriteRenderer>().sortingOrder + 1;
         }
     }
 
