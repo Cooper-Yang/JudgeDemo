@@ -64,7 +64,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: S
+  m_text: P
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe54faa4efdc6844c85d9d46aa743079, type: 2}
   m_sharedMaterial: {fileID: -5858712772293843174, guid: fe54faa4efdc6844c85d9d46aa743079,
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 1662549173}
   - component: {fileID: 1662549172}
   m_Layer: 5
-  m_Name: Save - BUTTON
+  m_Name: Print - BUTTON
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 1956585110}
   - component: {fileID: 1956585109}
   m_Layer: 5
-  m_Name: Save Button - Background
+  m_Name: Print Button - Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloseButton: {fileID: 4344900914782630548}
-  SaveButton: {fileID: 1662549172}
+  PrintButton: {fileID: 1662549172}
   ContentImage: {fileID: 7663662773556487891}
   FileNameText: {fileID: 4344900914760507897}
 --- !u!1 &4344900916058872141
@@ -912,8 +912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f370228de185fb64e8f19beddca315aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragBarTransform: {fileID: 0}
-  canvas: {fileID: 0}
+  MustBeChildOfACanvas: 0
 --- !u!1 &4344900916219125422
 GameObject:
   m_ObjectHideFlags: 0
