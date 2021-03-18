@@ -24,7 +24,6 @@ public class DeskTopCtrl : MonoBehaviour
     [Header("Bulletin Board Setting")]
     public float BulBoardCamSize = 120;
     public Vector3 BulBoardCamPos = new Vector3(137, 54, -10);
-    public GameObject BulBoard;
     [Header("Notebook Setting")]
     public float NotebookCamSize = 75;
     public Vector3 NotebookCamPos;
