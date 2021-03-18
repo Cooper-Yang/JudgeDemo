@@ -10,9 +10,9 @@ public class ComputerState : StateBase
         //Enable Computer Script?
         //Disable Desktop Script
         DeskTop.StartCoroutine(DeskTop.LerpCamPos(DeskTop.ComputerCamPos, DeskTop.CompCamSize));
-        DeskTop.MonitorHitbox.gameObject.SetActive(false);
-        DeskTop.BoardHitbox.gameObject.SetActive(false);
-        DeskTop.NotebookHitbox.gameObject.SetActive(false);
+        DeskTop.MonitorHitbox.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        DeskTop.BoardHitbox.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        DeskTop.NotebookHitbox.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
 
     }
 
