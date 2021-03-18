@@ -56,9 +56,22 @@ public class Printer : MonoBehaviour
         Doc.Assemble();
     }
 
-    public void Print(TextAsset textFile)
+    public void Print(string[] lines)
     {
+        string combined = string.Join("\n", lines);
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, WorldCanvas.transform);
+        Doc.SetHeader(":CONSOLE OUTPUT:");
+        Doc.SetText(combined);
+        Doc.Assemble();
 
+    }
+
+    public void Print(Sprite picture, string name)
+    {
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, WorldCanvas.transform);
+        Doc.SetText("Photo: "+name);
+        Doc.SetImage(picture);
+        Doc.Assemble();
     }
 
 }
