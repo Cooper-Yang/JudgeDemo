@@ -7,7 +7,7 @@ using TMPro;
 public class FileWindow : MonoBehaviour
 {
     [SerializeField] Button CloseButton;
-    [SerializeField] Button SaveButton;
+    [SerializeField] Button PrintButton;
 
     [SerializeField] Image ContentImage;
     [SerializeField] TextMeshProUGUI FileNameText;
@@ -17,7 +17,7 @@ public class FileWindow : MonoBehaviour
     private void Awake()
     {
         CloseButton.onClick.AddListener(() => DestoryThisWindow());
-        SaveButton.onClick.AddListener(() => SaveToDesktop());
+        PrintButton.onClick.AddListener(() => Print());
     }
 
     public void ReadFile(string path)
@@ -46,6 +46,12 @@ public class FileWindow : MonoBehaviour
         float newX = amount * count;
         float newY = amount * -count;
         this.transform.localPosition = new Vector3(newX, newY, transform.localPosition.z);
+    }
+
+    public void Print()
+    {
+        Printer printer = FindObjectOfType<Printer>();
+        printer.Print(ContentImage.sprite, FileNameText.text);
     }
 
     /*private void UpdateWindow()

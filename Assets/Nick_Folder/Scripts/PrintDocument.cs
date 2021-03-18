@@ -2,10 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PrintDocument : MonoBehaviour
 {
     public PrintRow PrintRow;
+    public TextMeshProUGUI thisText;
+    public Image picture;
+    public Image backgroundImage;
 
     public enum DocumentType { Email, Image, Console, Text };
 
@@ -13,7 +18,7 @@ public class PrintDocument : MonoBehaviour
     private string fullText;
     int charsPerRow = 96; // The maximum number of character that can fit in one PrintRow (size 6 font "Ticketing TMP")
     int numSegments = 0;
-
+    bool isImage = false;
 
     public void SetType(DocumentType type)
     { myType = type; }
@@ -27,14 +32,44 @@ public class PrintDocument : MonoBehaviour
         string subject = email.GetSubject();
         if (subject.Length > 24)
             subject = subject.Substring(0, 24);
-        string headerText = subject + "...\n* * From: " + email.GetContact() +"\n* * Date: "+email.GetDate();
+        string headerText = subject + "...\n* * From: " + email.GetContact() +"\n* * Date: "+email.GetDate() + "\n* * * * * * * * * * * *";
         row.AssignText(headerText);
+        row.transform.SetAsFirstSibling();
         numSegments++;
+        isImage = false;
+    }
+
+    public void SetHeader(string String)
+    {
+        PrintRow row = Instantiate(PrintRow, this.transform);
+        string headerText = String + "\n* * * * * * * * * * * *";
+        row.AssignText(headerText);
+        row.transform.SetAsFirstSibling();
+        numSegments++;
+        isImage = false;
+    }
+
+    public void SetImage(Sprite image)
+    {
+        picture.sprite = image;
+        isImage = true;
     }
 
     public void Assemble()
     {
-        SplitText();
+        //SplitText();
+        thisText.text = fullText;
+
+        if (isImage)
+        {
+            picture.enabled = true;
+            backgroundImage.enabled = true;
+        }
+        else
+        {
+            picture.enabled = false;
+            backgroundImage.enabled = false;
+        }
     }
 
     private void SplitText()
