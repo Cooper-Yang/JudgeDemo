@@ -966,6 +966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8227f8c914c2ef64b8a3a88931cd9749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deskTop: {fileID: 1941114056}
   defaultCursor: {fileID: 2800000, guid: 91393f1ff44663546a54a1abeba151be, type: 3}
   clickCursor: {fileID: 2800000, guid: 2536bb38ffd6d104da8419067fe785b0, type: 3}
   cursorMode: 0
@@ -9575,7 +9576,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.98735, y: 107.501945}
+  m_AnchoredPosition: {x: -79.987404, y: 107.50192}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &943935870
@@ -11662,7 +11663,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1413046307}
   m_HandleRect: {fileID: 1413046306}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -14513,7 +14514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1390847472
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17486,7 +17487,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1632979908}
   m_HandleRect: {fileID: 1632979907}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -20594,7 +20595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1978075052
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22190,6 +22191,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083694802}
   m_CullTransparentMesh: 0
+--- !u!1 &2090364319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2090364321}
+  - component: {fileID: 2090364320}
+  m_Layer: 0
+  m_Name: SoundMan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2090364320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090364319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a53e91a29fe7b84693a7b00628e9b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAudioSources: 50
+  sourcePrefab: {fileID: 3442578957496478283, guid: 1dbef90ee9b525d4697a21e2078b8edf,
+    type: 3}
+  click: {fileID: 8300000, guid: 94dd451dfcfed57479e68e305cd757e3, type: 3}
+  console:
+  - {fileID: 8300000, guid: 386f716ed1103aa48aba6e2aea50c8a5, type: 3}
+  - {fileID: 8300000, guid: 975f52a238ec3b2469d9b93ccf8f7253, type: 3}
+  emailReceived: {fileID: 8300000, guid: 913db9d785883ba4cb1bf0998ba87ee3, type: 3}
+  board: {fileID: 8300000, guid: 9237fa9ba29e37f44a4c0d89604919c3, type: 3}
+  book: {fileID: 8300000, guid: f8861856d0c1f1f4ca236545268246da, type: 3}
+  computer: {fileID: 8300000, guid: 5870f667c8dbb044684041d90dad5e54, type: 3}
+  newspaper: {fileID: 8300000, guid: 67a3118b48b392e418f3fb5805db9360, type: 3}
+  ambience: {fileID: 8300000, guid: ab137bc274f114f4fa1d6a48775f868d, type: 3}
+  printing: {fileID: 8300000, guid: 1ac128dcd92cc8d4e976da2590322e8e, type: 3}
+  bookTurnPage: {fileID: 8300000, guid: f8861856d0c1f1f4ca236545268246da, type: 3}
+  newspaperTurnPage: {fileID: 8300000, guid: 67a3118b48b392e418f3fb5805db9360, type: 3}
+--- !u!4 &2090364321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090364319}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2094380211
 GameObject:
   m_ObjectHideFlags: 0

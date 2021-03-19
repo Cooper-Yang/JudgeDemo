@@ -46,6 +46,10 @@ public class SoundMan : MonoBehaviour
         aPosition = transform.position;
     }
 
+    public void PrintingSound()
+    {
+        PlaySoundAtPosition(printing, aPosition);
+    }
     public void EmailReceivedSound()
     {
         PlaySoundAtPosition(emailReceived, aPosition);
