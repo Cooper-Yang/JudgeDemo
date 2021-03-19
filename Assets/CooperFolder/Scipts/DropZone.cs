@@ -1,8 +1,19 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
+using TMPro;
 using UnityEngine.EventSystems;
 
-public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
+public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+{
+
+    public TextMeshProUGUI evidenceKeyword;
+
+    private void Awake()
+    {
+        evidenceKeyword = GetComponentInParent<TextMeshProUGUI>();
+        evidenceKeyword.text = "";
+    }
 
     public void OnPointerEnter(PointerEventData eventData) {
 
@@ -32,6 +43,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         {
             d.parentToReturnTo = GameObject.Find("Canvas - Board").transform;
             d.placeHolderParent = d.parentToReturnTo;
+            //d.GetBack();
         }
     }
 
@@ -51,8 +63,20 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             d.parentToReturnTo = this.transform;
             if (gameObject.CompareTag("Container"))
             {
-                transform.parent.parent.GetComponent<CrimialEvidence>().theEvidenceContained.Add(d.name);  //add the name of evidence
+                evidenceKeyword.text = d.GetComponentInChildren<PrintDocument>().GetKey();
+                transform.parent.parent.parent.GetComponent<CrimialEvidence>().theEvidenceContained.Add(d.name);  //add the name of evidence
+                d.transform.GetChild(0).gameObject.SetActive(false);
             }
+        }
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            
+            
+            
         }
     }
 }
