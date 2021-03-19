@@ -64,7 +64,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             if (gameObject.CompareTag("Container"))
             {
                 evidenceKeyword.text = d.GetComponentInChildren<PrintDocument>().GetKey();
-                transform.parent.parent.parent.GetComponent<CrimialEvidence>().theEvidenceContained.Add(d.name);  //add the name of evidence
+                transform.parent.parent.parent.GetComponent<CrimialEvidence>().theEvidenceContained.Add(evidenceKeyword.text);  //add the name of evidence
                 d.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
