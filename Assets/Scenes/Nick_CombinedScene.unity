@@ -674,6 +674,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55787518}
   m_CullTransparentMesh: 0
+--- !u!1 &71464800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 71464801}
+  - component: {fileID: 71464802}
+  m_Layer: 0
+  m_Name: Cursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &71464801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71464800}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1941114058}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &71464802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71464800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8227f8c914c2ef64b8a3a88931cd9749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursor: {fileID: 2800000, guid: 91393f1ff44663546a54a1abeba151be, type: 3}
+  clickCursor: {fileID: 2800000, guid: 2536bb38ffd6d104da8419067fe785b0, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &74148395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,7 +1709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrinterSceneObject: {fileID: 1305222302}
-  PrintDocumentPrefab: {fileID: 1337596594658914968, guid: bfa020ad6cfe5534aba1548ceb64e10e,
+  PrintDocumentPrefab: {fileID: 236581181047767870, guid: 6248fd41ff651b345b45c8865991cd9f,
     type: 3}
   WorldCanvas: {fileID: 1978945896}
 --- !u!1 &346522889
@@ -4094,7 +4141,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1941114058}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &587575930
 GameObject:
@@ -4237,7 +4284,7 @@ Transform:
   m_Children:
   - {fileID: 1385362377}
   m_Father: {fileID: 1941114058}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &595052292
 GameObject:
@@ -5155,7 +5202,7 @@ Transform:
   m_Children:
   - {fileID: 1978945900}
   m_Father: {fileID: 1941114058}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &715717277
 SpriteRenderer:
@@ -6487,7 +6534,7 @@ Transform:
   m_Children:
   - {fileID: 1064739304}
   m_Father: {fileID: 1941114058}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &904936371
 GameObject:
@@ -6791,7 +6838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.98742, y: 107.501945}
+  m_AnchoredPosition: {x: -79.98738, y: 107.501945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &943935870
@@ -12651,7 +12698,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1632979907}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.49999982
+  m_Size: 0.5000002
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13774,7 +13821,7 @@ Transform:
   m_Children:
   - {fileID: 1060084181}
   m_Father: {fileID: 1941114058}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1775835191
 GameObject:
@@ -15137,6 +15184,7 @@ Transform:
   m_LocalScale: {x: 33, y: 33, z: 1}
   m_Children:
   - {fileID: 1667784956}
+  - {fileID: 71464801}
   - {fileID: 715717276}
   - {fileID: 1745005725}
   - {fileID: 892598491}
@@ -15498,7 +15546,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0

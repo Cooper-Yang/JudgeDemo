@@ -163,7 +163,6 @@ GameObject:
   - component: {fileID: 5116379439346495061}
   - component: {fileID: 5116379439346495060}
   - component: {fileID: 5116379439346495059}
-  - component: {fileID: 6697430827725253637}
   - component: {fileID: 1462358480999413153}
   m_Layer: 5
   m_Name: PrintDocument
@@ -258,19 +257,6 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
---- !u!114 &6697430827725253637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5116379439346495057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f370228de185fb64e8f19beddca315aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MustBeChildOfACanvas: 0
 --- !u!114 &1462358480999413153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,6 +711,7 @@ GameObject:
   - component: {fileID: 9090304682714953435}
   - component: {fileID: 3780778555225605863}
   - component: {fileID: 236581181047767870}
+  - component: {fileID: 2336176888884199588}
   m_Layer: 0
   m_Name: PrintedEvidence
   m_TagString: Untagged
@@ -786,6 +773,19 @@ MonoBehaviour:
   picture: {fileID: 2398070186538218663}
   backgroundImage: {fileID: 6966358118716321972}
   evidenceKey: 
+--- !u!114 &2336176888884199588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8924495941035218711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f370228de185fb64e8f19beddca315aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MustBeChildOfACanvas: 0
 --- !u!1 &8973420445738161992
 GameObject:
   m_ObjectHideFlags: 0
