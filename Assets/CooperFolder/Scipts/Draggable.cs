@@ -22,6 +22,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     //for return
     private Vector3 theOrigin;
     public Transform theOriginParent;
+    //public Vector3 theOriginScale;
     private void Awake()
     {
         if (GetComponent<LayoutElement>() == null)
@@ -74,6 +75,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
             theOrigin = draggableTransform.position;
             theOriginParent = this.transform.parent;
+            //theOriginScale = draggableTransform.localScale;
         }
     }
 
@@ -89,6 +91,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     }
     
     public void OnBeginDrag(PointerEventData eventData) {
+        this.transform.GetChild(0).gameObject.SetActive(true);
         Vector3 globalMousePos;
         if (RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, eventData.position, eventData.pressEventCamera, out globalMousePos))
         {
@@ -119,9 +122,14 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         Vector3 globalMousePos;
         if (RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, eventData.position, eventData.pressEventCamera, out globalMousePos))
         {
+            //draggableTransform.localScale = theOriginScale * .1f;
             Vector3 location = new Vector3(globalMousePos.x + xOffset, globalMousePos.y - yOffset, globalMousePos.z);
+            
+            
             draggableTransform.position = location;
             draggableTransform.rotation = canvasRect.rotation;
+
+            
         }
         
         
@@ -156,6 +164,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         this.transform.SetParent(parentToReturnTo);
         this.transform.SetSiblingIndex(placeHolder.transform.GetSiblingIndex());
         this.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        this.transform.SetAsLastSibling();
         Destroy(placeHolder);
+        //draggableTransform.localScale = theOriginScale;
     }
 }
