@@ -145,7 +145,8 @@ public class EmailManager : MonoBehaviour
         email.SetDate(lines[7]);
         email.SetStatus(lines[9]);
         email.SetAttachment(lines[11]);
-        email.SetBody(lines[13]);
+        email.SetKey(lines[13]);
+        email.SetBody(lines[15]);
         email.SetUnread(true);
 
         return email;
