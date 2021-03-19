@@ -1517,7 +1517,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346007963}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d49bd23b96fd8f4f882b052b7d842af, type: 3}
   m_Name: 
@@ -5230,6 +5230,111 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805995782}
   m_CullTransparentMesh: 0
+--- !u!1 &823199931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 823199932}
+  - component: {fileID: 823199933}
+  m_Layer: 0
+  m_Name: Case1Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &823199932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823199931}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.304157, y: 1.9672211, z: 91.65084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &823199933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823199931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d59015b43393bf4c8504caf3c3f40a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events: []
+  caseID: XIao Wang
+  requiredEvidences:
+  - evidence1
+  - evidence2
+  - evidence3
+  winConditions: 00000000010000000100000001000000
+  endings:
+  - on: 0
+    year: 94
+    month: 11
+    date: 0
+    hour: 9
+    min: 10
+    generate: 0
+    trigger: 1
+    toGenerate: {fileID: 0}
+    toTrigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 346007967}
+          m_MethodName: CreateNewEmailToPlayer
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 4900000, guid: 16dcc2e851861ad48bf0d263a6e44493,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    dady: {fileID: 0}
+  - on: 0
+    year: 94
+    month: 11
+    date: 0
+    hour: 9
+    min: 10
+    generate: 0
+    trigger: 0
+    toGenerate: {fileID: 0}
+    toTrigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 346007967}
+          m_MethodName: CreateNewEmailToPlayer
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 4900000, guid: e2cf5e2e6a2f72e4fb6ea77207b81f20,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    dady: {fileID: 0}
 --- !u!1 &844360303
 GameObject:
   m_ObjectHideFlags: 0
@@ -10166,7 +10271,6 @@ GameObject:
   - component: {fileID: 1457769973}
   - component: {fileID: 1457769972}
   - component: {fileID: 1457769971}
-  - component: {fileID: 1457769974}
   m_Layer: 5
   m_Name: TEMP - Test Button
   m_TagString: Untagged
@@ -10237,9 +10341,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 346007963}
-        m_MethodName: 
-        m_Mode: 3
+      - m_Target: {fileID: 346007970}
+        m_MethodName: endDay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10285,19 +10389,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457769969}
   m_CullTransparentMesh: 0
---- !u!114 &1457769974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457769969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec1dc17207964d4fb8b46945c2125e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  someButton: {fileID: 1457769971}
 --- !u!1 &1491820133
 GameObject:
   m_ObjectHideFlags: 0
@@ -10591,7 +10682,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 405242337}
-        m_MethodName: CompareEvidence
+        m_MethodName: SubmitReport
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

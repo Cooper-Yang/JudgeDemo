@@ -6,12 +6,13 @@
 #11/11#
 #0#
 #!#
+#Xiao Wang instructions#
 #Comrade Yao,
 
 A secretary of mine, Xiao Wang, hasn't shown up for a couple weeks. 
 I believed he has betrayed our fatherland and plans to flee.
 
-- Xiao Wang's govermnent email account is < xwang8@gov.ch >
+- Xiao Wang's govermnent email account is "xwang8@gov.ch"
 
 - Use the Terminal on your computer to Access the Personnel database and Generate a Skeleton Key to log into his Email.
 

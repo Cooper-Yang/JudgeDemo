@@ -8,13 +8,22 @@ public class HighLight : MonoBehaviour
     private Color StartColor = Color.white;
     private Color HightlightColor = Color.yellow;
 
+    private void Update()
+    {
+        if (transform.childCount > 0)
+        {
+            GetComponentInChildren<Canvas>().sortingOrder = this.GetComponent<SpriteRenderer>().sortingOrder + 1;
+        }
+    }
 
     void OnMouseEnter()
     {
+        CursorManager.Instance.ChangeToClick();
         this.GetComponent<Renderer>().material.color = HightlightColor;
     }
     void OnMouseExit()
     {
+        CursorManager.Instance.ChangeToDefault();
         this.GetComponent<Renderer>().material.color = StartColor;
     }
     private void OnMouseDown()
