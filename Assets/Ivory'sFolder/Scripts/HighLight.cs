@@ -31,16 +31,19 @@ public class HighLight : MonoBehaviour
         //call DeskTopCtrl to change state
         if(this.gameObject.tag == "Computer")
         {
+            SoundMan.me.ComputerSound(Vector3.zero);
             this.GetComponent<Renderer>().material.color = StartColor;
             deskcon.ChangeState(deskcon.ComputerState);
         }
         else if(this.gameObject.tag == "Notebook")
         {
+            SoundMan.me.BookSound(Vector3.zero);
             this.GetComponent<Renderer>().material.color = StartColor;
             deskcon.ChangeState(deskcon.NotebookState);
         }
         else if (this.gameObject.tag == "Bboard")
         {
+            SoundMan.me.BoardSound(Vector3.zero);
             this.GetComponent<Renderer>().material.color = StartColor;
             deskcon.ChangeState(deskcon.BulboardState);
         }
