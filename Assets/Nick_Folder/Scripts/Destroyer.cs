@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Destroyer : MonoBehaviour
 {
     public bool Active = false;
 
     public float delayTimer = 5f;
+
+    public TextMeshProUGUI directoryText;
+    public TextMeshProUGUI realText;
 
     private void Awake()
     {
