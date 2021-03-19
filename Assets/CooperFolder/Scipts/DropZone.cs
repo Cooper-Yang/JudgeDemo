@@ -9,17 +9,13 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         if (eventData.pointerDrag == null)
             return;
 
-        if (transform.childCount > 0)
+        if (transform.childCount > 1)
         {
             return;
         }
         
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
-        // if (gameObject.CompareTag("TrashContainer"))
-        // {
-        //     d.placeHolderParent = d.originalParent;
-        // }
-        // else 
+   
         if (d != null)
         {
             d.placeHolderParent = this.transform;
@@ -30,15 +26,11 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
         if (eventData.pointerDrag == null)
             return;
-        
-        if (transform.childCount > 0)
-        {
-            return;
-        }
-        
+
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         if (d != null && d.placeHolderParent == this.transform)
         {
+            d.parentToReturnTo = GameObject.Find("Canvas - Board").transform;
             d.placeHolderParent = d.parentToReturnTo;
         }
     }
@@ -48,6 +40,12 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         
+        if (transform.childCount > 1)
+        {
+            d.GetBack();
+            //d.parentToReturnTo = d.parentToReturnTo;
+            return;
+        }
         
         if (d != null) {
             d.parentToReturnTo = this.transform;
