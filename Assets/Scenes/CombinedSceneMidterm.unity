@@ -3184,7 +3184,6 @@ GameObject:
   - component: {fileID: 449123405}
   - component: {fileID: 449123408}
   - component: {fileID: 449123407}
-  - component: {fileID: 449123406}
   m_Layer: 0
   m_Name: INSTRUCTIONS
   m_TagString: Untagged
@@ -3212,19 +3211,6 @@ RectTransform:
   m_AnchoredPosition: {x: -146.99997, y: 192.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &449123406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449123404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f370228de185fb64e8f19beddca315aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MustBeChildOfACanvas: 0
 --- !u!114 &449123407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7731,22 +7717,22 @@ MonoBehaviour:
     It''s the first blue icon,
     you''ve probably tried it already.
 
-    
 
-    Just in case you don''t know
-    how to use it:
 
-    1. In the console window, left click the area to the right
-    of the colon.
+    Just in case you don''t know how to
+    use it:
 
-    2. Type "Help" or "help" to get all the commands. Upper case
-    or lower case don''t matter.
+    1. In the console window, left click the area to the right of the
+    colon.
 
-    
+    2. Type "Help" or "help" to get all the commands. Upper case or lower
+    case don''t matter.
 
-    I don''t expect you to master it soon,
-    but the console isn''t something hard, just keep playing around with it and you''ll
-    know how it works. '
+
+
+    I don''t expect you to master it soon, but the console
+    isn''t something hard, just keep playing around with it and you''ll know how
+    it works. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d0a5ea595fa917428721e6cd7a4fd19, type: 2}
   m_sharedMaterial: {fileID: 6084372786025151925, guid: 9d0a5ea595fa917428721e6cd7a4fd19,
@@ -8760,8 +8746,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1413046307}
   m_HandleRect: {fileID: 1413046306}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.49999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13509,8 +13495,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1632979908}
   m_HandleRect: {fileID: 1632979907}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.5000001
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
