@@ -6,7 +6,7 @@ public class Printer : MonoBehaviour
 {
     public GameObject PrinterSceneObject;
     public PrintDocument PrintDocumentPrefab;
-    public GameObject WorldCanvas;
+    public GameObject canvas;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class Printer : MonoBehaviour
 
     public void Print(Email email)
     {
-        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, WorldCanvas.transform);
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, canvas.transform);
         //Doc.SetType()
         Doc.SetHeader(email);
         Doc.SetText(email.GetBody());
@@ -35,7 +35,7 @@ public class Printer : MonoBehaviour
     public void Print(string[] lines)
     {
         string combined = string.Join("\n", lines);
-        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, WorldCanvas.transform);
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, canvas.transform);
         Doc.SetHeader(":CONSOLE OUTPUT:");
         Doc.SetText(combined);
         Doc.SetKey("console");
@@ -45,7 +45,7 @@ public class Printer : MonoBehaviour
 
     public void Print(Sprite picture, string name)
     {
-        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, WorldCanvas.transform);
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, canvas.transform);
         Doc.SetText("Photo: "+name);
         Doc.SetImage(picture);
         Doc.SetKey(name);

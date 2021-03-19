@@ -15,6 +15,9 @@ public class DragWindow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     private float xOffset = 0;
     private bool isComputerWindow;
 
+    private Vector3 smallSize = new Vector3(1, 1, 1);
+    private Vector3 bigSize = new Vector3(1.5f, 1.5f, 1);
+
     private void Awake()
     {
         if (canvas == null)
@@ -57,6 +60,11 @@ public class DragWindow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
         {
             xOffset = draggableTransform.position.x - globalMousePos.x;
         }
+
+        if (!isComputerWindow)
+        {
+            LerpScale(draggableTransform, true);
+        }
     }
 
     public void OnDrag(PointerEventData data)
@@ -70,8 +78,21 @@ public class DragWindow : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
         }
     }
 
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData data)
     {
         // END DRAGGING - Assign new canvas if dropped onto different canvas?
+        if (!isComputerWindow)
+        {
+            LerpScale(draggableTransform, false);
+        }
+    }
+
+    private void LerpScale(RectTransform dragTrans, bool makeBig)
+    {
+        if(makeBig)
+            dragTrans.localScale = Vector3.Lerp(smallSize, bigSize, 1);
+        else
+            dragTrans.localScale = Vector3.Lerp(bigSize, smallSize, 1);
+
     }
 }
