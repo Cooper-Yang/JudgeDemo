@@ -3,51 +3,43 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 
-public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler ,IPointerDownHandler{
+public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
     [HideInInspector]
     public Transform parentToReturnTo = null;
-    public Transform parentToReturnToCompare = null;
-    public Vector2 originalAnchor;
-    public Transform originalParent;
     [HideInInspector]
     public Transform placeHolderParent = null;
 
     private GameObject placeHolder = null;
 
-    private GameObject theClone;
-    
-    
+    private Canvas canvas;
     private RectTransform draggableTransform;
     private RectTransform canvasRect;
     private float yOffset = 0;
     private float xOffset = 0;
     private bool isComputerWindow;
     
-    
-    
-    [SerializeField] private Canvas canvas;
-
-
-
-
+    //for return
+    private Vector3 theOrigin;
+    public Transform theOriginParent;
     private void Awake()
     {
         if (GetComponent<LayoutElement>() == null)
         {
             LayoutElement lE = gameObject.AddComponent<LayoutElement>();
-            lE.preferredWidth = 100;
-            lE.preferredHeight = 100;
+            lE.preferredHeight = 100f;
+            lE.preferredWidth = 100f;
             lE.flexibleHeight = 0;
             lE.flexibleWidth = 0;
-            lE.layoutPriority = 1;
         }
 
         if (GetComponent<CanvasGroup>() == null)
         {
-            gameObject.AddComponent<CanvasGroup>();
+            CanvasGroup cG = gameObject.AddComponent<CanvasGroup>();
+            cG.alpha = 1;
+            cG.interactable = true;
+            cG.blocksRaycasts = true;
         }
-        
         
         if (canvas == null)
         {
@@ -79,35 +71,33 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 draggableTransform = this.transform.GetComponent<RectTransform>();
                 yOffset = 0;
             }
+
+            theOrigin = draggableTransform.position;
+            theOriginParent = this.transform.parent;
         }
-        originalAnchor = draggableTransform.anchoredPosition;
-        originalParent = this.transform.parent;
     }
-    public void OnPointerDown(PointerEventData eventData)
+
+    public void GetBack()
     {
-        // RectTransform t = dragTransform;
-        // while (t.parent != null)
-        // {
-        //     if (t.parent.CompareTag(" "))
-        //     {
-        //         break;
-        //     }
-        //     t = t.parent.GetComponent<RectTransform>();
-        // }
-        
-        //this for the set as last sibling 
-        
-        
-        draggableTransform.SetAsLastSibling();
+        draggableTransform.position = theOrigin;
+
+        parentToReturnTo = theOriginParent;
+        this.transform.SetParent(parentToReturnTo);
+        this.transform.SetSiblingIndex(placeHolder.transform.GetSiblingIndex());
+        this.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        Destroy(placeHolder);
     }
-    public void OnBeginDrag(PointerEventData eventData)
-    {
+    
+    public void OnBeginDrag(PointerEventData eventData) {
+        Vector3 globalMousePos;
+        if (RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, eventData.position, eventData.pressEventCamera, out globalMousePos))
+        {
+            xOffset = draggableTransform.position.x - globalMousePos.x;
+        }
         
-        theClone = Instantiate(gameObject, transform.position, Quaternion.identity,canvas.transform);
-        Destroy(theClone.GetComponent<Draggable>());
-        Destroy(theClone.GetComponent<LayoutElement>());
-        Destroy(theClone.GetComponent<CanvasGroup>());
-        Debug.Log("instante!");
+        
+        
+        
         placeHolder = new GameObject();
         placeHolder.transform.SetParent( this.transform.parent );
         LayoutElement le = placeHolder.AddComponent<LayoutElement>();
@@ -119,20 +109,25 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         placeHolder.transform.SetSiblingIndex(this.transform.GetSiblingIndex() );
 
         parentToReturnTo = this.transform.parent;
-        
-        parentToReturnToCompare = this.transform.parent;
-        
         placeHolderParent = parentToReturnTo;
-        this.transform.SetParent(this.transform.parent.parent);
+        //this.transform.SetParent(this.transform.parent.parent);
 
         this.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData) {
-        draggableTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        Vector3 globalMousePos;
+        if (RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, eventData.position, eventData.pressEventCamera, out globalMousePos))
+        {
+            Vector3 location = new Vector3(globalMousePos.x + xOffset, globalMousePos.y - yOffset, globalMousePos.z);
+            draggableTransform.position = location;
+            draggableTransform.rotation = canvasRect.rotation;
+        }
+        
+        
+        
         
         //this.transform.position = eventData.position;
-        //this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 0);
 
         if (placeHolder.transform.parent != placeHolderParent)
         {
@@ -143,7 +138,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         for (int i = 0; i < placeHolderParent.childCount; i++)
         {
-            if (this.transform.localPosition.x < placeHolderParent.GetChild(i).position.x)
+            if (this.transform.position.x < placeHolderParent.GetChild(i).position.x)
             {
                 newSiblingIndex = i;
 
@@ -158,16 +153,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        if (parentToReturnTo == parentToReturnToCompare || parentToReturnTo.CompareTag("Container") || parentToReturnTo.CompareTag("TrashContainer") )
-        {
-            Destroy(theClone);
-        }
-
-        if (!parentToReturnTo.CompareTag("Container") )
-        {
-            draggableTransform.anchoredPosition = originalAnchor;
-            
-        }
         this.transform.SetParent(parentToReturnTo);
         this.transform.SetSiblingIndex(placeHolder.transform.GetSiblingIndex());
         this.GetComponent<CanvasGroup>().blocksRaycasts = true;
