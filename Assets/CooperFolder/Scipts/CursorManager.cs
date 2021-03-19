@@ -33,12 +33,12 @@ public class CursorManager : MonoBehaviour
 
     public void ChangeToClick()
     {
-        Cursor.SetCursor(clickCursor, Input.mousePosition, cursorMode);
+        Cursor.SetCursor(clickCursor, hotSpot, cursorMode);
     }
 
     public void ChangeToDefault()
     {
-        Cursor.SetCursor(defaultCursor, Input.mousePosition, cursorMode);
+        Cursor.SetCursor(defaultCursor, hotSpot, cursorMode);
     }
     
     
