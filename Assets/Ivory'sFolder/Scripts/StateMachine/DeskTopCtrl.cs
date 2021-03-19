@@ -38,6 +38,12 @@ public class DeskTopCtrl : MonoBehaviour
     public bool ImageAfterLerp = false;
 
     private StateBase currentState;
+
+    public StateBase CurrentState
+    {
+        get => currentState;
+    }
+
     public StateBase DeskState = new DeskState();
     public StateBase ComputerState = new ComputerState();
     public StateBase BulboardState = new BulBoardState();
@@ -62,7 +68,7 @@ public class DeskTopCtrl : MonoBehaviour
             currentState.EnterState(this);
         }
     }
-
+    
     void Start()
     {
 

@@ -46,6 +46,8 @@ public class TerminalControl : MonoBehaviour
     {
         if (terminalInput.isFocused && terminalInput.text != "" && Input.GetKeyDown(KeyCode.Return))
         {
+            SoundMan.me.ConsoleSound();
+            
             // store whatever the user entered
             string userInput = terminalInput.text;
 

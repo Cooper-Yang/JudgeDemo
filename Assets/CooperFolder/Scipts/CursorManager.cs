@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CursorManager : MonoBehaviour
 {
+    public DeskTopCtrl deskTop;
     public Texture2D defaultCursor;
     public Texture2D clickCursor;
     public CursorMode cursorMode = CursorMode.Auto;
@@ -40,7 +41,12 @@ public class CursorManager : MonoBehaviour
     {
         Cursor.SetCursor(defaultCursor, hotSpot, cursorMode);
     }
-    
-    
-    
+
+    private void Update()
+    {
+        if (deskTop.CurrentState == deskTop.ComputerState && Input.GetMouseButtonDown(0))
+        {
+            SoundMan.me.ClickSound();
+        }
+    }
 }

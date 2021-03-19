@@ -24,6 +24,7 @@ public class Printer : MonoBehaviour
 
     public void Print(Email email)
     {
+        SoundMan.me.PrintingSound();
         PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, canvas.transform);
         //Doc.SetType()
         Doc.SetHeader(email);
@@ -34,6 +35,7 @@ public class Printer : MonoBehaviour
 
     public void Print(string[] lines)
     {
+        SoundMan.me.PrintingSound();
         string combined = string.Join("\n", lines);
         PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, canvas.transform);
         Doc.SetHeader(":CONSOLE OUTPUT:");
@@ -45,6 +47,7 @@ public class Printer : MonoBehaviour
 
     public void Print(Sprite picture, string name)
     {
+        SoundMan.me.PrintingSound();
         PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, canvas.transform);
         Doc.SetText("Photo: "+name);
         Doc.SetImage(picture);
