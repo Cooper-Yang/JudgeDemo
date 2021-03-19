@@ -263,6 +263,7 @@ public class EmailManager : MonoBehaviour
     // Can modify this method in the future to deliver emails to different user inboxes.
     public void CreateNewEmailToPlayer(TextAsset textFile)
     {
+        SoundMan.me.EmailReceivedSound();
         PlayerInboxFiles.Add(textFile);
         Email emailTemp = CreateEmailFromFile(textFile);
         InboxEmails.Add(emailTemp);
