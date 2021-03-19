@@ -18,10 +18,12 @@ public class HighLight : MonoBehaviour
 
     void OnMouseEnter()
     {
+        CursorManager.Instance.ChangeToClick();
         this.GetComponent<Renderer>().material.color = HightlightColor;
     }
     void OnMouseExit()
     {
+        CursorManager.Instance.ChangeToDefault();
         this.GetComponent<Renderer>().material.color = StartColor;
     }
     private void OnMouseDown()
