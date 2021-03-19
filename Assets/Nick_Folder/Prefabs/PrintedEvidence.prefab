@@ -711,7 +711,6 @@ GameObject:
   - component: {fileID: 9090304682714953435}
   - component: {fileID: 3780778555225605863}
   - component: {fileID: 236581181047767870}
-  - component: {fileID: 2336176888884199588}
   m_Layer: 0
   m_Name: PrintedEvidence
   m_TagString: Untagged
@@ -773,19 +772,6 @@ MonoBehaviour:
   picture: {fileID: 2398070186538218663}
   backgroundImage: {fileID: 6966358118716321972}
   evidenceKey: 
---- !u!114 &2336176888884199588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8924495941035218711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f370228de185fb64e8f19beddca315aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MustBeChildOfACanvas: 0
 --- !u!1 &8973420445738161992
 GameObject:
   m_ObjectHideFlags: 0
