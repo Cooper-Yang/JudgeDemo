@@ -12,6 +12,8 @@
 #0#
 //ATTACHMENT PATH [Example:: Image2.png --> If no attachment, MUST mark as "!"]
 #!#
+//EVIDENCE KEYWORD [string]
+#Evidence Key Phrase#
 //BODY
 #Body Text
 
