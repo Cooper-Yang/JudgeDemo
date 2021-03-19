@@ -12,19 +12,27 @@ public class PrintDocument : MonoBehaviour
     public Image picture;
     public Image backgroundImage;
 
-    public enum DocumentType { Email, Image, Console, Text };
-
+    /*public enum DocumentType { Email, Image, Console, Text };
     private DocumentType myType;
+    public void SetType(DocumentType type)
+    { myType = type; }*/
+
     private string fullText;
+    [SerializeField] private string evidenceKey;
     int charsPerRow = 96; // The maximum number of character that can fit in one PrintRow (size 6 font "Ticketing TMP")
     int numSegments = 0;
     bool isImage = false;
 
-    public void SetType(DocumentType type)
-    { myType = type; }
+
 
     public void SetText(string s)
     { fullText = s; }
+
+    public void SetKey(string k)
+    { evidenceKey = k; }
+
+    public string GetKey()
+    { return evidenceKey; }
 
     public void SetHeader(Email email)
     {

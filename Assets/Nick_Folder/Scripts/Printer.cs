@@ -22,37 +22,13 @@ public class Printer : MonoBehaviour
         }
     }
 
-    // UNUSED
-    public void Print(PrintDocument.DocumentType docType, string text)
-    {
-        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, WorldCanvas.transform);
-        Doc.SetType(docType);
-
-        switch (docType)
-        {
-            case PrintDocument.DocumentType.Email:
-                break;
-
-            case PrintDocument.DocumentType.Image:
-                break;
-
-            case PrintDocument.DocumentType.Text:
-                Doc.SetText(text);
-                break;
-
-            default:
-                break;
-        }
-
-        Doc.Assemble();
-    }
-
     public void Print(Email email)
     {
         PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, WorldCanvas.transform);
         //Doc.SetType()
         Doc.SetHeader(email);
         Doc.SetText(email.GetBody());
+        Doc.SetKey(email.GetKey());
         Doc.Assemble();
     }
 
@@ -62,6 +38,7 @@ public class Printer : MonoBehaviour
         PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, WorldCanvas.transform);
         Doc.SetHeader(":CONSOLE OUTPUT:");
         Doc.SetText(combined);
+        Doc.SetKey("console");
         Doc.Assemble();
 
     }
@@ -71,6 +48,7 @@ public class Printer : MonoBehaviour
         PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, WorldCanvas.transform);
         Doc.SetText("Photo: "+name);
         Doc.SetImage(picture);
+        Doc.SetKey(name);
         Doc.Assemble();
     }
 
