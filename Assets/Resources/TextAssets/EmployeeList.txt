@@ -1,0 +1,7 @@
+NOT IMPLMENTED PROPERLY YET...
+lastname,firstname,section,contactinfo
+lastname,firstname,section,contactinfo
+lastname,firstname,section,contactinfo
+Xiao,Xin,Target,xinxiao@gov.ch
+lastname,firstname,section,contactinfo
+...NOT NECESSARY FOR THIS CASE

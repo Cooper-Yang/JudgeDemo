@@ -1,0 +1,18 @@
+// To PLAYER from BOSS --> Email 2
+
+#Boss#
+#theboss@web.com#
+#Long subject long subject long subject long subject long subject#
+#11/12#
+#1#
+#Photo_1#
+#Boss_2#
+#Mr. Anderson,
+
+Here is a picture of someplace nice...
+
+You will never get there LOL!
+
+Back to work <3
+
+- Boss#

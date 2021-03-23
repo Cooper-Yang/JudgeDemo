@@ -1,0 +1,20 @@
+//Input information in between HASHTAG signs (Do not delete it!)
+
+#IT Department#
+#Yao Bang#
+#Instructions for using the console#
+#10/26#
+#0#
+#!#
+#INSTRUCTIONS
+
+You should be able to see the "Email" software we installed on your computer.
+
+It's the first blue icon, you've probably tried it already.
+
+Just in case you don't know how to use it:
+1. In the console window, left click the area to the right of the colon.
+2. Type "Help" or "help" to get all the commands. Upper case or lower case don't matter.
+
+I don't expect you to master it soon, but the console isn't something hard, just keep playing around with it and you'll know how it works. 
+#

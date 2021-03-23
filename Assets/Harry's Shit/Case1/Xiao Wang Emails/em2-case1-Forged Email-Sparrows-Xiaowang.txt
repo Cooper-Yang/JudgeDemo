@@ -1,0 +1,19 @@
+//Input information in between HASHTAG signs (Do not delete it!)
+
+#The Sparrows#
+#Xiao Wang#
+#PACKAGE STATUS#
+#10/21#
+#3#
+#Ticket - Zeng#
+#Train Ticket#
+#PACKAGE DELIVERED.
+
+ DON'T MISS THE BUS.
+ 
+ -THE SPARROWS
+ ----------------------------------------
+ From: Xiao Wang
+ To: Anonymous
+ 
+ I’ve paid, did you receive it?#

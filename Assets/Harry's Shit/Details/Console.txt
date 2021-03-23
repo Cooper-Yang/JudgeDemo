@@ -1,0 +1,65 @@
+//Below is the detailed data base we might need for the console to produce
+
+
+//Locations
+
+The capital City: 
+Ti King/Ti City -帝京/帝都- The cultural and political center of Chiu.
+
+States/Province:
+Yan Province -燕- The Province surrounding Ti King, located in the North East Chiu, where Liang Gang and Xing An is.
+Cunnan Province -江南- Located in the South East Chiu, where Motu is.
+Shiu Province -蜀- Located in the Central Chiu, where Wutu and Footu is
+Min Province -闽- Located in the South Chiu, where Chitu, Yawtu, and Kong Town is.
+Dian Province -滇- Located in the South West Chiu, where Fatu and Bian Chui is.
+Sippeh Region -疆- The mountains and deserts in the North West Chiu, as a natural barrier of the borderland. 
+
+Major Cities:
+Motu -魔- The most international City of Chiu, heart of economy and diplomatic.
+Wutu -雾- Economic and tech Center in the Central Chiu.
+Chitu -雌- A young city, with rapid growth of economics and technology.
+Yawtu -妖- Cultural center, the oldest sea port city in the South.
+Footu -府- Culture and industrial center in the central Chiu. aka city of food and foot massage.
+Fatu -花- Land port city in the South East. A city of flower and forest. 
+
+Harbor Cities:
+Kong Town -港城- The Economic center in the South.
+Liang Gang -梁(两)港- The region where two mega industrial harbor cities connect.
+
+Borderland Cities:
+Bian Chui -边陲- The North West port city, dry, windy, and hot.
+Xing An -兴安- The North East port city, Super cold, always covered with snow.
+
+//Government Agencies
+MSS -国安- Ministry of State Security
+Judicial Enforcer -警察- The Police of Chiu
+ICA -口岸- Immigration and Checkpoints Authority, is the border control agency of Chiu
+BT -边防- Border Troops, is the military force guarding borderland.
+
+//Government Administrative Levels
+Central
+
+Province
+Province Governor 
+
+City
+Mayor
+
+County
+County Magistrate
+
+Town
+Township Director
+
+
+
+
+//Customs:
+Bian Chui
+Xing An
+Yawtu
+Fatu
+
+//Personnel
+Xiao Wang, LcThe Committee of Harmony
+Yao Bang, The Committee of Harmony

@@ -4,7 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Undefined
+  - Box
+  - Sephere
+  - NoteBook Trigger
   - Canvas
+  - Computer
+  - Notebook
+  - Repo
+  - Container
+  - TrashContainer
+  - Bboard
   layers:
   - Default
   - TransparentFX

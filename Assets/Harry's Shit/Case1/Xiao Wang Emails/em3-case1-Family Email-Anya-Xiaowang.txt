@@ -1,0 +1,20 @@
+//Input information in between HASHTAG signs (Do not delete it!)
+
+#Anya#
+#Xiao Wang#
+#Come back soon...#
+#10/21#
+#3#
+#!#
+#Xiao Wang confirmation#
+#My dear,
+
+ We received the passports and tickets, but there are only three, Ma and pa said they’ll stay. Isn’t there another way? We’re packing already. 
+ 
+ Be seeing you at dinner.
+ ----------------------------------------
+ From: Xiao Wang
+ To: Anya
+ 
+ My Love,
+ Remember the plan I told you last time, I bought new identities for the family, and tickets to the Bianchui town. Start to pack our luggage, we’re leaving soon.#

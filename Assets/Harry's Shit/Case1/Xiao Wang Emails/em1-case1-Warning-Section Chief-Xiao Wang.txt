@@ -1,0 +1,26 @@
+//Input information in between HASHTAG signs (Do not delete it!)
+
+#Section Chief#
+#Xiao Wang#
+#YOU ARE DONE :)#
+#10/25#
+#1#
+#!#
+#Xiao Wang is in trouble#
+#You’re in big trouble. We’re sending the enforcement.
+ ----------------------------------------
+ From: Section Chief
+ To: Xiao Wang
+ 
+ Do I need to address the importance of the rules? No rules, no standards! I want a reflective report of 2000 when you’re back.
+ ----------------------------------------
+ From: Overseer
+ To: Xiao Wang
+ 
+ Reply to this email immediately, your absence has not been granted.
+ ----------------------------------------
+ From: Section Chief
+ To: Xiao Wang
+ 
+ You’re late, where is your morning report?
+#

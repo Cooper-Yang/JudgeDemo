@@ -1,0 +1,197 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &531550091322289501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 531550091322289499}
+  - component: {fileID: 531550091322289498}
+  - component: {fileID: 531550091322289496}
+  - component: {fileID: 531550091322289497}
+  - component: {fileID: 531550091322289510}
+  - component: {fileID: 531550091322289511}
+  m_Layer: 0
+  m_Name: CONTROL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &531550091322289499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531550091322289501}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.2887282, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &531550091322289498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531550091322289501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a52699232e9754a902ecc646fc76aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LinesOnScreen: 0
+  startFile: {fileID: 0}
+  currentFile: {fileID: 0}
+--- !u!114 &531550091322289496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531550091322289501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f4e8aadb2e7db42bf89ffe43343549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EmailWindow: {fileID: 0}
+  ConsoleWindow: {fileID: 0}
+--- !u!114 &531550091322289497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531550091322289501}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8c88f7f781e5548944720fd793c262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TopOfInbox: {fileID: 0}
+  emailHeight: 50
+  inboxCapacity: 20
+  emailCount: 0
+  EmailPrefab: {fileID: 5838394530521102446, guid: 0482fdbd4d079e945a68b16a2d981b2f,
+    type: 3}
+  PlayerAllFiles:
+  - {fileID: 4900000, guid: 7ff3cd262bf5c5e47a1ede3f24b27cf8, type: 3}
+  - {fileID: 4900000, guid: 638bc80570742824da38d7214651d358, type: 3}
+  - {fileID: 4900000, guid: 436d3238803e9d2419f017caefdf07c7, type: 3}
+  - {fileID: 4900000, guid: 1998ae1250910a146a3ebd0a5f525897, type: 3}
+  - {fileID: 4900000, guid: c8c49445845ded54ba05776ac803397e, type: 3}
+  - {fileID: 4900000, guid: d6fb1b8515585774495bcd733fcaaba6, type: 3}
+  BossAllFiles:
+  - {fileID: 4900000, guid: 20e0f5988ec680a43b51def604fdd3b9, type: 3}
+  HitchcockAllFiles:
+  - {fileID: 4900000, guid: 478bf9ab98dd69446bf29b17d7f32358, type: 3}
+  - {fileID: 4900000, guid: 846d3b7bf09907447985d82496c461f1, type: 3}
+  XiaoWangAllFiles: []
+  PlayerInboxFiles:
+  - {fileID: 4900000, guid: 7ff3cd262bf5c5e47a1ede3f24b27cf8, type: 3}
+  BossInboxFiles:
+  - {fileID: 4900000, guid: 20e0f5988ec680a43b51def604fdd3b9, type: 3}
+  HitchcockInboxFiles:
+  - {fileID: 4900000, guid: 478bf9ab98dd69446bf29b17d7f32358, type: 3}
+  XiaoWangInboxFiles:
+  - {fileID: 4900000, guid: 6327de8fb71c982458b9f9b63d9c92a2, type: 3}
+  - {fileID: 4900000, guid: c6d4d05ca4987c74b8e2826089d32ae2, type: 3}
+  - {fileID: 4900000, guid: c3119572260e99e4cb269088181aeac6, type: 3}
+  - {fileID: 4900000, guid: 5a071c5e3ceccb346b4bfef90c1c25e8, type: 3}
+  - {fileID: 4900000, guid: 351a1dbbf70b7574cbefb683abee98c7, type: 3}
+  - {fileID: 4900000, guid: 41cf80c2dd116c84ebb4525c9445c430, type: 3}
+  - {fileID: 4900000, guid: 16dcc2e851861ad48bf0d263a6e44493, type: 3}
+  - {fileID: 4900000, guid: e2cf5e2e6a2f72e4fb6ea77207b81f20, type: 3}
+  InboxEmails: []
+  ActiveEmail: {fileID: 5838394530521102446, guid: 0482fdbd4d079e945a68b16a2d981b2f,
+    type: 3}
+  BodyPanel: {fileID: 0}
+  emptyColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  portraitIMG: {fileID: 0}
+  contactTMP: {fileID: 0}
+  addressTMP: {fileID: 0}
+  dateTMP: {fileID: 0}
+  subjectTMP: {fileID: 0}
+  statusTMP: {fileID: 0}
+  bodyTMP: {fileID: 0}
+  MainPanel: {fileID: 0}
+  UsernameText: {fileID: 0}
+  LogOutButton: {fileID: 0}
+  LoginPanel: {fileID: 0}
+  LogInButton: {fileID: 0}
+  OpenAttachmentButton: {fileID: 0}
+  loadingBar: {fileID: 0}
+  loginResultText: {fileID: 0}
+  usernameInput: {fileID: 0}
+  passwordInput: {fileID: 0}
+  usernameArray:
+  - Player
+  - Boss
+  - Hitchcock
+  passwordArray:
+  - password
+  - password
+  - hitch1
+  loadingSprites:
+  - {fileID: -2914503216214332612, guid: 16c8294af37e1b34fa64326d9a57771d, type: 3}
+  - {fileID: -3243969905789220278, guid: 16c8294af37e1b34fa64326d9a57771d, type: 3}
+  - {fileID: -2240947139059371774, guid: 16c8294af37e1b34fa64326d9a57771d, type: 3}
+  - {fileID: 21300000, guid: a163f1d5af451884a8ec74b9cca40e4f, type: 3}
+  - {fileID: 21300000, guid: 65a0a01095891754b829ad58456b4873, type: 3}
+  NewWindowPrefab: {fileID: 836217817, guid: 313e5db4e571e3f428acce1e99bf0c3b, type: 3}
+  ComputerPanel: {fileID: 0}
+  normalStatusColor: {r: 0.50980395, g: 0.50980395, b: 0.50980395, a: 1}
+  newStatusColor: {r: 0, g: 0.4884801, b: 1, a: 1}
+  urgentStatusColor: {r: 1, g: 0, b: 0, a: 1}
+  flaggedStatusColor: {r: 0.8962264, g: 0.5213393, b: 0.08877714, a: 1}
+  doneStatusColor: {r: 0.015574936, g: 0.6603774, b: 0.16584668, a: 1}
+  currentUser: 0
+--- !u!114 &531550091322289510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531550091322289501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fc6c8541bcebf49ae5c9f680cd688e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directoryLine: {fileID: 1804686773076556678, guid: 01145f3f0707de74c8d651845e987755,
+    type: 3}
+  responseLine: {fileID: 9210587205518685356, guid: 8bf63be1499b6f845a2cbdfd1e28e8f5,
+    type: 3}
+  userInputLine: {fileID: 0}
+  userInputLineDir: {fileID: 0}
+  terminalInput: {fileID: 0}
+  scroll: {fileID: 0}
+  msgList: {fileID: 0}
+  lineHeight: 25
+  scrollVelocity: 600
+  currentDirectory: 0
+  NewWindowPrefab: {fileID: 836217817, guid: 313e5db4e571e3f428acce1e99bf0c3b, type: 3}
+  ComputerPanel: {fileID: 0}
+  CustomsLocation: 0
+--- !u!114 &531550091322289511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531550091322289501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f89da137b5c38b458eec369ccd2e176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Charmander: {fileID: 4900000, guid: 003331a3df558b94bbc97740b54f82cf, type: 3}

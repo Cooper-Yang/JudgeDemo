@@ -1,0 +1,17 @@
+//Input information in between HASHTAG signs (Do not delete it!)
+
+#Boss#
+#theboss@web.com#
+#There's been a murder!#
+#11/11#
+#0#
+#!#
+#Boss_3#
+#Mr. Anderson,
+
+Sgt. Stomtonovich has been found dead in his home.
+The coroner tells us cause of death is likely poison.
+
+Find out what happened!
+
+- Boss#
