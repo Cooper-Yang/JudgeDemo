@@ -161,6 +161,7 @@ public class Interpreter : MonoBehaviour
 
             case "print": // TODO: - maybe a command, maybe a button on window next to 'X' 
                 response.Add("<color=#E0E300>Printing Screen...</color>");
+                control.Print();
                 return response;
 
             case "clear":
@@ -308,8 +309,11 @@ public class Interpreter : MonoBehaviour
                                             OutputTextFile("Location1Report", colors["light"]);
                                         else if (index == 2)
                                         {
-                                            Output("Opening Passport Photos from Water Bridge Database:", colors["purple"]);
-                                            control.OpenPassportWindows(Resources.LoadAll("Location1Passports", typeof(Sprite)));
+                                            int numPassports = control.OpenPassportWindows(Resources.LoadAll("Location1Passports", typeof(Sprite)));
+                                            if(numPassports > 0)
+                                                Output("Opening "+numPassports+" Passport Photos from Water Bridge Database:", colors["purple"]);
+                                            else
+                                                Output("There are no passports available from Water Bridge.", colors["purple"]);
                                         }
                                         break;
 
@@ -318,8 +322,11 @@ public class Interpreter : MonoBehaviour
                                             OutputTextFile("Location2Report", colors["light"]);
                                         else if (index == 2)
                                         {
-                                            Output("Opening Passport Photos from Main Terminal Database:", colors["purple"]);
-                                            control.OpenPassportWindows(Resources.LoadAll("Location2Passports", typeof(Sprite)));
+                                            int numPassports = control.OpenPassportWindows(Resources.LoadAll("Location2Passports", typeof(Sprite)));
+                                            if (numPassports > 0)
+                                                Output("Opening " + numPassports + " Passport Photos from Main Terminal Database:", colors["purple"]);
+                                            else
+                                                Output("There are no passports available from Main Terminal.", colors["purple"]);
                                         }
                                         break;
 
@@ -328,8 +335,11 @@ public class Interpreter : MonoBehaviour
                                             OutputTextFile("Location3Report", colors["light"]);
                                         else if (index == 2)
                                         {
-                                            Output("Opening Passport Photos from Zeng Outpost Database:", colors["purple"]);
-                                            control.OpenPassportWindows(Resources.LoadAll("Location3Passports", typeof(Sprite)));
+                                            int numPassports = control.OpenPassportWindows(Resources.LoadAll("Location3Passports", typeof(Sprite)));
+                                            if (numPassports > 0)
+                                                Output("Opening " + numPassports + " Passport Photos from Zeng Outpost Database:", colors["purple"]);
+                                            else
+                                                Output("There are no passports available from Zeng Outpost.", colors["purple"]);
                                         }
                                         break;
 
@@ -338,7 +348,7 @@ public class Interpreter : MonoBehaviour
                                         break;
 
                                     default:
-                                        Output("inspecting location: \"" + currentLocation.ToString() + "\"", colors["yellow"]);
+                                        Output("Inspecting location: \"" + currentLocation.ToString() + "\"", colors["yellow"]);
                                         break;
                                 }
                                 break;

@@ -46,6 +46,8 @@ public class TerminalControl : MonoBehaviour
     {
         if (terminalInput.isFocused && terminalInput.text != "" && Input.GetKeyDown(KeyCode.Return))
         {
+            SoundMan.me.ConsoleSound();
+            
             // store whatever the user entered
             string userInput = terminalInput.text;
 
@@ -182,7 +184,7 @@ public class TerminalControl : MonoBehaviour
         return key;
     }
 
-    public void OpenPassportWindows(object[] array)
+    public int OpenPassportWindows(object[] array)
     {
         Sprite[] sprites = new Sprite[array.Length];
         for (int x = 0; x < array.Length; x++)
@@ -191,6 +193,8 @@ public class TerminalControl : MonoBehaviour
         }
 
         StartCoroutine(StaggerCreatePassportWindows(sprites, 0.2f));
+
+        return array.Length;
     }
 
     IEnumerator StaggerCreatePassportWindows(Sprite[] sprites, float delay)
@@ -206,5 +210,41 @@ public class TerminalControl : MonoBehaviour
             i++;
             yield return new WaitForSeconds(delay);
         }
+    }
+
+    public void Print()
+    {
+        Destroyer[] allLines = msgList.GetComponentsInChildren<Destroyer>();
+        List<Destroyer> linesToPrint = new List<Destroyer>();
+        List<string> lines = new List<string>();
+
+        int size = 13;
+        if (allLines.Length < 13)
+            size = allLines.Length;
+
+        for (int i = 1; i < size; i++)
+        {
+            linesToPrint.Add(allLines[allLines.Length - i]);
+        }
+
+        foreach (Destroyer line in linesToPrint)
+        {
+            string realString;
+            if (line.directoryText != null)
+            {
+                realString = line.directoryText.text + " " + line.realText.text;
+            }
+            else
+            {
+                realString = line.realText.text;
+            }
+
+            lines.Add(realString);
+        }
+
+        Printer printControl = this.GetComponent<Printer>();
+        string[] arr = lines.ToArray();
+        Array.Reverse(arr);
+        printControl.Print(arr);
     }
 }
