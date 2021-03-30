@@ -30,10 +30,10 @@ public class EvidenceManager : MonoBehaviour
     private void Start()
     {
         theEvidence = new Dictionary<string, List<string>>();
-        foreach (GameObject i in suspectList)
+        /*foreach (GameObject i in suspectList)
         {
             theEvidence.Add(i.name,i.GetComponent<CrimialEvidence>().theEvidenceComparedTo);
-        }
+        }*/
     }
 
     public void HandleInputData()
