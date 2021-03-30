@@ -1,0 +1,5 @@
+Name,Individual,address,income,taxes,taxStatus
+Nick,Some Guy,76 Street,$1,000,000,$250,000,Paid in Full
+namess,129873,aysdiu,gshafd,asdrfsa,asdf
+Iuhsdiuf,Gfsa,asiudfhs,sgfsa,asdas,asdas
+asdf,suhfia,qwausd,asuhd,asdas,hfgd
