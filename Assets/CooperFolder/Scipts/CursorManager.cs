@@ -29,17 +29,17 @@ public class CursorManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        Cursor.SetCursor(defaultCursor, hotSpot, cursorMode);
+        //Cursor.SetCursor(defaultCursor, hotSpot, cursorMode);
     }
 
     public void ChangeToClick()
     {
-        Cursor.SetCursor(clickCursor, hotSpot, cursorMode);
+        //Cursor.SetCursor(clickCursor, hotSpot, cursorMode);
     }
 
     public void ChangeToDefault()
     {
-        Cursor.SetCursor(defaultCursor, hotSpot, cursorMode);
+        //Cursor.SetCursor(defaultCursor, hotSpot, cursorMode);
     }
 
     private void Update()
