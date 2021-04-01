@@ -15,6 +15,7 @@ TagManager:
   - Container
   - TrashContainer
   - Bboard
+  - Material
   layers:
   - Default
   - TransparentFX
