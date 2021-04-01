@@ -4,10 +4,10 @@ using System.Collections;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+public class DropZone : MonoBehaviour//, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
 
-    public TextMeshProUGUI evidenceKeyword;
+    /*public TextMeshProUGUI evidenceKeyword;
 
     private void Awake()
     {
@@ -68,15 +68,6 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                 d.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
-    }
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            
-            
-            
-        }
-    }
+    }*/
+    
 }
