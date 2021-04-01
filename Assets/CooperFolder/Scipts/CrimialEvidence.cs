@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class CrimialEvidence : MonoBehaviour
 {
-    public List<string> theEvidenceComparedTo;
+    //public List<string> theEvidenceComparedTo;
     public List<string> theEvidenceContained;
 }
