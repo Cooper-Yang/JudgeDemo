@@ -14,14 +14,15 @@ public class ICAControl : MonoBehaviour
     public GameObject joinWindow;
     public GameObject homeWindow;
     public GameObject loginWindow;
-    
+
+    private Printer printer;
         
     public TMP_InputField loginEmail;
     public TMP_InputField loginPassword;
     public GameObject errorText;
     void Start()
     {
-        
+        printer = FindObjectOfType<Printer>();
     }
     
     void Update()
