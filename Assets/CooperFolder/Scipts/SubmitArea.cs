@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,8 +14,7 @@ public class SubmitArea : MonoBehaviour
         FindMaterialInArea();
         MaterialArea = GameObject.Find("Material Area");
     }
-
-    // Update is called once per frame
+    
 
     void FindMaterialInArea()
     {
@@ -29,23 +29,33 @@ public class SubmitArea : MonoBehaviour
                  
         }
     }
-    
-    public void RectOverlaps()
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("enter submit");
+        other.transform.SetParent(transform);
+        FindMaterialInArea();
+    }
+
+    /*public void RectOverlaps()
     {
 
         foreach (RectTransform rectTransform in MaterialArea.GetComponent<MatArea>().inArea)
         {
-            Rect rect1 = new Rect(rectTransform.localPosition.x, rectTransform.localPosition.y, rectTransform.rect.width, rectTransform.rect.height);
-            Rect rect2 = new Rect(GetComponent<RectTransform>().localPosition.x, GetComponent<RectTransform>().localPosition.y, GetComponent<RectTransform>().rect.width, GetComponent<RectTransform>().rect.height);
-            
+            //Rect rect1 = new Rect(rectTransform.localPosition.x, rectTransform.localPosition.y, rectTransform.rect.width, rectTransform.rect.height);
+            //Rect rect2 = new Rect(GetComponent<RectTransform>().localPosition.x, GetComponent<RectTransform>().localPosition.y, GetComponent<RectTransform>().rect.width, GetComponent<RectTransform>().rect.height);
+            Rect rect1 = new Rect(rectTransform.position.x, rectTransform.position.y, rectTransform.rect.width, rectTransform.rect.height);
+            Rect rect2 = new Rect(GetComponent<RectTransform>().position.x, GetComponent<RectTransform>().position.y, GetComponent<RectTransform>().rect.width, GetComponent<RectTransform>().rect.height);
             
             if (rect1.Overlaps(rect2))
             {
-                
-                rectTransform.transform.SetParent(transform);
+                Debug.Log("yoxi");
+
+                rectTransform.transform.SetParent(this.transform);
+                FindMaterialInArea();
             }
         }
-        FindMaterialInArea();
-    }
+        
+    }*/
     
 }
