@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class SubmitArea : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class SubmitArea : MonoBehaviour
         FindMaterialInArea();
     }
 
-    /*public void RectOverlaps()
+    public void RectOverlaps()
     {
 
         foreach (RectTransform rectTransform in MaterialArea.GetComponent<MatArea>().inArea)
@@ -49,13 +50,15 @@ public class SubmitArea : MonoBehaviour
             
             if (rect1.Overlaps(rect2))
             {
-                Debug.Log("yoxi");
-
+                Debug.Log("will submit");
+                Debug.Log(rectTransform.parent.name);
                 rectTransform.transform.SetParent(this.transform);
+                Debug.Log("parent to submit");
+                Debug.Log(rectTransform.parent.name);
                 FindMaterialInArea();
             }
         }
         
-    }*/
+    }
     
 }

@@ -37,7 +37,7 @@ public class MatArea : MonoBehaviour
         FindMaterialInArea();
     }
 
-    /*public void RectOverlaps()
+    public void RectOverlaps()
     {
         
         foreach (RectTransform rectTransform in SumbitArea.GetComponent<SubmitArea>().inArea)
@@ -49,13 +49,14 @@ public class MatArea : MonoBehaviour
  
             if (rect1.Overlaps(rect2))
             {
-                Debug.Log("overlap");
+                Debug.Log("will mat");
 
                 rectTransform.transform.SetParent(this.transform);
+                Debug.Log("parent to mat");
                 FindMaterialInArea();
             }
         }
         
-    }*/
+    }
 
 }
