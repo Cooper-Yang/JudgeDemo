@@ -52,14 +52,14 @@ public class DropZone : MonoBehaviour//, IDropHandler, IPointerEnterHandler, IPo
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         
-        if (transform.childCount > 1)
+        /*if (transform.childCount > 1)
         {
             d.GetBack();
             //d.parentToReturnTo = d.parentToReturnTo;
             return;
-        }
+        }*/
         
-        if (d != null) {
+       /* if (d != null) {
             d.parentToReturnTo = this.transform;
             if (gameObject.CompareTag("Container"))
             {

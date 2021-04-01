@@ -23,7 +23,7 @@ public class MatArea : MonoBehaviour
 
     public void FindMaterialInArea()
     {
-        inArea.Clear();
+        //inArea.Clear();
  
         for (int i = 0; i < transform.childCount; i++) 
         {
@@ -75,7 +75,7 @@ public class MatArea : MonoBehaviour
             {
                 Debug.Log(rectTransform.transform.name);
                 Debug.Log("will mat");
-                
+                SumbitArea.GetComponent<SubmitArea>().inArea.Remove(rectTransform);
                 rectTransform.transform.SetParent(this.transform);
                 Debug.Log("parent to mat");
                 FindMaterialInArea();
