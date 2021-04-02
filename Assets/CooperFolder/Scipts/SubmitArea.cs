@@ -19,7 +19,7 @@ public class SubmitArea : MonoBehaviour
 
     public void Update()
     {
-        FindMaterialInArea();
+        //FindMaterialInArea();
     }
 
     public void FindMaterialInArea()
@@ -36,13 +36,7 @@ public class SubmitArea : MonoBehaviour
                  
         }
     }
-
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("enter submit");
-        other.transform.SetParent(transform);
-        FindMaterialInArea();
-    }
+    
 
     public void RectOverlaps()
     {
@@ -81,9 +75,10 @@ public class SubmitArea : MonoBehaviour
                 rectTransform.transform.SetParent(this.transform);
                 Debug.Log("parent to submit");
                 Debug.Log(rectTransform.parent.name);
-                FindMaterialInArea();
+                
                 //MaterialArea.GetComponent<MatArea>().FindMaterialInArea();
             }
+            FindMaterialInArea();
         }
         
     }
