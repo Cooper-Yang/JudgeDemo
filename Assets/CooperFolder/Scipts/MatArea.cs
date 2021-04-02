@@ -18,7 +18,7 @@ public class MatArea : MonoBehaviour
 
     public void Update()
     {
-        //FindMaterialInArea();
+        FindMaterialInArea();
     }
 
     public void FindMaterialInArea()
@@ -74,7 +74,7 @@ public class MatArea : MonoBehaviour
                 
                 //SumbitArea.GetComponent<SubmitArea>().FindMaterialInArea();
             }
-            FindMaterialInArea();
+            //FindMaterialInArea();
         }
         
     }

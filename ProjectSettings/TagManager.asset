@@ -16,6 +16,7 @@ TagManager:
   - TrashContainer
   - Bboard
   - Material
+  - Criminal
   layers:
   - Default
   - TransparentFX
