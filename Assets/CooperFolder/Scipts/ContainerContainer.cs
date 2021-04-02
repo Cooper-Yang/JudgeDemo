@@ -23,7 +23,7 @@ public class ContainerContainer : MonoBehaviour
             if (_drop.transform.childCount>0)
             {
                 Destroy(_drop.transform.GetChild(0).gameObject);
-                _drop.GetComponent<DropZone>().evidenceKeyword.text = "";
+                //_drop.GetComponent<DropZone>().evidenceKeyword.text = "";
                 _drop.transform.parent.parent.parent.GetComponent<CrimialEvidence>().theEvidenceContained.Clear();
             }
         }
