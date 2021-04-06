@@ -20,6 +20,7 @@ public class SubmitArea : MonoBehaviour
     public void Update()
     {
         FindMaterialInArea();
+        GetAllEvidence();
     }
 
     public void FindMaterialInArea()
@@ -36,13 +37,7 @@ public class SubmitArea : MonoBehaviour
                  
         }
     }
-
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("enter submit");
-        other.transform.SetParent(transform);
-        FindMaterialInArea();
-    }
+    
 
     public void RectOverlaps()
     {
@@ -81,9 +76,10 @@ public class SubmitArea : MonoBehaviour
                 rectTransform.transform.SetParent(this.transform);
                 Debug.Log("parent to submit");
                 Debug.Log(rectTransform.parent.name);
-                FindMaterialInArea();
+                
                 //MaterialArea.GetComponent<MatArea>().FindMaterialInArea();
             }
+            //FindMaterialInArea();
         }
         
     }
@@ -91,15 +87,24 @@ public class SubmitArea : MonoBehaviour
     private void GetAllEvidence()
     {
         evidences.Clear();
- 
-        for (int i = 0; i < transform.childCount; i++) 
+        GameObject.FindWithTag("Criminal").GetComponent<CrimialEvidence>().myMaterials.Clear();
+        
+        foreach (RectTransform rectTransform in inArea)
+        {
+            evidences.Add(rectTransform.transform.GetComponentInChildren<PrintDocument>().GetKey());
+            GameObject.FindWithTag("Criminal").GetComponent<CrimialEvidence>().myMaterials.Add(rectTransform.gameObject);
+        }
+
+        GameObject.FindWithTag("Criminal").GetComponent<CrimialEvidence>().theEvidenceContained = evidences;
+
+        /*for (int i = 0; i < transform.childCount; i++) 
         {
             if(transform.GetChild(i).gameObject.CompareTag("Material"))
             {
                 evidences.Add(transform.GetChild(i).GetComponentInChildren<PrintDocument>().GetKey());
             }
                  
-        }
+        }*/
     }
     
 }
