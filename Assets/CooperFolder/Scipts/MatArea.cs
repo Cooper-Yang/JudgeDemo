@@ -36,13 +36,6 @@ public class MatArea : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("enter mat");
-        other.transform.SetParent(transform);
-        FindMaterialInArea();
-    }
-
     public void RectOverlaps()
     {
         
@@ -78,9 +71,10 @@ public class MatArea : MonoBehaviour
                 SumbitArea.GetComponent<SubmitArea>().inArea.Remove(rectTransform);
                 rectTransform.transform.SetParent(this.transform);
                 Debug.Log("parent to mat");
-                FindMaterialInArea();
+                
                 //SumbitArea.GetComponent<SubmitArea>().FindMaterialInArea();
             }
+            //FindMaterialInArea();
         }
         
     }
