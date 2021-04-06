@@ -6,4 +6,6 @@ public class CrimialEvidence : MonoBehaviour
 {
     //public List<string> theEvidenceComparedTo;
     public List<string> theEvidenceContained;
+
+    public List<GameObject> myMaterials = new List<GameObject>();
 }
