@@ -947,6 +947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684f1a5088cd63e4884dde56082a4af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theEvidenceComparedTo: []
   theEvidenceContained: []
   myMaterials: []
 --- !u!224 &46870670
@@ -2454,6 +2455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684f1a5088cd63e4884dde56082a4af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theEvidenceComparedTo: []
   theEvidenceContained: []
   myMaterials: []
 --- !u!1001 &196693198
@@ -3039,8 +3041,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 297906977}
   m_HandleRect: {fileID: 297906976}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.5
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4268,6 +4270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684f1a5088cd63e4884dde56082a4af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theEvidenceComparedTo: []
   theEvidenceContained: []
   myMaterials: []
 --- !u!224 &328291332
@@ -4578,6 +4581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684f1a5088cd63e4884dde56082a4af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theEvidenceComparedTo: []
   theEvidenceContained: []
   myMaterials: []
 --- !u!1 &368862996
@@ -7912,10 +7916,6 @@ MonoBehaviour:
   evidences: []
   MaterialArea: {fileID: 0}
   dropDown: {fileID: 627175535}
-  suspectList:
-  - {fileID: 1234002599}
-  - {fileID: 362809142}
-  - {fileID: 181612684}
 --- !u!1 &627175533
 GameObject:
   m_ObjectHideFlags: 0
@@ -7929,7 +7929,7 @@ GameObject:
   - component: {fileID: 627175536}
   - component: {fileID: 627175535}
   m_Layer: 5
-  m_Name: Dropdown (1)
+  m_Name: SuspectDropDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8093,6 +8093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684f1a5088cd63e4884dde56082a4af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theEvidenceComparedTo: []
   theEvidenceContained: []
   myMaterials: []
 --- !u!224 &633409359
@@ -10301,6 +10302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684f1a5088cd63e4884dde56082a4af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theEvidenceComparedTo: []
   theEvidenceContained: []
   myMaterials: []
 --- !u!224 &863661290
@@ -13414,7 +13416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.9874, y: 107.501976}
+  m_AnchoredPosition: {x: -79.98746, y: 107.501976}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1117658578
@@ -13770,6 +13772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684f1a5088cd63e4884dde56082a4af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theEvidenceComparedTo: []
   theEvidenceContained: []
   myMaterials: []
 --- !u!224 &1154648604
@@ -13803,6 +13806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1157687556}
+  - component: {fileID: 1157687557}
   m_Layer: 5
   m_Name: SuspectList
   m_TagString: Untagged
@@ -13832,6 +13836,20 @@ RectTransform:
   m_AnchoredPosition: {x: 412.00012, y: 70.546524}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1157687557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157687555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393197b93d211a745a4187c07f4f0480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  susList: []
+  dropDown: {fileID: 627175535}
 --- !u!1 &1168198878
 GameObject:
   m_ObjectHideFlags: 0
@@ -14796,7 +14814,7 @@ GameObject:
   - component: {fileID: 1234002600}
   - component: {fileID: 1234002601}
   m_Layer: 5
-  m_Name: Xiao Wang
+  m_Name: Copper
   m_TagString: Criminal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14833,6 +14851,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684f1a5088cd63e4884dde56082a4af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theEvidenceComparedTo:
+  - Testing 1
+  - Testing
   theEvidenceContained: []
   myMaterials: []
 --- !u!1 &1235540915
@@ -14974,6 +14995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684f1a5088cd63e4884dde56082a4af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theEvidenceComparedTo: []
   theEvidenceContained: []
   myMaterials: []
 --- !u!224 &1255472231
@@ -18908,7 +18930,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709923506}
+      - m_Target: {fileID: 623120512}
         m_MethodName: SubmitReport
         m_Mode: 1
         m_Arguments:
@@ -21395,7 +21417,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 881189918}
   m_HandleRect: {fileID: 881189917}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
