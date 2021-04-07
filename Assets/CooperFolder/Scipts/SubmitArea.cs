@@ -12,7 +12,7 @@ public class SubmitArea : MonoBehaviour
     public GameObject MaterialArea;
 
     public TMP_Dropdown dropDown;
-    public List<GameObject> suspectList;
+    //public List<GameObject> suspectList;
 
     // Start is called before the first frame update
     void Start()
@@ -60,15 +60,17 @@ public class SubmitArea : MonoBehaviour
             
             if (rect1.Overlaps(rect2))
             {
+                //Add sound effect here
+
                 //this line remove the gameobject from material's list
                 MaterialArea.GetComponent<MatArea>().inArea.Remove(rectTransform);
                 //this line add the gameobject into our list, in a magical way, check the methods find material in area
                 rectTransform.transform.SetParent(this.transform);
                 //this two line add the key to the current crinimal
-                suspectList[dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained.Add
+                SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained.Add
                     (rectTransform.transform.GetComponentInChildren<PrintDocument>().GetKey());
                 //this line add the gameobject to the current crinimals
-                suspectList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Add(rectTransform.gameObject);
+                SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Add(rectTransform.gameObject);
             }
 
         }
@@ -79,20 +81,20 @@ public class SubmitArea : MonoBehaviour
     {
         //this method is no longer used
         evidences.Clear();
-        suspectList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Clear();
+        SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Clear();
 
         foreach (RectTransform rectTransform in inArea)
         {
             if (rectTransform.gameObject.activeInHierarchy)
             {
                 evidences.Add(rectTransform.transform.GetComponentInChildren<PrintDocument>().GetKey());
-                suspectList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Add(rectTransform.gameObject);
+                SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Add(rectTransform.gameObject);
             }
             
         }
 
         //GameObject.FindWithTag("Criminal").GetComponent<CrimialEvidence>().theEvidenceContained = evidences;
-        suspectList[dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained = evidences;
+        SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained = evidences;
 
         /*for (int i = 0; i < transform.childCount; i++) 
         {
@@ -108,7 +110,7 @@ public class SubmitArea : MonoBehaviour
     {
         //This methods controlls the active states of the materials belongs to different criminals
         int k = dropDown.value;
-        foreach (GameObject i in suspectList)
+        foreach (GameObject i in SuspectList.Instance.susList)
         {
             foreach (GameObject gO in i.GetComponent<CrimialEvidence>().myMaterials)
             {
@@ -118,7 +120,7 @@ public class SubmitArea : MonoBehaviour
 
         }
 
-        foreach (GameObject gO in suspectList[k].GetComponent<CrimialEvidence>().myMaterials)
+        foreach (GameObject gO in SuspectList.Instance.susList[k].GetComponent<CrimialEvidence>().myMaterials)
         {
             gO.SetActive(true);
         }
@@ -127,7 +129,7 @@ public class SubmitArea : MonoBehaviour
 
     public void SubmitReport()
     {
-        string caseID = suspectList[dropDown.value].name;
+        /*string caseID = suspectList[dropDown.value].name;
         Debug.Log(caseID);
         foreach (OneCase cm in FindObjectsOfType<OneCase>())
         {
@@ -142,7 +144,22 @@ public class SubmitArea : MonoBehaviour
                 }
                 break;
             }
+        }*/
+        CrimialEvidence crimeData = SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>();
+        int score = 0;
+        foreach (string sub in crimeData.theEvidenceContained)
+        {
+            foreach (string ans in crimeData.theEvidenceComparedTo)
+            {
+                if (ans.Equals(sub))
+                {
+                    score++;
+                }
+            }
         }
+        Debug.Log(score + " evidences matches !");
+        inArea.Clear();
+        SuspectList.Instance.RemoveSuspect(crimeData.gameObject);
     }
 
 }
