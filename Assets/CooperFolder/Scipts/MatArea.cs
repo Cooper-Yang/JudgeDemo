@@ -51,15 +51,18 @@ public class MatArea : MonoBehaviour
             
             if (rect1.Overlaps(rect2))
             {
+
+                //Add sound effect here
+
                 //this line remove the gameobject from the submitarea
                 SumbitArea.GetComponent<SubmitArea>().inArea.Remove(rectTransform);
                 //this line add the gameobject into this list, check FindMaterialInArea() for further details  
                 rectTransform.transform.SetParent(this.transform);
                 //this line remove the key from the current crinimal
-                SumbitArea.GetComponent<SubmitArea>().suspectList[SumbitArea.GetComponent<SubmitArea>().dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained.Remove
+                SuspectList.Instance.susList[SumbitArea.GetComponent<SubmitArea>().dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained.Remove
     (rectTransform.transform.GetComponentInChildren<PrintDocument>().GetKey());
                 //thie line remove the gameobject from the current criminal
-                SumbitArea.GetComponent<SubmitArea>().suspectList[SumbitArea.GetComponent<SubmitArea>().dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Remove(rectTransform.gameObject);
+                SuspectList.Instance.susList[SumbitArea.GetComponent<SubmitArea>().dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Remove(rectTransform.gameObject);
             }
 
         }
