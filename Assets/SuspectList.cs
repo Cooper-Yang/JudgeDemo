@@ -54,9 +54,12 @@ public class SuspectList : MonoBehaviour
 
     public void RemoveSuspect(GameObject toRemove)
     {
+
+        dropDown.value = 1;
+
         susList.Remove(toRemove);
         Destroy(toRemove);
-        dropDown.value = 1;
+
         RefreshDropDown();
         dropDown.value = 0;
     }
