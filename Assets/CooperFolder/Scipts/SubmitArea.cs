@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEditor;
 
 public class SubmitArea : MonoBehaviour
@@ -9,7 +10,10 @@ public class SubmitArea : MonoBehaviour
     public List<RectTransform> inArea = new List<RectTransform>();
     public List<string> evidences = new List<string>();
     public GameObject MaterialArea;
-    
+
+    public TMP_Dropdown dropDown;
+    //public List<GameObject> suspectList;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +24,7 @@ public class SubmitArea : MonoBehaviour
     public void Update()
     {
         FindMaterialInArea();
-        GetAllEvidence();
+        //GetAllEvidence();
     }
 
     public void FindMaterialInArea()
@@ -29,10 +33,14 @@ public class SubmitArea : MonoBehaviour
  
         for (int i = 0; i < transform.childCount; i++) 
         {
+            //this block set the child to the list
             if(transform.GetChild(i).gameObject.CompareTag("Material"))
             {
                 inArea.Add(transform.GetChild(i).gameObject.GetComponent<RectTransform>());
                 transform.GetChild(i).gameObject.transform.SetParent(transform.parent);
+
+                //RectTransform rectTransform = transform.GetChild(i).GetComponent<RectTransform>();
+                
             }
                  
         }
@@ -42,60 +50,51 @@ public class SubmitArea : MonoBehaviour
     public void RectOverlaps()
     {
 
-        foreach (RectTransform rectTransform in MaterialArea.GetComponent<MatArea>().inArea)
+
+        for(int i=0;i < MaterialArea.GetComponent<MatArea>().inArea.Count; i++)
         {
+            RectTransform rectTransform = MaterialArea.GetComponent<MatArea>().inArea[i];
             Rect rect1 = new Rect(rectTransform.localPosition.x, rectTransform.localPosition.y, rectTransform.rect.width, rectTransform.rect.height);
             Rect rect2 = new Rect(GetComponent<RectTransform>().localPosition.x, GetComponent<RectTransform>().localPosition.y, GetComponent<RectTransform>().rect.width, GetComponent<RectTransform>().rect.height);
-            
-            /*RectTransform myTransform = GetComponent<RectTransform>();
-            if ((rectTransform.position.x > myTransform.position.x - (myTransform.rect.width / 2)) &&
-                (rectTransform.position.x < myTransform.position.x + (myTransform.rect.width / 2)) &&
-                (rectTransform.position.y < myTransform.position.y + (myTransform.rect.height / 2)) &&
-                (rectTransform.position.y < myTransform.position.y + (myTransform.rect.height / 2))
-                )
 
-                //if (rect1.Overlaps(rect2))
-            {
-                Debug.Log(rectTransform.transform.name);
-                Debug.Log("will mat");
-
-                rectTransform.transform.SetParent(this.transform);
-                Debug.Log("parent to mat");
-                FindMaterialInArea();
-            }*/
-            
-            //Rect rect1 = new Rect(rectTransform.position.x, rectTransform.position.y, rectTransform.rect.width, rectTransform.rect.height);
-            //Rect rect2 = new Rect(GetComponent<RectTransform>().position.x, GetComponent<RectTransform>().position.y, GetComponent<RectTransform>().rect.width, GetComponent<RectTransform>().rect.height);
             
             if (rect1.Overlaps(rect2))
             {
-                Debug.Log(rectTransform.transform.name);
-                Debug.Log("will submit");
-                Debug.Log(rectTransform.parent.name);
+                //Add sound effect here
+
+                //this line remove the gameobject from material's list
                 MaterialArea.GetComponent<MatArea>().inArea.Remove(rectTransform);
+                //this line add the gameobject into our list, in a magical way, check the methods find material in area
                 rectTransform.transform.SetParent(this.transform);
-                Debug.Log("parent to submit");
-                Debug.Log(rectTransform.parent.name);
-                
-                //MaterialArea.GetComponent<MatArea>().FindMaterialInArea();
+                //this two line add the key to the current crinimal
+                SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained.Add
+                    (rectTransform.transform.GetComponentInChildren<PrintDocument>().GetKey());
+                //this line add the gameobject to the current crinimals
+                SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Add(rectTransform.gameObject);
             }
-            //FindMaterialInArea();
+
         }
         
     }
 
     private void GetAllEvidence()
     {
+        //this method is no longer used
         evidences.Clear();
-        GameObject.FindWithTag("Criminal").GetComponent<CrimialEvidence>().myMaterials.Clear();
-        
+        SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Clear();
+
         foreach (RectTransform rectTransform in inArea)
         {
-            evidences.Add(rectTransform.transform.GetComponentInChildren<PrintDocument>().GetKey());
-            GameObject.FindWithTag("Criminal").GetComponent<CrimialEvidence>().myMaterials.Add(rectTransform.gameObject);
+            if (rectTransform.gameObject.activeInHierarchy)
+            {
+                evidences.Add(rectTransform.transform.GetComponentInChildren<PrintDocument>().GetKey());
+                SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Add(rectTransform.gameObject);
+            }
+            
         }
 
-        GameObject.FindWithTag("Criminal").GetComponent<CrimialEvidence>().theEvidenceContained = evidences;
+        //GameObject.FindWithTag("Criminal").GetComponent<CrimialEvidence>().theEvidenceContained = evidences;
+        SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained = evidences;
 
         /*for (int i = 0; i < transform.childCount; i++) 
         {
@@ -106,5 +105,61 @@ public class SubmitArea : MonoBehaviour
                  
         }*/
     }
-    
+
+    public void HandleInputData()
+    {
+        //This methods controlls the active states of the materials belongs to different criminals
+        int k = dropDown.value;
+        foreach (GameObject i in SuspectList.Instance.susList)
+        {
+            foreach (GameObject gO in i.GetComponent<CrimialEvidence>().myMaterials)
+            {
+                gO.SetActive(false);
+            }
+
+
+        }
+
+        foreach (GameObject gO in SuspectList.Instance.susList[k].GetComponent<CrimialEvidence>().myMaterials)
+        {
+            gO.SetActive(true);
+        }
+        
+    }
+
+    public void SubmitReport()
+    {
+        /*string caseID = suspectList[dropDown.value].name;
+        Debug.Log(caseID);
+        foreach (OneCase cm in FindObjectsOfType<OneCase>())
+        {
+            if (cm.caseID.Equals(caseID))
+            {
+                cm.submitReport(suspectList[dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained);
+                Debug.Log("submitted");
+                suspectList[dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained.Clear();
+                foreach (GameObject gO in suspectList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials)
+                {
+                    Destroy(gO);
+                }
+                break;
+            }
+        }*/
+        CrimialEvidence crimeData = SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>();
+        int score = 0;
+        foreach (string sub in crimeData.theEvidenceContained)
+        {
+            foreach (string ans in crimeData.theEvidenceComparedTo)
+            {
+                if (ans.Equals(sub))
+                {
+                    score++;
+                }
+            }
+        }
+        Debug.Log(score + " evidences matches !");
+        inArea.Clear();
+        SuspectList.Instance.RemoveSuspect(crimeData.gameObject);
+    }
+
 }

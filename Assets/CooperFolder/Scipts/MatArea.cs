@@ -31,6 +31,8 @@ public class MatArea : MonoBehaviour
             {
                 inArea.Add(transform.GetChild(i).gameObject.GetComponent<RectTransform>());
                 transform.GetChild(i).gameObject.transform.SetParent(transform.parent);
+                //RectTransform rectTransform = transform.GetChild(i).GetComponent<RectTransform>();
+                
             }
                  
         }
@@ -39,42 +41,30 @@ public class MatArea : MonoBehaviour
     public void RectOverlaps()
     {
         
-        foreach (RectTransform rectTransform in SumbitArea.GetComponent<SubmitArea>().inArea)
+        for(int i=0;i< SumbitArea.GetComponent<SubmitArea>().inArea.Count; i++)
         {
+            RectTransform rectTransform= SumbitArea.GetComponent<SubmitArea>().inArea[i];
             Rect rect1 = new Rect(rectTransform.localPosition.x, rectTransform.localPosition.y, rectTransform.rect.width, rectTransform.rect.height);
-            Rect rect2 = new Rect(GetComponent<RectTransform>().localPosition.x, GetComponent<RectTransform>().localPosition.y, GetComponent<RectTransform>().rect.width, GetComponent<RectTransform>().rect.height);/*
+            Rect rect2 = new Rect(GetComponent<RectTransform>().localPosition.x, GetComponent<RectTransform>().localPosition.y, GetComponent<RectTransform>().rect.width, GetComponent<RectTransform>().rect.height);
             
-            /*RectTransform myTransform = GetComponent<RectTransform>();
-            if ((rectTransform.position.x > myTransform.position.x - (myTransform.rect.width / 2)) &&
-                (rectTransform.position.x < myTransform.position.x + (myTransform.rect.width / 2)) &&
-                (rectTransform.position.y < myTransform.position.y + (myTransform.rect.height / 2)) &&
-                (rectTransform.position.y < myTransform.position.y + (myTransform.rect.height / 2))
-                )
-
-                //if (rect1.Overlaps(rect2))
-            {
-                Debug.Log(rectTransform.transform.name);
-                Debug.Log("will mat");
-
-                rectTransform.transform.SetParent(this.transform);
-                Debug.Log("parent to mat");
-                FindMaterialInArea();
-            }*/
             
-            //Rect rect1 = new Rect(rectTransform.position.x, rectTransform.position.y, rectTransform.rect.width, rectTransform.rect.height);
-            //Rect rect2 = new Rect(GetComponent<RectTransform>().position.x, GetComponent<RectTransform>().position.y, GetComponent<RectTransform>().rect.width, GetComponent<RectTransform>().rect.height);
             
             if (rect1.Overlaps(rect2))
             {
-                Debug.Log(rectTransform.transform.name);
-                Debug.Log("will mat");
+
+                //Add sound effect here
+
+                //this line remove the gameobject from the submitarea
                 SumbitArea.GetComponent<SubmitArea>().inArea.Remove(rectTransform);
+                //this line add the gameobject into this list, check FindMaterialInArea() for further details  
                 rectTransform.transform.SetParent(this.transform);
-                Debug.Log("parent to mat");
-                
-                //SumbitArea.GetComponent<SubmitArea>().FindMaterialInArea();
+                //this line remove the key from the current crinimal
+                SuspectList.Instance.susList[SumbitArea.GetComponent<SubmitArea>().dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained.Remove
+    (rectTransform.transform.GetComponentInChildren<PrintDocument>().GetKey());
+                //thie line remove the gameobject from the current criminal
+                SuspectList.Instance.susList[SumbitArea.GetComponent<SubmitArea>().dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Remove(rectTransform.gameObject);
             }
-            //FindMaterialInArea();
+
         }
         
     }
