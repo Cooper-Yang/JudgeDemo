@@ -33,7 +33,6 @@ public class CaseManager : MonoBehaviour
 
     //Case SparrowCase1 = new Case()
 
-    
     private static List<Evidence> CombineEvidence(List<Evidence> evidence1, List<Evidence> evidence2)
     {
         List<Evidence> newEvidence = new List<Evidence>();
