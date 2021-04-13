@@ -15,16 +15,12 @@ public class Evidence
 
 public class EvidenceGroup
 {
+    string[] keywords;
+
     List<Evidence> thisGroup = new List<Evidence>();
-    string key;
-    public string GetKey() { return key; }
-    public EvidenceGroup(string keyword)
+    public EvidenceGroup(string[] keys)
     {
-        key = keyword;
-        foreach(Evidence e in thisGroup)
-        {
-            e.SetKey(keyword);
-        }
+        keywords = keys;
     }
 
     public int GetCount() { return thisGroup.Count; }
@@ -53,5 +49,11 @@ public class EvidenceGroup
             count++;
         }
         return arr;
+    }
+
+    public int GetScore()
+    {
+
+        return 0;
     }
 }
