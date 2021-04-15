@@ -6,7 +6,7 @@ public class Printer : MonoBehaviour
 {
     public GameObject PrinterSceneObject;
     public PrintDocument PrintDocumentPrefab;
-    public GameObject canvas;
+    public GameObject parent;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class Printer : MonoBehaviour
     public void Print(Email email)
     {
         SoundMan.me.PrintingSound();
-        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, canvas.transform);
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, parent.transform);
         //Doc.SetType()
         Doc.SetHeader(email);
         Doc.SetText(email.GetBody());
@@ -36,7 +36,7 @@ public class Printer : MonoBehaviour
     public void Print(CrimeBlock block)
     {
         SoundMan.me.PrintingSound();
-        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, canvas.transform);
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, parent.transform);
         //Doc.SetType()
         Doc.SetHeader(block.date.text+" "+block.location.text);
         Doc.SetText(block.content1.text+" "+block.content2.text);
@@ -54,7 +54,7 @@ public class Printer : MonoBehaviour
     {
         SoundMan.me.PrintingSound();
         string combined = string.Join("\n", lines);
-        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, canvas.transform);
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, parent.transform);
         Doc.SetHeader(":CONSOLE OUTPUT:");
         Doc.SetText(combined);
         Doc.SetKey("console");
@@ -65,7 +65,7 @@ public class Printer : MonoBehaviour
     public void Print(Sprite picture, string name)
     {
         SoundMan.me.PrintingSound();
-        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, canvas.transform);
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, parent.transform);
         Doc.SetText("Photo: "+name);
         Doc.SetImage(picture);
         Doc.SetKey(name);
