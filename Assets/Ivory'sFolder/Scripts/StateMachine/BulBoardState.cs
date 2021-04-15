@@ -19,7 +19,7 @@ public class BulBoardState : StateBase
         if (DeskTop.ImageAfterLerp == true)
         {
             DeskTop.Back.gameObject.SetActive(true);
-            DeskTop.BoardHitbox.GetComponent<SpriteRenderer>().sortingOrder = 12;
+            DeskTop.BoardHitbox.GetComponent<SpriteRenderer>().sortingOrder = 100;
         }
 
         if (Input.GetKey(KeyCode.Escape))

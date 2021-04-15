@@ -12,7 +12,6 @@ public class DeskTopCtrl : MonoBehaviour
     //Computer Sprite
     //Notebook Sprite
     //Mouse Pos
-
     public Camera mainCamera;
 
     [Header("Desktop Setting")]
