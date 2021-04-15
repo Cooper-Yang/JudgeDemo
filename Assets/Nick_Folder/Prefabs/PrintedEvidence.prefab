@@ -750,9 +750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99c8672a14b4cf48b9b0d28a56d9e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentToReturnTo: {fileID: 0}
-  placeHolderParent: {fileID: 0}
-  theOriginParent: {fileID: 0}
 --- !u!114 &236581181047767870
 MonoBehaviour:
   m_ObjectHideFlags: 0
