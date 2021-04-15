@@ -11,7 +11,7 @@ public class CaseManager : MonoBehaviour
     static string[] assaultKeys =   { "injuredVictim",  "biologicalEvidence",   "ownsWeapon",       "AtCrimescene" };
     static string[] murderKeys =    { "deadVictim",     "biologicalEvidence",   "ownsWeapon" ,      "AtCrimescene",     "ballisticsReport" };
     static string[] purjuryKeys =   { "officialLying",  "defamingGovernment",   "spreadFalseInformation" };
-    static string[] insurrectionKeys = { "illegalPublication", "protestNonviolent",    "protestViolent", "defamingGovernment" };
+    static string[] insurrectionKeys = { "illegalOwnership", "protestNonviolent",    "protestViolent", "defamingGovernment" };
     static string[] treasonKeys =   { "fleeingCountry", "SparrowConnection",    "holdingClassifiedDoc",  "distributingClassifiedDoc" };
 
     /*static EvidenceGroup forgeryEvidence = new EvidenceGroup(forgeryKeys); // fake passports, fake ticket, fake money
