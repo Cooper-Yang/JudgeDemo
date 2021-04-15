@@ -28,14 +28,14 @@ public class CaseManager : MonoBehaviour
     List<Case> ClosedCases;
     List<Case> TotalCases;
 
-    Case case1_0 = new Case("Person 0", "introEmail",   2,  tresspassingKeys,    Case.Crime.Forgery, 0); // tutorial email --> last 0 param means no second Crime
-    Case case1_1 = new Case("Person 1", "introCustoms", 3,  forgeryKeys,    Case.Crime.Forgery, 0); // tutorial customs
-    Case case1_2 = new Case("Person 2", "introFinance", 4,  theftKeys,      Case.Crime.Theft,   0);   // tutorial financial
-    Case case1_3 = new Case("Person 3", "introCrime",   4,  assaultKeys,     Case.Crime.Murder,  0);  // tutorial law enforcement
+    Case case1_0 = new Case("Person 0",  "introEmail",   2,  tresspassingKeys,  Case.Crime.Forgery, 0);  // tutorial email --> last 0 param means no second Crime
+    Case case1_1 = new Case("Person 1",  "introCustoms", 3,  forgeryKeys,       Case.Crime.Forgery, 0);  // tutorial customs
+    Case case1_2 = new Case("Person 2",  "introFinance", 4,  theftKeys,         Case.Crime.Theft,   0);  // tutorial financial
+    Case case1_3 = new Case("Person 3",  "introCrime",   4,  assaultKeys,       Case.Crime.Murder,  0);  // tutorial law enforcement
 
-    Case case2_1 = new Case("Person 4", "keyword",  5,  CombineKeys(assaultKeys, murderKeys),   Case.Crime.Assault, Case.Crime.Murder);  // more complicated cases
-    Case case2_2 = new Case("Person 5", "keyword",  6,  CombineKeys(forgeryKeys, treasonKeys),  Case.Crime.Forgery, Case.Crime.Treason); // have 2 evidence groups since there are 2 crimes
-    Case case2_3 = new Case("Xiao Wang", "keyword", 7,  CombineKeys(arsonKeys, assaultKeys),  Case.Crime.Forgery, Case.Crime.Treason); 
+    Case case2_1 = new Case("Person 4",  "keyword",  5,  CombineKeys(assaultKeys, murderKeys),  Case.Crime.Assault, Case.Crime.Murder);  // more complicated cases
+    Case case2_2 = new Case("Person 5",  "keyword",  6,  CombineKeys(forgeryKeys, treasonKeys), Case.Crime.Forgery, Case.Crime.Treason); // have 2 evidence groups since there are 2 crimes
+    Case case2_3 = new Case("Xiao Wang", "keyword", 7,   CombineKeys(arsonKeys, assaultKeys),   Case.Crime.Forgery, Case.Crime.Treason); 
 
     //Case case3_1 = new Case("Person 7", "keyword",  8,  CombineEvidence(forgeryEvidence, treasonEvidence),  Case.Crime.Forgery, Case.Crime.Treason);
     //Case case3_2 = new Case("Person 8", "keyword",  9,  CombineEvidence(forgeryEvidence, treasonEvidence),  Case.Crime.Forgery, Case.Crime.Treason);
