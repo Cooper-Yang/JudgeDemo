@@ -78,7 +78,7 @@ public class FinancialControl : MonoBehaviour
         // Search through the listIDs using the Input word
         foreach (string[] arr in listIDs)
         {
-            if (input == arr[0])
+            if (input.ToLower() == arr[0].ToLower())
             {
                 return arr;
             }
@@ -93,12 +93,12 @@ public class FinancialControl : MonoBehaviour
     {
         if (arr.Length > 1) // IF VALID
         {
-            resultsName.text = "Name:      " + arr[0];
-            resultsType.text = "Type:      " + arr[1];
-            resultsAddress.text = "Address:   " + arr[2];
-            resultsIncome.text ="Income:    " + arr[3];
-            resultsTaxes.text = "Taxes:     " + arr[4];
-            resultsTaxStatus.text = "Payment:   " + arr[5];
+            resultsName.text = "Name:      <color=#012456>" + arr[0]+ "</color>";
+            resultsType.text = "Type:      <color=#012456>" + arr[1] + "</color>";
+            resultsAddress.text = "Address:   <color=#012456>" + arr[2] + "</color>";
+            resultsIncome.text = "Income:    <color=#012456>" + arr[3] + "</color>";
+            resultsTaxes.text = "Taxes:     <color=#012456>" + arr[4] + "</color>";
+            resultsTaxStatus.text = "Payment:   <color=#012456>" + arr[5] + "</color>";
         }
         else
         {

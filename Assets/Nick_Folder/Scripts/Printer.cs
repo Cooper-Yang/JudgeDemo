@@ -33,6 +33,23 @@ public class Printer : MonoBehaviour
         Doc.Assemble();
     }
 
+    public void Print(CrimeBlock block)
+    {
+        SoundMan.me.PrintingSound();
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, canvas.transform);
+        //Doc.SetType()
+        Doc.SetHeader(block.date.text+" "+block.location.text);
+        Doc.SetText(block.content1.text+" "+block.content2.text);
+        Doc.SetKey(block.key);
+        for(int i = Doc.LayoutGroup.transform.childCount-2; i > Doc.LayoutGroup.transform.childCount - 5; i--)
+        {
+            Destroy(Doc.LayoutGroup.transform.GetChild(i).gameObject);
+        }
+        Doc.Assemble();
+        Doc.thisText.rectTransform.localPosition = Vector3.zero; 
+        Doc.thisText.rectTransform.sizeDelta = new Vector2(96,72);
+    }
+
     public void Print(string[] lines)
     {
         SoundMan.me.PrintingSound();
