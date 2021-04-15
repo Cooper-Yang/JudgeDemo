@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
+using TMPro;
 using UnityEngine;
 
 public class Printer : MonoBehaviour
@@ -50,6 +52,18 @@ public class Printer : MonoBehaviour
         Doc.thisText.rectTransform.sizeDelta = new Vector2(96,72);
     }
 
+    public void Print(TextMeshProUGUI texts)
+    {
+        SoundMan.me.PrintingSound();
+        //string combined = string.Join("\n", lines);
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, parent.transform);
+        Doc.SetHeader("Customs PrintOut");
+        Doc.SetText(texts.text);
+        Doc.SetKey("console");
+        Doc.Assemble();
+
+    }
+    
     public void Print(string[] lines)
     {
         SoundMan.me.PrintingSound();
