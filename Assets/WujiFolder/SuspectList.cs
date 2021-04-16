@@ -50,6 +50,7 @@ public class SuspectList : MonoBehaviour
     public void AddSuspect(GameObject toAdd)
     {
         susList.Add(toAdd);
+        RefreshDropDown();
     }
 
     public void RemoveSuspect(GameObject toRemove)
