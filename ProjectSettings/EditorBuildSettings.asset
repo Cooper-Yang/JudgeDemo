@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/CombinedSceneMidterm.unity
     guid: 5d108ca3dd223d44ca04c2fac1e820d5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Nick_CombinedScene.unity
     guid: c7c3a9ace9a3d2e43989be3e2475f828
+  - enabled: 1
+    path: Assets/Scenes/NEW_CompleteScene.unity
+    guid: 3f8e1e310e4caf04f89c59af5fb533ed
   m_configObjects: {}
