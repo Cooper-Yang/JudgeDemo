@@ -159,6 +159,14 @@ public class SubmitArea : MonoBehaviour
         }
         Debug.Log(score + " evidences matches !");
         inArea.Clear();
+        if (score >= 3)
+        {
+            crimeData.goodend.Invoke();
+        }
+        else
+        {
+            crimeData.badend.Invoke();
+        }
         SuspectList.Instance.RemoveSuspect(crimeData.gameObject);
     }
 
