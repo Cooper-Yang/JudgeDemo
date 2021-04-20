@@ -1,0 +1,15 @@
+// To PLAYER from BOSS --> Email 2
+
+#Boss#
+#theboss@web.com#
+#You Failed!#
+#11/11#
+#0#
+#!#
+#You Failed!#
+#Comrade Yao,
+
+You did not find all the useful information and Yang Mimi escaped!
+Do not have any expectation on this month's salary.
+
+   -Section Chief#
