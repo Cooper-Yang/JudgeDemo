@@ -44,6 +44,7 @@ public class SoundMan : MonoBehaviour
         }
 
         aPosition = transform.position;
+        AmbienceSound();
     }
 
     public void PrintingSound()
@@ -74,6 +75,7 @@ public class SoundMan : MonoBehaviour
     {
         AudioSource source = GetSource();
         source.loop = true;
+        source.volume = .5f;
         source.clip = ambience;
         source.transform.position = aPosition;
         source.Play();
