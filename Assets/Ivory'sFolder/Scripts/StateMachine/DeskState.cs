@@ -20,6 +20,7 @@ public class DeskState : StateBase
 
         DeskTop.NoteBook.gameObject.SetActive(false);
         DeskTop.ImageAfterLerp = false;
+        SoundMan.me.AmbienceZoomOut();
     }
 
     public override void StayOnState(DeskTopCtrl DeskTop)

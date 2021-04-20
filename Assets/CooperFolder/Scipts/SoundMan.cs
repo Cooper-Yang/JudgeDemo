@@ -74,11 +74,26 @@ public class SoundMan : MonoBehaviour
     public void AmbienceSound()
     {
         AudioSource source = GetSource();
+        source.gameObject.name = "Ambience";
+        source.gameObject.AddComponent<AudioLowPassFilter>();
+        source.gameObject.GetComponent<AudioLowPassFilter>().cutoffFrequency = 22000f;
         source.loop = true;
         source.volume = .5f;
         source.clip = ambience;
         source.transform.position = aPosition;
         source.Play();
+    }
+
+    public void AmbienceZoomIn()
+    {
+        GameObject ab = GameObject.Find("Ambience");
+        ab.GetComponent<AudioLowPassFilter>().cutoffFrequency = 4000f;
+    }
+    
+    public void AmbienceZoomOut()
+    {
+        GameObject ab = GameObject.Find("Ambience");
+        ab.GetComponent<AudioLowPassFilter>().cutoffFrequency = 22000f;
     }
 
     public void BookTurnSound()
