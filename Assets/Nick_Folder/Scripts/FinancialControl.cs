@@ -7,7 +7,10 @@ using System;
 
 public class FinancialControl : MonoBehaviour
 {
+    Printer printer;
     public Button IDSearchButton, EstateButton, TreasuryButton;
+    public Button AccountButton, PrintIncomeButton, PrintTaxButton;
+
     public GameObject[] Panels = new GameObject[3];
 
     [Header("ID Search")]
@@ -22,6 +25,7 @@ public class FinancialControl : MonoBehaviour
     public TextMeshProUGUI resultsTaxStatus;
 
     private List<string[]> listIDs;
+    private string[] currentAccount;
 
     [Header("Estate Values")]
     public float e;
@@ -37,6 +41,10 @@ public class FinancialControl : MonoBehaviour
         ChangePanel(0);
         SearchButton.onClick.AddListener(() => DisplaySearchResults(SearchID()));
         listIDs = SplitCSV();
+
+        printer = FindObjectOfType<Printer>();
+        PrintIncomeButton.onClick.AddListener(() => PrintStatement(true));
+        PrintTaxButton.onClick.AddListener(() => PrintStatement(false));
     }
 
     private void ChangePanel(int count)
@@ -80,12 +88,14 @@ public class FinancialControl : MonoBehaviour
         {
             if (input.ToLower() == arr[0].ToLower())
             {
+                currentAccount = arr;
                 return arr;
             }
             else
                 continue;
         }
         // If no results found, return this...
+        currentAccount = null;
         return new string[] { "No Results Found." };
     }
 
@@ -108,6 +118,27 @@ public class FinancialControl : MonoBehaviour
             resultsIncome.text = "";
             resultsTaxes.text = "";
             resultsTaxStatus.text = "";
+        }
+    }
+
+    private void PrintStatement(bool isIncome)
+    {
+        if (currentAccount != null)
+        {
+            if (isIncome)
+            {
+                printer.Print(currentAccount[0], "Yearly Income: "+currentAccount[3], "Current Balance: "+currentAccount[8], int.Parse(currentAccount[4]), "INCOME");
+                Debug.Log(int.Parse(currentAccount[4]));
+            }
+            else
+            {
+                printer.Print(currentAccount[0], "Taxes Owed: "+currentAccount[5], "Status: "+currentAccount[7], int.Parse(currentAccount[6]), "TAX");
+            }
+        }
+        else
+        {
+            // No Current Account
+            Debug.Log("No current account to print");
         }
     }
 }
