@@ -10,7 +10,11 @@ public class Crimes : MonoBehaviour
     [SerializeField]
     Vector3 iniPosition;
     [SerializeField]
+    int showAmount = 1;
+    [SerializeField]
     float difference;//the distance between each
+    [SerializeField]
+    List<GameObject> controller;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +30,7 @@ public class Crimes : MonoBehaviour
         }
         for(int i = 0; i < blocks.Count; i++)
         {
-            if (i < 3)
+            if (i < showAmount)
             {
                 blocks[i].gameObject.SetActive(true);
                 blocks[i].gameObject.GetComponent<RectTransform>().localPosition = iniPosition - new Vector3(0, i * difference, 0);
@@ -36,6 +40,11 @@ public class Crimes : MonoBehaviour
                 blocks[i].gameObject.SetActive(false);
             }
         }
+        foreach(GameObject g in controller)
+        {
+            g.SetActive(showAmount < blocks.Count);
+        }
+
     }
 
     public void GoUp()
