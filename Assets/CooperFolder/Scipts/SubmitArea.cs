@@ -36,6 +36,7 @@ public class SubmitArea : MonoBehaviour
             //this block set the child to the list
             if(transform.GetChild(i).gameObject.CompareTag("Material"))
             {
+                //Debug.Log("trans");
                 inArea.Add(transform.GetChild(i).gameObject.GetComponent<RectTransform>());
                 transform.GetChild(i).gameObject.transform.SetParent(transform.parent);
 
@@ -51,7 +52,7 @@ public class SubmitArea : MonoBehaviour
     {
 
 
-        for(int i=0;i < MaterialArea.GetComponent<MatArea>().inArea.Count; i++)
+        /*for(int i=0;i < MaterialArea.GetComponent<MatArea>().inArea.Count; i++)
         {
             RectTransform rectTransform = MaterialArea.GetComponent<MatArea>().inArea[i];
             Rect rect1 = new Rect(rectTransform.localPosition.x, rectTransform.localPosition.y, rectTransform.rect.width, rectTransform.rect.height);
@@ -73,7 +74,7 @@ public class SubmitArea : MonoBehaviour
                 SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Add(rectTransform.gameObject);
             }
 
-        }
+        }*/
         
     }
 
@@ -170,4 +171,20 @@ public class SubmitArea : MonoBehaviour
         SuspectList.Instance.RemoveSuspect(crimeData.gameObject);
     }
 
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Debug.Log("enter");
+        //print(collision.name);
+        if (collision.gameObject.GetComponent<PrintDocument>()&&!inArea.Contains(collision.GetComponent<RectTransform>()))
+        {
+            MaterialArea.GetComponent<MatArea>().inArea.Remove(collision.GetComponent<RectTransform>());
+            collision.transform.SetParent(this.transform);
+            //this two line add the key to the current crinimal
+            SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained.Add
+                   (collision.transform.GetComponentInChildren<PrintDocument>().GetKey());
+            //this line add the gameobject to the current crinimals
+            SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Add(collision.gameObject);
+        }
+    }
 }
