@@ -31,6 +31,13 @@ public class ComputerState : StateBase
 
     public override void LeaveState(DeskTopCtrl DeskTop)
     {
-        
+        foreach (GameObject mat in GameObject.FindGameObjectsWithTag("Material"))
+        {
+            if (mat.GetComponent<BoxCollider2D>())
+            {
+
+                mat.GetComponent<BoxCollider2D>().enabled = false;
+            }
+        }
     }
 }

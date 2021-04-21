@@ -22,7 +22,7 @@ public class Crimes : MonoBehaviour
     {
         foreach(CrimeBlock block in blocks)
         {
-            block.transform.parent = this.transform;
+            block.transform.SetParent(this.transform);
         }
         for(int i = 0; i < blocks.Count; i++)
         {
