@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8141060296257743450}
   - component: {fileID: 7866058263406589382}
   - component: {fileID: 3989382273157719574}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 1687357275646198853}
   - component: {fileID: 31159813906300447}
   - component: {fileID: 2892123323362441580}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 5116379439346495060}
   - component: {fileID: 5116379439346495059}
   - component: {fileID: 1462358480999413153}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: PrintDocument
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 7736085466401619300}
   - component: {fileID: 1649149889615860117}
   - component: {fileID: 2398070186538218663}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: ContentImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 3685799963571113684}
   - component: {fileID: 2010292739795086788}
   - component: {fileID: 6966358118716321972}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: ImageBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 7036709926313569933}
   - component: {fileID: 4705739164919828987}
   - component: {fileID: 1524032607814136237}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 5324228318449045436}
   - component: {fileID: 6941956382974367848}
   - component: {fileID: 7085198291989044096}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 7332541716571522040}
   - component: {fileID: 3175573127495838398}
   - component: {fileID: 2700016211170082995}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +711,8 @@ GameObject:
   - component: {fileID: 9090304682714953435}
   - component: {fileID: 3780778555225605863}
   - component: {fileID: 236581181047767870}
-  m_Layer: 0
+  - component: {fileID: 8952291946330866002}
+  m_Layer: 8
   m_Name: PrintedEvidence
   m_TagString: Material
   m_Icon: {fileID: 0}
@@ -769,6 +770,32 @@ MonoBehaviour:
   picture: {fileID: 2398070186538218663}
   backgroundImage: {fileID: 6966358118716321972}
   evidenceKey: 
+--- !u!61 &8952291946330866002
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8924495941035218711}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100}
+  m_EdgeRadius: 0
 --- !u!1 &8973420445738161992
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,7 +807,7 @@ GameObject:
   - component: {fileID: 5923191907078263417}
   - component: {fileID: 1968160628565115467}
   - component: {fileID: 5978516457059661920}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
