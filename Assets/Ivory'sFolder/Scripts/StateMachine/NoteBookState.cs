@@ -20,7 +20,6 @@ public class NoteBookState : StateBase
     {
         if (DeskTop.ImageAfterLerp == true)
         {
-            DeskTop.Back.gameObject.SetActive(true);
             DeskTop.NoteBook.SetActive(true);
         }
 
