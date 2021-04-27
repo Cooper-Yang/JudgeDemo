@@ -130,6 +130,10 @@ public class SubmitArea : MonoBehaviour
 
     public void SubmitReport()
     {
+        if (SuspectList.Instance.dropDown.options.Count <= 0)
+        {
+            return;
+        }
         /*string caseID = suspectList[dropDown.value].name;
         Debug.Log(caseID);
         foreach (OneCase cm in FindObjectsOfType<OneCase>())

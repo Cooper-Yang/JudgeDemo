@@ -8,6 +8,8 @@ public class SuspectList : MonoBehaviour
     private static SuspectList _instance;
     public List<GameObject> susList;
     public TMP_Dropdown dropDown;
+    [SerializeField]
+    TMP_Text label;
     // Start is called before the first frame update
     public static SuspectList Instance
     {
@@ -64,5 +66,9 @@ public class SuspectList : MonoBehaviour
 
         RefreshDropDown();
         dropDown.value = 0;
+        if (dropDown.options.Count == 0)
+        {
+            label.text = "";
+        }
     }
 }
