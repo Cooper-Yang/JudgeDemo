@@ -8,10 +8,10 @@ using System;
 public class FinancialControl : MonoBehaviour
 {
     Printer printer;
-    public Button IDSearchButton, EstateButton, TreasuryButton;
+    public Button IDSearchButton, TreasuryButton;
     public Button AccountButton, PrintIncomeButton, PrintTaxButton;
 
-    public GameObject[] Panels = new GameObject[3];
+    public GameObject[] Panels = new GameObject[2];
 
     [Header("ID Search")]
     public TMP_InputField inputField;
@@ -36,8 +36,7 @@ public class FinancialControl : MonoBehaviour
     private void Awake()
     {
         IDSearchButton.onClick.AddListener(() => ChangePanel(0));
-        EstateButton.onClick.AddListener(() => ChangePanel(1));
-        TreasuryButton.onClick.AddListener(() => ChangePanel(2));
+        TreasuryButton.onClick.AddListener(() => ChangePanel(1));
         ChangePanel(0);
         SearchButton.onClick.AddListener(() => DisplaySearchResults(SearchID()));
         listIDs = SplitCSV();
@@ -107,8 +106,8 @@ public class FinancialControl : MonoBehaviour
             resultsType.text = "Type:      <color=#012456>" + arr[1] + "</color>";
             resultsAddress.text = "Address:   <color=#012456>" + arr[2] + "</color>";
             resultsIncome.text = "Income:    <color=#012456>" + arr[3] + "</color>";
-            resultsTaxes.text = "Taxes:     <color=#012456>" + arr[4] + "</color>";
-            resultsTaxStatus.text = "Payment:   <color=#012456>" + arr[5] + "</color>";
+            resultsTaxes.text = "Taxes:     <color=#012456>" + arr[5] + "</color>";
+            resultsTaxStatus.text = "Payment:   <color=#012456>" + arr[7] + "</color>";
         }
         else
         {
@@ -139,6 +138,30 @@ public class FinancialControl : MonoBehaviour
         {
             // No Current Account
             Debug.Log("No current account to print");
+            string[] blank = new string[1] { "No Account Selected" };
+            DisplaySearchResults(blank);
+        }
+    }
+
+    public void PrintCommitteeReport(int i)
+    {
+        int[] payments;
+        switch (i)
+        {
+            case 1:
+                payments = new int[8] { 2100, -1400, -950, 1675, 990, 1400, -1150, 1025 };
+                printer.Print(i, "Committee of Justice", payments);
+                break;
+            case 2:
+                payments = new int[6] { 1200, 1400, -5000, 850, -1065, -900 };
+                printer.Print(i, "Committee of Harmony", payments);
+                break;
+            case 3:
+                payments = new int[5] { 850, 1250, 1600, -1325, -1000 };
+                printer.Print(i, "Committee of Prosperity", payments);
+                break;
+            default:
+                break;
         }
     }
 }
