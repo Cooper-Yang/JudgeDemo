@@ -74,7 +74,7 @@ public class DeskTopCtrl : MonoBehaviour
     
     void Start()
     {
-
+        BoardHitbox.GetComponent<SpriteRenderer>().sortingOrder = 0;
         ChangeState(DeskState);
     }
 
