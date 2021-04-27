@@ -1,0 +1,18 @@
+//Input information in between HASHTAG signs (Do not delete it!)
+ 
+ #Section Chief#
+ #Yao Bang#
+ #EMERGENCY: RENEGADE ON RUN#
+ #10/26#
+ #1#
+ #!#
+ #Email1-OLD#
+ #Comrade Yao, 
+  I always believe in our country and our government. However, some people don’t. A secretary of mine, Xiao Wang, hasn't shown up for a couple weeks. I believed he betrayed our fatherland and fleet with train. I want you to find out where he is.
+  
+  He might be using a fake id, use the skeleton key in the console's Personnel to log into his email xwang8@gov.ch.
+  
+  The Custom Database will provide you records of personnel arrived at the town.
+  
+  Potential crime for Forgery and Treason.
+ # 
