@@ -68,7 +68,8 @@ public class FinancialControl : MonoBehaviour
         // Called on Awake -- new List of string[]
         List<string[]> fullList = new List<string[]>();
         // Split total text file by NewLine -- string[] of lines 
-        string[] lines = personnelCSV.text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+        //string[] lines = personnelCSV.text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+        string[] lines = personnelCSV.text.Split(new[] { "\r\n", "\r", "\n" },StringSplitOptions.None);
         // Split each line into string[] seperated by ',' -- add to List
         foreach (string line in lines)
         {
