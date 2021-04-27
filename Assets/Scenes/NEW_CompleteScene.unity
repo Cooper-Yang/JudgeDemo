@@ -6486,7 +6486,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 346007966}
         m_MethodName: CloseWindow
         m_Mode: 2
         m_Arguments:
@@ -8555,6 +8555,7 @@ MonoBehaviour:
   XiaoWangAllFiles: []
   LeeAllFiles:
   - {fileID: 4900000, guid: 525c1e542a95187418f752a80af86080, type: 3}
+  FangZhouAllFiles: []
   PlayerInboxFiles:
   - {fileID: 4900000, guid: 638bc80570742824da38d7214651d358, type: 3}
   - {fileID: 4900000, guid: 20e0f5988ec680a43b51def604fdd3b9, type: 3}
@@ -8573,6 +8574,8 @@ MonoBehaviour:
   - {fileID: 4900000, guid: e2cf5e2e6a2f72e4fb6ea77207b81f20, type: 3}
   LeeInboxFiles:
   - {fileID: 4900000, guid: 525c1e542a95187418f752a80af86080, type: 3}
+  FangZhouInboxFiles:
+  - {fileID: 4900000, guid: 7291ba8a2bb7f7c429467f104729618d, type: 3}
   InboxEmails: []
   ActiveEmail: {fileID: 5838394530521102446, guid: 0482fdbd4d079e945a68b16a2d981b2f,
     type: 3}
@@ -8602,12 +8605,14 @@ MonoBehaviour:
   - Hitchcock
   - xwang8@gov.ch
   - Lee
+  - FangZhou
   passwordArray:
   - password
   - password
   - hitch1
   - xiaoPassword
   - LeePassword
+  - fangPassword
   loadingSprites:
   - {fileID: -2914503216214332612, guid: 16c8294af37e1b34fa64326d9a57771d, type: 3}
   - {fileID: -3243969905789220278, guid: 16c8294af37e1b34fa64326d9a57771d, type: 3}
@@ -9518,6 +9523,53 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 955226172}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 207027454}
+        m_MethodName: AddSuspect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1843396750}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 346007967}
+        m_MethodName: CreateNewEmailToPlayer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: c8c49445845ded54ba05776ac803397e,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 346007967}
+        m_MethodName: CreateNewEmailToPlayer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: c8c49445845ded54ba05776ac803397e,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 346007967}
+        m_MethodName: CreateNewEmailToPlayer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: c8c49445845ded54ba05776ac803397e,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -31446,7 +31498,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1413046306}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.49999985
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -32905,7 +32957,7 @@ GameObject:
   - component: {fileID: 1180305570}
   - component: {fileID: 1180305571}
   m_Layer: 8
-  m_Name: Yang Mimi
+  m_Name: Fang Zhou
   m_TagString: Criminal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32943,17 +32995,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theEvidenceComparedTo:
-  - Ticket - Zeng
-  - true2
-  - Yang Mimi
+  - FangZhouKey1
+  - FangZhouKey2
   theEvidenceContained: []
   myMaterials: []
   goodend:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 346007967}
+        m_MethodName: CreateNewEmailToPlayer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: 9452d68239780dd41b112c1f08c9b771,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   badend:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 346007967}
+        m_MethodName: CreateNewEmailToPlayer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: fb4c81eceabde104d8f0d85d3d71ec4e,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1189142629
 GameObject:
   m_ObjectHideFlags: 0
@@ -40761,7 +40836,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 346007966}
         m_MethodName: CloseWindow
         m_Mode: 2
         m_Arguments:
@@ -47462,7 +47537,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1632979907}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.5000001
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
