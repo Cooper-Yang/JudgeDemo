@@ -19,10 +19,7 @@ public class ComputerState : StateBase
 
     public override void StayOnState(DeskTopCtrl DeskTop)
     {
-        if (DeskTop.ImageAfterLerp == true)
-        {
-            DeskTop.Back.gameObject.SetActive(true);
-        }
+
         if (Input.GetKey(KeyCode.Escape))
         {
             DeskTop.ChangeState(DeskTop.DeskState);
