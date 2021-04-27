@@ -9,42 +9,32 @@ using TMPro;
 public class ClueText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 { // Extends the pointer handlers
     public bool choosen = false;
+    private Color temp_c;
     private EviToRep eviToRep;
     void Start()
     {
-        eviToRep = GameObject.Find("NoteManager").GetComponent<EviToRep>();
+        //eviToRep = GameObject.Find("NoteManager").GetComponent<EviToRep>();
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
+        temp_c = GetComponent<TextMeshProUGUI>().color;
         GetComponent<TextMeshProUGUI>().color = Color.gray; // Changes the colour of the text
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (choosen)
-        {
-            GetComponent<TextMeshProUGUI>().color = Color.red;
-        }
-        else
-        {
-            GetComponent<TextMeshProUGUI>().color = Color.black; // Changes the colour of the text
-        }
+            GetComponent<TextMeshProUGUI>().color = temp_c; // Changes the colour of the text
     }
     public void OnPointerDown(PointerEventData eventData)
     {
         if (!choosen)
         {
             choosen = true;
-            eviToRep.choosenList.Add(GetComponent<TextMeshProUGUI>().text);
-            for(int i = 0; i < eviToRep.choosenList.Count; i++)
-                Debug.Log(eviToRep.choosenList[i]);
-            if (eviToRep.choosenList.Count == 0)
-                Debug.Log("choosenList is empty");
+            Debug.Log("Start");
         }
         else
         {
             choosen = false;
-            eviToRep.choosenList.Remove(GetComponent<TextMeshProUGUI>().text);
         }
     }
 }
