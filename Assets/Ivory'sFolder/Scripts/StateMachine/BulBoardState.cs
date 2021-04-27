@@ -27,7 +27,6 @@ public class BulBoardState : StateBase
     {
         if (DeskTop.ImageAfterLerp == true)
         {
-            DeskTop.Back.gameObject.SetActive(true);
             DeskTop.BoardHitbox.GetComponent<SpriteRenderer>().sortingOrder = 100;
         }
 
@@ -40,6 +39,7 @@ public class BulBoardState : StateBase
 
     public override void LeaveState(DeskTopCtrl DeskTop)
     {
+        DeskTop.BoardHitbox.GetComponent<SpriteRenderer>().sortingOrder = -50;
         foreach (GameObject mat in GameObject.FindGameObjectsWithTag("Material"))
         {
             if (mat.GetComponent<BoxCollider2D>())
