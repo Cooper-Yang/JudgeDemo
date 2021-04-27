@@ -17,4 +17,14 @@ public class CrimialEvidence : MonoBehaviour
             Destroy(myMaterials[i]);
         }
     }
+
+    public void clear()
+    {
+        for (int i = 0; i < myMaterials.Count; i++)
+        {
+            Destroy(myMaterials[i]);
+        }
+        theEvidenceContained.Clear();
+        myMaterials.Clear();
+    }
 }

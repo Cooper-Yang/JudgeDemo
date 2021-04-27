@@ -6,10 +6,12 @@
 #08/31#
 #0#
 #!#
-#Boss_evidence1#
+#!#
 #Mr. Boss Man,
 
-We've implemented a new case reporting system. Print this email and file it into evidence for the case labelled "Internal Training"
+Thanks for subimtting the thing. The system works properly. 
+
+Now start working on the other cases.
 
 
 From, 
