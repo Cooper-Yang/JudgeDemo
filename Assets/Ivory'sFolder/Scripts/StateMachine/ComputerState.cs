@@ -14,15 +14,12 @@ public class ComputerState : StateBase
         DeskTop.MonitorHitbox.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         DeskTop.BoardHitbox.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         DeskTop.NotebookHitbox.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
-
+        SoundMan.me.AmbienceZoomIn();
     }
 
     public override void StayOnState(DeskTopCtrl DeskTop)
     {
-        if (DeskTop.ImageAfterLerp == true)
-        {
-            DeskTop.Back.gameObject.SetActive(true);
-        }
+
         if (Input.GetKey(KeyCode.Escape))
         {
             DeskTop.ChangeState(DeskTop.DeskState);
@@ -31,6 +28,13 @@ public class ComputerState : StateBase
 
     public override void LeaveState(DeskTopCtrl DeskTop)
     {
-        
+        foreach (GameObject mat in GameObject.FindGameObjectsWithTag("Material"))
+        {
+            if (mat.GetComponent<BoxCollider2D>())
+            {
+
+                mat.GetComponent<BoxCollider2D>().enabled = false;
+            }
+        }
     }
 }

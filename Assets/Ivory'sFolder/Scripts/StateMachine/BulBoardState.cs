@@ -12,13 +12,21 @@ public class BulBoardState : StateBase
         DeskTop.MonitorHitbox.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         DeskTop.BoardHitbox.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         DeskTop.NotebookHitbox.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        SoundMan.me.AmbienceZoomIn();
+        foreach (GameObject mat in GameObject.FindGameObjectsWithTag("Material"))
+        {
+            if (mat.GetComponent<BoxCollider2D>())
+            {
+
+                mat.GetComponent<BoxCollider2D>().enabled = true;
+            }
+        }
     }
 
     public override void StayOnState(DeskTopCtrl DeskTop)
     {
         if (DeskTop.ImageAfterLerp == true)
         {
-            DeskTop.Back.gameObject.SetActive(true);
             DeskTop.BoardHitbox.GetComponent<SpriteRenderer>().sortingOrder = 100;
         }
 
@@ -31,7 +39,15 @@ public class BulBoardState : StateBase
 
     public override void LeaveState(DeskTopCtrl DeskTop)
     {
+        DeskTop.BoardHitbox.GetComponent<SpriteRenderer>().sortingOrder = -50;
+        foreach (GameObject mat in GameObject.FindGameObjectsWithTag("Material"))
+        {
+            if (mat.GetComponent<BoxCollider2D>())
+            {
 
+                mat.GetComponent<BoxCollider2D>().enabled = false;
+            }
+        }
     }
 
 

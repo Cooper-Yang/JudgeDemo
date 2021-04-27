@@ -13,13 +13,13 @@ public class NoteBookState : StateBase
         DeskTop.MonitorHitbox.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         DeskTop.BoardHitbox.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         DeskTop.NotebookHitbox.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        SoundMan.me.AmbienceZoomIn();
     }
 
     public override void StayOnState(DeskTopCtrl DeskTop)
     {
         if (DeskTop.ImageAfterLerp == true)
         {
-            DeskTop.Back.gameObject.SetActive(true);
             DeskTop.NoteBook.SetActive(true);
         }
 

@@ -33,8 +33,12 @@ public class DeskTopCtrl : MonoBehaviour
     public GameObject BoardHitbox;
     public GameObject NotebookHitbox;
     [Header("UI")]
-    public Button Back;
+    public Button Desk;
+    public Button PC;
+    public Button Board;
+    public Button Note;
     public bool ImageAfterLerp = false;
+    private bool isShown = false;
 
     private StateBase currentState;
 
@@ -70,7 +74,7 @@ public class DeskTopCtrl : MonoBehaviour
     
     void Start()
     {
-
+        BoardHitbox.GetComponent<SpriteRenderer>().sortingOrder = 0;
         ChangeState(DeskState);
     }
 
@@ -82,6 +86,40 @@ public class DeskTopCtrl : MonoBehaviour
     public void ReturnDeskTop()
     {
         ChangeState(DeskState);
+    }
+
+    public void ChangeToPC()
+    {
+        ChangeState(ComputerState);
+    }
+    public void ChangeToBoard()
+    {
+        ChangeState(BulboardState);
+    }
+    public void ChangeToNote()
+    {
+        ChangeState(NotebookState);
+    }
+
+    public void ShowIcon()
+    {
+        if(!isShown)
+        {
+            Desk.gameObject.SetActive(true);
+            PC.gameObject.SetActive(true);
+            Board.gameObject.SetActive(true);
+            Note.gameObject.SetActive(true);
+            isShown = true;
+
+        }
+        else if(isShown)
+        {
+            Desk.gameObject.SetActive(false);
+            PC.gameObject.SetActive(false);
+            Board.gameObject.SetActive(false);
+            Note.gameObject.SetActive(false);
+            isShown = false;
+        }
     }
 
     public IEnumerator LerpCamPos(Vector3 LerpGoal, float LerpCamSize)

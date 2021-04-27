@@ -40,7 +40,7 @@ public class MatArea : MonoBehaviour
 
     public void RectOverlaps()
     {
-        
+       /* 
         for(int i=0;i< SumbitArea.GetComponent<SubmitArea>().inArea.Count; i++)
         {
             RectTransform rectTransform= SumbitArea.GetComponent<SubmitArea>().inArea[i];
@@ -66,7 +66,23 @@ public class MatArea : MonoBehaviour
             }
 
         }
-        
+     */   
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Debug.Log("enter");
+        //print(collision.name);
+        if (collision.gameObject.GetComponent<PrintDocument>() && !inArea.Contains(collision.GetComponent<RectTransform>()))
+        {
+            SumbitArea.GetComponent<SubmitArea>().inArea.Remove(collision.GetComponent<RectTransform>());
+            collision.transform.SetParent(this.transform);
+            //this line remove the key from the current crinimal
+            SuspectList.Instance.susList[SumbitArea.GetComponent<SubmitArea>().dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained.Remove
+(collision.transform.GetComponentInChildren<PrintDocument>().GetKey());
+            //thie line remove the gameobject from the current criminal
+            SuspectList.Instance.susList[SumbitArea.GetComponent<SubmitArea>().dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Remove(collision.gameObject);
+        }
     }
 
 }
