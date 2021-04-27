@@ -160,7 +160,7 @@ public class SubmitArea : MonoBehaviour
         }
         Debug.Log(score + " evidences matches !");
         inArea.Clear();
-        if (score >= 3)
+        if (score >= crimeData.theEvidenceComparedTo.Count)
         {
             crimeData.goodend.Invoke();
         }

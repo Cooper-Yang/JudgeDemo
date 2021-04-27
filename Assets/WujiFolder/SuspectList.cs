@@ -59,7 +59,8 @@ public class SuspectList : MonoBehaviour
         dropDown.value = 1;
 
         susList.Remove(toRemove);
-        Destroy(toRemove);
+        //Destroy(toRemove);
+        toRemove.GetComponent<CrimialEvidence>().clear();
 
         RefreshDropDown();
         dropDown.value = 0;
