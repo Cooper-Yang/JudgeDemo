@@ -9,7 +9,7 @@ public class CrimeBlock : MonoBehaviour
     public TMP_Text date;
     public TMP_Text location;
     public TMP_Text content1;
-    public TMP_Text content2;
+    public Image image;
     public string key;
     // Start is called before the first frame update
     void Start()
