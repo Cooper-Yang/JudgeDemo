@@ -8,16 +8,19 @@ public class NoteBookState : StateBase
     {
         //Zoom in to note book
         //Enable Notebook Script
+        
         DeskTop.StartCoroutine(DeskTop.LerpCamPos(DeskTop.NotebookCamPos, DeskTop.NotebookCamSize));
         DeskTop.MonitorHitbox.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         DeskTop.BoardHitbox.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         DeskTop.NotebookHitbox.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        SoundMan.me.AmbienceZoomIn();
     }
 
     public override void StayOnState(DeskTopCtrl DeskTop)
     {
         if (DeskTop.ImageAfterLerp == true)
         {
+            DeskTop.Back.gameObject.SetActive(true);
             DeskTop.NoteBook.SetActive(true);
         }
 

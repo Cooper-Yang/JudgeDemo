@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
+using TMPro;
 using UnityEngine;
 
 public class Printer : MonoBehaviour
 {
     public GameObject PrinterSceneObject;
     public PrintDocument PrintDocumentPrefab;
-    public GameObject WorldCanvas;
+    public GameObject parent;
 
     void Start()
     {
@@ -22,55 +24,85 @@ public class Printer : MonoBehaviour
         }
     }
 
-    // UNUSED
-    public void Print(PrintDocument.DocumentType docType, string text)
-    {
-        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, WorldCanvas.transform);
-        Doc.SetType(docType);
-
-        switch (docType)
-        {
-            case PrintDocument.DocumentType.Email:
-                break;
-
-            case PrintDocument.DocumentType.Image:
-                break;
-
-            case PrintDocument.DocumentType.Text:
-                Doc.SetText(text);
-                break;
-
-            default:
-                break;
-        }
-
-        Doc.Assemble();
-    }
-
     public void Print(Email email)
     {
-        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, WorldCanvas.transform);
+        SoundMan.me.PrintingSound();
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, parent.transform);
         //Doc.SetType()
         Doc.SetHeader(email);
         Doc.SetText(email.GetBody());
+        Doc.SetKey(email.GetKey());
         Doc.Assemble();
+    }
+
+    public void Print(CrimeBlock block)
+    {
+        SoundMan.me.PrintingSound();
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, parent.transform);
+        //Doc.SetType()
+        Doc.SetHeader(block.date.text+" "+block.location.text);
+        //Doc.SetText(block.content1.text+" "+block.content2.text);
+        Doc.SetImage(block.image.sprite);
+        Doc.SetKey(block.key);
+        /*for(int i = Doc.LayoutGroup.transform.childCount-2; i > Doc.LayoutGroup.transform.childCount - 5; i--)
+        {
+            Destroy(Doc.LayoutGroup.transform.GetChild(i).gameObject);
+        }*/
+        Doc.Assemble();
+        //Doc.thisText.rectTransform.localPosition = Vector3.zero; 
+        //Doc.thisText.rectTransform.sizeDelta = new Vector2(96,72);
+    }
+
+    public void Print(TextMeshProUGUI texts)
+    {
+        SoundMan.me.PrintingSound();
+        //string combined = string.Join("\n", lines);
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, parent.transform);
+        Doc.SetHeader("Customs PrintOut");
+        Doc.SetText(texts.text);
+        Doc.SetKey("console");
+        Doc.Assemble();
+
+    }
+
+    public void Print(string name, string content, string info, int value, string title)
+    {
+        // Print Financial Statement
+        SoundMan.me.PrintingSound();
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, parent.transform);
+        Doc.SetHeader("***" + title + " STATEMENT***\nName: " + name);
+        Doc.SetText("\n" + content + "\n\n" + info);
+        // Example(  Income: 1000, Current Balance: 500)
+        // Example(  Taxes: 1000, Status: Paid)
+        Doc.SetKey("Statement_"+value);// TEMP TEMP
+        for (int i = Doc.LayoutGroup.transform.childCount - 2; i > Doc.LayoutGroup.transform.childCount - 5; i--)
+        {
+            Destroy(Doc.LayoutGroup.transform.GetChild(i).gameObject);
+        }
+        Doc.Assemble();
+        Doc.thisText.rectTransform.localPosition = Vector3.zero;
+        Doc.thisText.rectTransform.sizeDelta = new Vector2(96, 72);
     }
 
     public void Print(string[] lines)
     {
+        SoundMan.me.PrintingSound();
         string combined = string.Join("\n", lines);
-        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, WorldCanvas.transform);
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, parent.transform);
         Doc.SetHeader(":CONSOLE OUTPUT:");
         Doc.SetText(combined);
+        Doc.SetKey("console");
         Doc.Assemble();
 
     }
 
     public void Print(Sprite picture, string name)
     {
-        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, WorldCanvas.transform);
+        SoundMan.me.PrintingSound();
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, parent.transform);
         Doc.SetText("Photo: "+name);
         Doc.SetImage(picture);
+        Doc.SetKey(name);
         Doc.Assemble();
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeskTopCtrl : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class DeskTopCtrl : MonoBehaviour
     //Computer Sprite
     //Notebook Sprite
     //Mouse Pos
-
     public Camera mainCamera;
 
     [Header("Desktop Setting")]
@@ -19,7 +19,7 @@ public class DeskTopCtrl : MonoBehaviour
     public Vector3 DeskTopCamPos = new Vector3(0, -25, -10);
     
     [Header("Computer Setting")]
-    public float CompCamSize = 8;
+    public float CompCamSize = 75;
     public Vector3 ComputerCamPos = new Vector3(0, 2, -10);
     [Header("Bulletin Board Setting")]
     public float BulBoardCamSize = 120;
@@ -32,10 +32,17 @@ public class DeskTopCtrl : MonoBehaviour
     public GameObject MonitorHitbox;
     public GameObject BoardHitbox;
     public GameObject NotebookHitbox;
-
+    [Header("UI")]
+    public Button Back;
     public bool ImageAfterLerp = false;
 
     private StateBase currentState;
+
+    public StateBase CurrentState
+    {
+        get => currentState;
+    }
+
     public StateBase DeskState = new DeskState();
     public StateBase ComputerState = new ComputerState();
     public StateBase BulboardState = new BulBoardState();
@@ -60,7 +67,7 @@ public class DeskTopCtrl : MonoBehaviour
             currentState.EnterState(this);
         }
     }
-
+    
     void Start()
     {
 
@@ -72,6 +79,10 @@ public class DeskTopCtrl : MonoBehaviour
         currentState.StayOnState(this);
     }
 
+    public void ReturnDeskTop()
+    {
+        ChangeState(DeskState);
+    }
 
     public IEnumerator LerpCamPos(Vector3 LerpGoal, float LerpCamSize)
     {

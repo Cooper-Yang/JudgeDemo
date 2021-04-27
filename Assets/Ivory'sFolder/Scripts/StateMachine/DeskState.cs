@@ -10,6 +10,7 @@ public class DeskState : StateBase
         //Zoom out to desk top
         //Disable Computer Stuf
         //Enable DeskTop stuff
+        DeskTop.Back.gameObject.SetActive(false);
         DeskTop.BoardHitbox.GetComponent<SpriteRenderer>().sortingOrder = -50;
         DeskTop.StartCoroutine(DeskTop.LerpCamPos(DeskTop.DeskTopCamPos, DeskTop.DeskCamSize));
 
@@ -19,6 +20,8 @@ public class DeskState : StateBase
 
         DeskTop.NoteBook.gameObject.SetActive(false);
         DeskTop.ImageAfterLerp = false;
+        SoundMan.me.AmbienceZoomOut();
+
     }
 
     public override void StayOnState(DeskTopCtrl DeskTop)

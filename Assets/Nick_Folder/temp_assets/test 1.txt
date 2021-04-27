@@ -1,0 +1,6 @@
+Name,Individual,address,income,taxes,taxStatus
+Nick,Some Guy,76 Street,$1.000.000,1000000,$250.000,250000,Paid in Full,$32.000
+namess,129873,aysdiu,gshafd,asdrfsa,asdf
+isdif,Gfsa,asiudfhs,sgfsa,asdas,asdas
+asdf,suhfia,qwausd,asuhd,asdas,hfgd
+Xiao Wang, Known Insurrectionist, 123 Street, $12.000, 12000, $4.500, 4500, Due, $135.000 

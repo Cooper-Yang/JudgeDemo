@@ -30,10 +30,17 @@ public class EvidenceManager : MonoBehaviour
     private void Start()
     {
         theEvidence = new Dictionary<string, List<string>>();
-        foreach (GameObject i in suspectList)
+        /*suspectList.Clear();
+        foreach (GameObject gO in GameObject.FindGameObjectsWithTag("Criminal"))
+        {
+            suspectList.Add(gO);
+        }*/
+        
+        //suspectList = GameObject.FindGameObjectsWithTag("Criminal");
+        /*foreach (GameObject i in suspectList)
         {
             theEvidence.Add(i.name,i.GetComponent<CrimialEvidence>().theEvidenceComparedTo);
-        }
+        }*/
     }
 
     public void HandleInputData()
@@ -41,9 +48,19 @@ public class EvidenceManager : MonoBehaviour
         int k = dropDown.value;
         foreach (GameObject i in suspectList)
         {
-            i.SetActive(false);
+            foreach (GameObject gO in i.GetComponent<CrimialEvidence>().myMaterials)
+            {
+                gO.SetActive(false);
+            }
+
+            
         }
-        suspectList[k].SetActive(true);
+        
+        foreach (GameObject gO in suspectList[k].GetComponent<CrimialEvidence>().myMaterials)
+        {
+            gO.SetActive(true);
+        }
+        //suspectList[k].SetActive(true);
     }
 
     public void CompareEvidence()
@@ -77,6 +94,11 @@ public class EvidenceManager : MonoBehaviour
             {
                 cm.submitReport(suspectList[dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained);
                 Debug.Log("submitted");
+                suspectList[dropDown.value].GetComponent<CrimialEvidence>().theEvidenceContained.Clear();
+                foreach (GameObject gO in suspectList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials)
+                {
+                    Destroy(gO);
+                }
                 break;
             }
         }

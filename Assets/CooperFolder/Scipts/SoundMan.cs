@@ -8,8 +8,25 @@ public class SoundMan : MonoBehaviour
     public int maxAudioSources;
     AudioSource[] sources;
     public AudioSource sourcePrefab;
-    public AudioClip[] clickClips;
-    private int lastClick;
+    private Vector3 aPosition;
+    
+    [Header("PC SFX")]
+    public AudioClip click;
+    public AudioClip[] console;
+    private int lastConsole = 0;
+    public AudioClip emailReceived;
+    
+    [Header("Interaction SFX")]
+    public AudioClip board;
+    public AudioClip book;
+    public AudioClip computer;
+    public AudioClip newspaper;
+    
+    [Header("Other SFX")]
+    public AudioClip ambience;
+    public AudioClip printing;
+    public AudioClip bookTurnPage;
+    public AudioClip newspaperTurnPage;
 
     private void Awake()
     {
@@ -23,13 +40,79 @@ public class SoundMan : MonoBehaviour
         sources = new AudioSource[maxAudioSources];
         for (int i = 0; i < maxAudioSources; i++)
         {
-            sources[i] = Instantiate(sourcePrefab);
+            sources[i] = Instantiate(sourcePrefab,transform);
         }
+
+        aPosition = transform.position;
+        AmbienceSound();
     }
 
-    public void Click(Vector3 pos)
+    public void PrintingSound()
     {
-        lastClick = PlaySoundAtPosition(clickClips, lastClick, pos);
+        PlaySoundAtPosition(printing, aPosition);
+    }
+    public void EmailReceivedSound()
+    {
+        PlaySoundAtPosition(emailReceived, aPosition);
+    }
+    public void BoardSound(Vector3 pos)
+    {
+        PlaySoundAtPosition(board,pos);
+    }
+    public void BookSound(Vector3 pos)
+    {
+        PlaySoundAtPosition(book,pos);
+    }
+    public void ComputerSound(Vector3 pos)
+    {
+        PlaySoundAtPosition(computer,pos);
+    }
+    public void NewspaperSound(Vector3 pos)
+    {
+        PlaySoundAtPosition(newspaper,pos);
+    }
+    public void AmbienceSound()
+    {
+        AudioSource source = GetSource();
+        source.gameObject.name = "Ambience";
+        source.gameObject.AddComponent<AudioLowPassFilter>();
+        source.gameObject.GetComponent<AudioLowPassFilter>().cutoffFrequency = 22000f;
+        source.loop = true;
+        source.volume = .5f;
+        source.clip = ambience;
+        source.transform.position = aPosition;
+        source.Play();
+    }
+
+    public void AmbienceZoomIn()
+    {
+        GameObject ab = GameObject.Find("Ambience");
+        ab.GetComponent<AudioLowPassFilter>().cutoffFrequency = 4000f;
+    }
+    
+    public void AmbienceZoomOut()
+    {
+        GameObject ab = GameObject.Find("Ambience");
+        ab.GetComponent<AudioLowPassFilter>().cutoffFrequency = 22000f;
+    }
+
+    public void BookTurnSound()
+    {
+        PlaySoundAtPosition(bookTurnPage, aPosition);
+    }
+
+    public void NewspaperTurnSound()
+    {
+        PlaySoundAtPosition(newspaperTurnPage, aPosition);
+    }
+    public void ConsoleSound()
+    {
+        lastConsole = PlaySoundAtPosition(console, lastConsole, aPosition);
+    }
+    
+    public void ClickSound()
+    {
+        PlaySoundAtPosition(click, aPosition);
     }
 
     private void PlaySoundAtPosition(AudioClip clip, Vector3 pos) //play single clip

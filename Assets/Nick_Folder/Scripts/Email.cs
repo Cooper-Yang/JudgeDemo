@@ -116,7 +116,7 @@ public class Email : MonoBehaviour
         }
     }
 
-    //Getters
+    // Getters
     public Sprite GetPortrait() { return portrait_sprite; }
     public string GetContact() { return contact; }
     public string GetAddress() { return address; }
@@ -127,4 +127,8 @@ public class Email : MonoBehaviour
     public bool HasAttachment() { return hasAttachment; }
     public string GetAttachmentPath() { return AttachmentPath; }
 
+    // Evidence Key
+    private string evidenceKey;
+    public void SetKey(string key) { evidenceKey = key; }
+    public string GetKey() { return evidenceKey; }
 }
