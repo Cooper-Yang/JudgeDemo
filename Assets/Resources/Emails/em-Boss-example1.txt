@@ -5,13 +5,12 @@
 #Greet!#
 #08/31#
 #0#
-#Borat#
-#Borat_temp#
+#!#
+#Boss_evidence1#
 #Mr. Boss Man,
 
-It me, Sgt. Borat, reporting for shitting, yes?
+We've implemented a new case reporting system. Print this email and file it into evidence for the case labelled "Internal Training"
 
-Wa Wa Wee Wa, Very Nice!
 
 Love, 
 Borat#
