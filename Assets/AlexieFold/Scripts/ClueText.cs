@@ -6,35 +6,24 @@ using UnityEngine.Events; // This is so that you can extend the pointer handlers
 using UnityEngine.EventSystems; // This is so that you can extend the pointer handlers
 using TMPro;
 
-public class ClueText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
+public class ClueText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 { // Extends the pointer handlers
     public bool choosen = false;
     private Color temp_c;
-    private EviToRep eviToRep;
-    void Start()
-    {
-        //eviToRep = GameObject.Find("NoteManager").GetComponent<EviToRep>();
-    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         temp_c = GetComponent<TextMeshProUGUI>().color;
-        GetComponent<TextMeshProUGUI>().color = Color.gray; // Changes the colour of the text
+        GetComponent<TextMeshProUGUI>().color = new Color(0.3f,0.3f,0.3f); // Changes the colour of the text
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-            GetComponent<TextMeshProUGUI>().color = temp_c; // Changes the colour of the text
+        GetComponent<TextMeshProUGUI>().color = temp_c; // Changes the colour of the text
     }
-    public void OnPointerDown(PointerEventData eventData)
+
+    public void changeColor()
     {
-        if (!choosen)
-        {
-            choosen = true;
-            Debug.Log("Start");
-        }
-        else
-        {
-            choosen = false;
-        }
+        GetComponent<TextMeshProUGUI>().color = temp_c;
     }
 }
