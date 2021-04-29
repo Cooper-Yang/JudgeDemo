@@ -201,7 +201,7 @@ public class EmailManager : MonoBehaviour
             case "3":
                 statusTMP.color = doneStatusColor;
                 subjectTMP.margin = new Vector4(45, 0, 0, 0);
-                status = "Complete";
+                status = "Complete:";
                 break;
             default:
                 statusTMP.color = normalStatusColor;
@@ -255,7 +255,7 @@ public class EmailManager : MonoBehaviour
 
         if (emailCount < UserFiles.Count) // make sure there is a new email file available.
         {
-            if (emailCount < inboxCapacity) // check that there is room in the inbox
+            if (emailCount < inboxCapacity*10) // check that there is room in the inbox
             {
                 UserInbox.Add(UserFiles[emailCount]);
                 Email emailTemp = CreateEmailFromFile(UserFiles[emailCount]);
@@ -283,9 +283,12 @@ public class EmailManager : MonoBehaviour
     {
         SoundMan.me.EmailReceivedSound();
         PlayerInboxFiles.Add(textFile);
-        Email emailTemp = CreateEmailFromFile(textFile);
-        InboxEmails.Add(emailTemp);
-        emailCount++;
+        if (currentUser == EmailUsers.Player)
+        {
+            Email emailNew = CreateEmailFromFile(textFile);
+            InboxEmails.Add(emailNew);
+        }
+        //emailCount++;
     }
 
 
