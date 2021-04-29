@@ -18,12 +18,16 @@ public class EmailManager : MonoBehaviour
     [SerializeField] List<TextAsset> BossAllFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> HitchcockAllFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> XiaoWangAllFiles = new List<TextAsset>();
+    [SerializeField] List<TextAsset> LeeAllFiles = new List<TextAsset>();
+    [SerializeField] List<TextAsset> FangZhouAllFiles = new List<TextAsset>();
 
     // INBOXES:
     [SerializeField] List<TextAsset> PlayerInboxFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> BossInboxFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> HitchcockInboxFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> XiaoWangInboxFiles = new List<TextAsset>();
+    [SerializeField] List<TextAsset> LeeInboxFiles = new List<TextAsset>();
+    [SerializeField] List<TextAsset> FangZhouInboxFiles = new List<TextAsset>();
 
 
     [SerializeField] List<Email> InboxEmails = new List<Email>();
@@ -73,7 +77,7 @@ public class EmailManager : MonoBehaviour
     public void SetSkeletonKey(string s)
     { skeletonKey = s; }
 
-    private enum EmailUsers { Player, Boss, Hitchcock, XiaoWang };
+    private enum EmailUsers { Player, Boss, Hitchcock, XiaoWang, Lee, FangZhou };
     [SerializeField] private EmailUsers currentUser;
 
     private void Awake()
@@ -108,6 +112,12 @@ public class EmailManager : MonoBehaviour
                 break;
             case "XiaoWang":
                 userInbox = XiaoWangInboxFiles;
+                break;
+            case "Lee":
+                userInbox = LeeInboxFiles;
+                break;
+            case "FangZhou":
+                userInbox = FangZhouInboxFiles;
                 break;
             default:
                 userInbox = new List<TextAsset>();
@@ -228,6 +238,14 @@ public class EmailManager : MonoBehaviour
             case "XiaoWang":
                 UserFiles = XiaoWangAllFiles;
                 UserInbox = XiaoWangInboxFiles;
+                break;
+            case "Lee":
+                UserFiles = LeeAllFiles;
+                UserInbox = LeeInboxFiles;
+                break;
+            case "FangZhou":
+                UserFiles = FangZhouAllFiles;
+                UserInbox = FangZhouInboxFiles;
                 break;
             default:
                 UserFiles = new List<TextAsset>();
@@ -372,6 +390,14 @@ public class EmailManager : MonoBehaviour
             case "xwang8@gov.ch":
                 currentUser = EmailUsers.XiaoWang;
                 InitInbox("XiaoWang");
+                break;
+            case "Lee":
+                currentUser = EmailUsers.Lee;
+                InitInbox("Lee");
+                break;
+            case "FangZhou":
+                currentUser = EmailUsers.FangZhou;
+                InitInbox("FangZhou");
                 break;
         }
     }

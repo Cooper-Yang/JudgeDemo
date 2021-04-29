@@ -18,7 +18,6 @@ public class CameraZoomIn : MonoBehaviour
     }
     void Update()
     {
-        //var ct = Camera.main.transform;
         if (Input.GetMouseButtonDown(1) && !zoomedIn)
         {
             tempPos = Camera.main.transform.position;

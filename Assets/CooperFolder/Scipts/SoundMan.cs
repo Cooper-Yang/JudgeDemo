@@ -45,6 +45,8 @@ public class SoundMan : MonoBehaviour
 
         aPosition = transform.position;
         AmbienceSound();
+
+        DontDestroyOnLoad(transform.gameObject);
     }
 
     public void PrintingSound()

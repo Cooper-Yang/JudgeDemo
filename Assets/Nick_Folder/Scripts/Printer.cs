@@ -65,7 +65,7 @@ public class Printer : MonoBehaviour
 
     }
 
-    public void Print(string name, string content, string info, int value, string title)
+    public void Print(string name, string content, string info, int value, string title) // Financial
     {
         // Print Financial Statement
         SoundMan.me.PrintingSound();
@@ -74,11 +74,49 @@ public class Printer : MonoBehaviour
         Doc.SetText("\n" + content + "\n\n" + info);
         // Example(  Income: 1000, Current Balance: 500)
         // Example(  Taxes: 1000, Status: Paid)
-        Doc.SetKey("Statement_"+value);// TEMP TEMP
+        Doc.SetKey("Statement_"+name+"-"+value);// TEMP TEMP
         for (int i = Doc.LayoutGroup.transform.childCount - 2; i > Doc.LayoutGroup.transform.childCount - 5; i--)
         {
             Destroy(Doc.LayoutGroup.transform.GetChild(i).gameObject);
         }
+        Doc.Assemble();
+        Doc.thisText.rectTransform.localPosition = Vector3.zero;
+        Doc.thisText.rectTransform.sizeDelta = new Vector2(96, 72);
+    }
+
+    public void Print(int number, string name, int[] payments)
+    {
+        SoundMan.me.PrintingSound();
+        PrintDocument Doc = Instantiate(PrintDocumentPrefab, PrinterSceneObject.transform.position, Quaternion.identity, parent.transform);
+
+        List<string> values = new List<string>();
+        int total = 0;
+        foreach (int i in payments)
+        {
+            total += i;
+            if (i > 0)
+                values.Add("+" + i);
+            else
+                values.Add("" + i);
+        }
+
+        string text = "";
+        foreach (string s in values)
+        {
+            text = text + "\n" + s;
+        }
+
+        text += "\n\n Sum Total: " + total;
+
+        Doc.SetHeader("Expenditure Report:\n" + name);
+        Doc.SetText("\nList of Transactions:\n" + text);
+        Doc.SetKey(name+" Report");
+
+        for (int i = Doc.LayoutGroup.transform.childCount - 2; i > Doc.LayoutGroup.transform.childCount - 5; i--)
+        {
+            Destroy(Doc.LayoutGroup.transform.GetChild(i).gameObject);
+        }
+
         Doc.Assemble();
         Doc.thisText.rectTransform.localPosition = Vector3.zero;
         Doc.thisText.rectTransform.sizeDelta = new Vector2(96, 72);
