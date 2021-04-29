@@ -53,7 +53,7 @@ public class CaseManager : MonoBehaviour
 
     private static string[] CombineKeys(string[] a, string[] b)
     {
-        string[] c = new string[a.Length+b.Length];
+        string[] c = new string[a.Length + b.Length];
         int i = 0;
         foreach (string s in a)
         { c[i] = s; i++; }

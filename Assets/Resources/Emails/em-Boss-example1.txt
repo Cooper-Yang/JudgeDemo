@@ -1,16 +1,20 @@
 //Input information in between HASHTAG signs (Do not delete it!)
 
-#Sgt. Borat#
-#borat@web.gov#
-#Greet!#
-#08/31#
+#Chief Sun Wu#
+#wusun@gov.ch#
+#First Assignment#
+#11/04#
 #0#
 #!#
 #Boss_evidence1#
-#Mr. Boss Man,
+#Attention, Tongzhi Yao.
 
-We've implemented a new case reporting system. Print this email and file it into evidence for the case labelled "Internal Training"
+We've implemented a new filing system on your office bulletin.
+
+This is how you will complete and submit cases for the Committee of Justice. 
+
+Print this email and file it into evidence for the case labelled "Internal Training"
 
 
 From, 
-Borat#
+SC Sun#
