@@ -386,6 +386,44 @@ MonoBehaviour:
   evidences: []
   MaterialArea: {fileID: 0}
   dropDown: {fileID: 111806431}
+  requireScore: 3
+  currentScore: 0
+  toTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 207027454}
+        m_MethodName: AddSuspect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1180305569}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 207027454}
+        m_MethodName: AddSuspect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1843396750}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 207027454}
+        m_MethodName: AddSuspect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 955226172}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &4649429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -746,6 +784,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &14045110
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6404,6 +6443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   susList: []
   dropDown: {fileID: 111806431}
+  label: {fileID: 1983702580}
 --- !u!1 &217498904
 GameObject:
   m_ObjectHideFlags: 0
@@ -9601,6 +9641,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 0
 --- !u!1 &386587752
 GameObject:
   m_ObjectHideFlags: 0
@@ -27006,7 +27047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.987434, y: 107.50196}
+  m_AnchoredPosition: {x: -79.987434, y: 107.501976}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &943935870
@@ -27474,6 +27515,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 0
 --- !u!1 &969247777
 GameObject:
   m_ObjectHideFlags: 0
@@ -29146,6 +29188,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1021654660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30633,6 +30676,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1082673306
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31091,6 +31135,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1114361517
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31498,7 +31543,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1413046306}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.49999985
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -33029,6 +33074,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 0
 --- !u!1 &1189142629
 GameObject:
   m_ObjectHideFlags: 0
@@ -53118,6 +53164,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 0
 --- !u!1 &1843960827
 GameObject:
   m_ObjectHideFlags: 0
@@ -53298,6 +53345,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1854321538
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53755,6 +53803,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1871793233
 RectTransform:
   m_ObjectHideFlags: 0
