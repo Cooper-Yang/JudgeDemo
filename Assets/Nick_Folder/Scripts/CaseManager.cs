@@ -9,7 +9,7 @@ public class CaseManager : MonoBehaviour
     static string[] arsonKeys =     { "FireDamage",     "DestroyedProperty",    "DestroyedMoney" };
     static string[] tresspassingKeys = { "",            "",                     "" };
     static string[] assaultKeys =   { "injuredVictim",  "biologicalEvidence",   "ownsWeapon",       "AtCrimescene" };
-    static string[] murderKeys =    { "deadVictim",     "biologicalEvidence",   "ownsWeapon" ,      "AtCrimescene",     "ballisticsReport" };
+    static string[] murderKeys = { "deadVictim", "biologicalEvidence", "ownsWeapon", "AtCrimescene", "ballisticsReport" };
     static string[] purjuryKeys =   { "officialLying",  "defamingGovernment",   "spreadFalseInformation" };
     static string[] insurrectionKeys = { "illegalOwnership", "protestNonviolent",    "protestViolent", "defamingGovernment" };
     static string[] treasonKeys =   { "fleeingCountry", "SparrowConnection",    "holdingClassifiedDoc",  "distributingClassifiedDoc" };
