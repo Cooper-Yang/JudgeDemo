@@ -31551,6 +31551,8 @@ MonoBehaviour:
   warning: {fileID: 1066924292}
   hint: {fileID: 659876438}
   title: {fileID: 570976025}
+  change: {fileID: 2052374884}
+  UIcanvas: {fileID: 744341994}
   blackOutSqure: {fileID: 1359613810}
   mainCamera: {fileID: 1534901564}
 --- !u!1 &1066924290

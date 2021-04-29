@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Nick_CombinedScene.unity
     guid: c7c3a9ace9a3d2e43989be3e2475f828
   - enabled: 1
+    path: Assets/AlexieFold/Scene/StartScene.unity
+    guid: 426bc0eab0a899940bb303219580336d
+  - enabled: 1
     path: Assets/Scenes/NEW_CompleteScene.unity
     guid: 3f8e1e310e4caf04f89c59af5fb533ed
   m_configObjects: {}
