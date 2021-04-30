@@ -57273,7 +57273,7 @@ MonoBehaviour:
   ComputerCamPos: {x: 0, y: 2, z: -10}
   BulBoardCamSize: 150
   BulBoardCamPos: {x: 0, y: 85, z: -10}
-  NotebookCamSize: 75
+  NotebookCamSize: 70
   NotebookCamPos: {x: 0, y: -175, z: 0}
   NoteBook: {fileID: 1745005722}
   MonitorHitbox: {fileID: 587575930}
