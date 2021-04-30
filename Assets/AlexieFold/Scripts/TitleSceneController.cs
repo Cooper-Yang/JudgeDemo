@@ -11,6 +11,8 @@ public class TitleSceneController : MonoBehaviour
     public TextMeshProUGUI warning;
     public TextMeshProUGUI hint;
     public TextMeshProUGUI title;
+    public GameObject change;
+    public Canvas UIcanvas;
     public Image blackOutSqure;
     public Camera mainCamera;
     private int wrongTries;
@@ -78,6 +80,7 @@ public class TitleSceneController : MonoBehaviour
 
         if (playTitle)
         {
+            UIcanvas.gameObject.SetActive(false);
             while(blackOutSqure.GetComponent<Image>().color.a < 1)
             {
                 fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
@@ -118,8 +121,8 @@ public class TitleSceneController : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSeconds(0.5f);
-            SceneManager.LoadScene(0);
+            yield return new WaitForSeconds(0.1f);
+            SceneManager.LoadScene(1);
         }
     }
 }
