@@ -18,6 +18,10 @@ public class TitleSceneController : MonoBehaviour
     private int wrongTries;
     private float fadeOutTimer;
     private bool playTitle;
+
+    public AudioSource startSong;
+
+    public AudioSource deadManSwitch;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +39,11 @@ public class TitleSceneController : MonoBehaviour
         {
             fadeOutTimer += 0.08f * Time.deltaTime;
             AmbienceFadeOut();
+            if (startSong.isPlaying)
+            {
+                deadManSwitch.Play();
+                startSong.Pause();
+            }
         }
     }
 
