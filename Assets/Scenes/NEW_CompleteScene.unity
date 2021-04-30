@@ -7892,7 +7892,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 69.69, y: -8.120001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292907475
 MonoBehaviour:
@@ -7940,7 +7940,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Computer System Guide
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aaaad5d6bb08dbc41a4f158d429fe276, type: 2}
   m_sharedMaterial: {fileID: -4272040396395860296, guid: aaaad5d6bb08dbc41a4f158d429fe276,
@@ -14138,7 +14138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &533837893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14662,7 +14662,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -72.49, y: -8.120001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &547326140
 MonoBehaviour:
@@ -14710,7 +14710,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Routines
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aaaad5d6bb08dbc41a4f158d429fe276, type: 2}
   m_sharedMaterial: {fileID: -4272040396395860296, guid: aaaad5d6bb08dbc41a4f158d429fe276,
@@ -19824,7 +19824,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -22.7, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 50.72, y: -8.120001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &676893311
 MonoBehaviour:
@@ -22644,7 +22644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &751607254
 Transform:
   m_ObjectHideFlags: 0
@@ -22684,17 +22684,7 @@ MonoBehaviour:
   pgdw: {fileID: 1559383908}
   back: {fileID: 263168604}
   clueText: {fileID: 0}
-  LeftList:
-  - OFFICE MANUAL TEST LANGUagedddddddddddddOFFICE MANUAL TEST LANGUagedddddddddddddOFFICE
-    MANUAL TEST LANGUagedddddddddddddOFFICE MANUAL TEST LANGUagedddddddddddddOFFICE
-    MANUAL TEST LANGUagedddddddddddddOFFICE MANUAL TEST LANGUagedddddddddddddOFFICE
-    MANUAL TEST LANGUagedddddddddddddOFFICE MANUAL TEST LANGUagedddddddddddddOFFICE
-    MANUAL TEST LANGUagedddddddddddddOFFICE MANUAL TEST LANGUagedddddddddddddOFFICE
-    MANUAL TEST LANGUagedddddddddddddOFFICE MANUAL TEST LANGUagedddddddddddddOFFICE
-    MANUAL TEST LANGUagedddddddddddddOFFICE MANUAL TEST LANGUagedddddddddddddOFFICE
-    MANUAL TEST LANGUagedddddddddddddOFFICE MANUAL TEST LANGUagedddddddddddddOFFICE
-    MANUAL TEST LANGUagedddddddddddddOFFICE MANUAL TEST LANGUagedddddddddddddOFFICE
-    MANUAL TEST LANGUagedddddddddddddOFFICE MANUAL TEST LANGUageddddddddddddd
+  LeftList: []
   pageNum: 0
 --- !u!212 &751607256
 SpriteRenderer:
@@ -23077,9 +23067,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'OFFICE MANUAL TEST
-
-    LANGUageddddddddddddd'
+  m_text: Submission Board Guide:\nWhenever you finish printing information or evidence,
+    you can sort it out on the board on the right and drag the evidence you need
+    to the board on the left.\n\nOn the Report board on the left, you can select
+    the case you want to work on (click the rectangular bbutton on the left of the
+    submit case to select).\n\nClick the submit button to submit. Please consider
+    carefully before submitting something, there is no turning back.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aaaad5d6bb08dbc41a4f158d429fe276, type: 2}
   m_sharedMaterial: {fileID: -4272040396395860296, guid: aaaad5d6bb08dbc41a4f158d429fe276,
@@ -23913,7 +23906,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -22.7, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 127.28, y: -8.120001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &789006691
 MonoBehaviour:
@@ -23961,7 +23954,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Submission Board Guide
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aaaad5d6bb08dbc41a4f158d429fe276, type: 2}
   m_sharedMaterial: {fileID: -4272040396395860296, guid: aaaad5d6bb08dbc41a4f158d429fe276,
@@ -25450,7 +25443,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 751607255}
-        m_MethodName: hhh
+        m_MethodName: Routines
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28868,7 +28861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.98741, y: 107.501945}
+  m_AnchoredPosition: {x: -79.987404, y: 107.501945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &943935870
@@ -32616,7 +32609,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 751607255}
-        m_MethodName: hhh
+        m_MethodName: Computer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34766,7 +34759,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -28.740005, y: -8.120001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1158619318
 MonoBehaviour:
@@ -34814,7 +34807,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Introduction
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aaaad5d6bb08dbc41a4f158d429fe276, type: 2}
   m_sharedMaterial: {fileID: -4272040396395860296, guid: aaaad5d6bb08dbc41a4f158d429fe276,
@@ -38255,7 +38248,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 751607255}
-        m_MethodName: hhh
+        m_MethodName: Board
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55840,7 +55833,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Submission Board Guide:\nWhenever you finish printing information or evidence,
+    you can sort it out on the board on the right and drag the evidence you need
+    to the board on the left.\n\nOn the Report board on the left, you can select
+    the case you want to work on (click the rectangular bbutton on the left of the
+    submit case to select).\n\nClick the submit button to submit. Please consider
+    carefully before submitting something, there is no turning back.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aaaad5d6bb08dbc41a4f158d429fe276, type: 2}
   m_sharedMaterial: {fileID: -4272040396395860296, guid: aaaad5d6bb08dbc41a4f158d429fe276,
@@ -60620,7 +60618,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 751607255}
-        m_MethodName: hhh
+        m_MethodName: Introduction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
