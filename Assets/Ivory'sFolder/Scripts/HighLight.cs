@@ -37,7 +37,7 @@ public class HighLight : MonoBehaviour
         }
         else if(this.gameObject.tag == "Notebook")
         {
-            SoundMan.me.BookSound(Vector3.zero);
+            SoundMan.me.NewspaperSound(Vector3.zero);
             this.GetComponent<Renderer>().material.color = StartColor;
             deskcon.ChangeState(deskcon.NotebookState);
         }
