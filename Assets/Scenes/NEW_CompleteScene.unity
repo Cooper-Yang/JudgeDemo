@@ -28861,7 +28861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.987404, y: 107.501945}
+  m_AnchoredPosition: {x: -79.98738, y: 107.501945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &943935870
@@ -57906,8 +57906,8 @@ MonoBehaviour:
   ComputerCamPos: {x: 0, y: 2, z: -10}
   BulBoardCamSize: 150
   BulBoardCamPos: {x: 0, y: 85, z: -10}
-  NotebookCamSize: 75
-  NotebookCamPos: {x: 0, y: -175, z: 0}
+  NotebookCamSize: 70
+  NotebookCamPos: {x: -1, y: -185, z: 0}
   NoteBook: {fileID: 751607253}
   MonitorHitbox: {fileID: 587575930}
   BoardHitbox: {fileID: 892598487}
