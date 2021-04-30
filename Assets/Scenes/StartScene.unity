@@ -5738,9 +5738,9 @@ RectTransform:
   m_Father: {fileID: 1210746070}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 48, y: -24}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 96, y: 24}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &170624631
@@ -13328,9 +13328,9 @@ RectTransform:
   m_Father: {fileID: 1210746070}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 48, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 96, y: 24}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &334850003
@@ -15908,9 +15908,9 @@ RectTransform:
   m_Father: {fileID: 1210746070}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 48, y: -72}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 96, y: 24}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &414881925
@@ -53881,7 +53881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1376617067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53899,7 +53899,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 506, y: 166.7001}
+  m_AnchoredPosition: {x: 514.8, y: -49}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1376617068
@@ -72052,9 +72052,9 @@ RectTransform:
   m_Father: {fileID: 1210746070}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 48, y: -48}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 96, y: 24}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1954161433
@@ -72704,7 +72704,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "<color=#D24753>Happy Birthday, \nYao Bang</color>\nWe'll hang out for
-    dinner tonight, but finish your work first.\n\nBest,\nYour Boss\n\n11.4"
+    dinner tonight, but finish your work first.\n\nBest,\n  Your Boss,\n  SC Sun
+    Wu\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d0a5ea595fa917428721e6cd7a4fd19, type: 2}
   m_sharedMaterial: {fileID: 6084372786025151925, guid: 9d0a5ea595fa917428721e6cd7a4fd19,
@@ -78301,8 +78302,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<color=#8A2D2D>\nHappy Birthday, \nYao Bang!\n\nWe'll hang out for dinner
-    tonight, but finish your work first.\n</color>\n\n"
+  m_text: '<color=#2123BA>
+
+    Your Birthday:
+
+
+    1104
+
+    </color>
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d0a5ea595fa917428721e6cd7a4fd19, type: 2}
   m_sharedMaterial: {fileID: 6084372786025151925, guid: 9d0a5ea595fa917428721e6cd7a4fd19,
@@ -78312,8 +78322,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281150857
-  m_fontColor: {r: 0.5377358, g: 0.17501779, b: 0.17501779, a: 1}
+    rgba: 4290323232
+  m_fontColor: {r: 0.12677999, g: 0.13694331, b: 0.7264151, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -80275,6 +80285,7 @@ MonoBehaviour:
   book: {fileID: 8300000, guid: f8861856d0c1f1f4ca236545268246da, type: 3}
   computer: {fileID: 8300000, guid: 5870f667c8dbb044684041d90dad5e54, type: 3}
   newspaper: {fileID: 8300000, guid: 67a3118b48b392e418f3fb5805db9360, type: 3}
+  evidenceOnDrop: {fileID: 0}
   ambience: {fileID: 8300000, guid: ab137bc274f114f4fa1d6a48775f868d, type: 3}
   printing: {fileID: 8300000, guid: 1bc6a9241d24c194d8bdb6b78e1c1788, type: 3}
   bookTurnPage: {fileID: 8300000, guid: f8861856d0c1f1f4ca236545268246da, type: 3}
