@@ -20,7 +20,7 @@ public class ManualController : MonoBehaviour
     public Button back;
     public ClueText clueText;
     public List<string> LeftList;
-    public int pageNum;
+    public int pageNum = 0;
     private Color temp_c;
     void Start()
     {
