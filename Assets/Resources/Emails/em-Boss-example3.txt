@@ -1,21 +1,21 @@
 //Input information in between HASHTAG signs (Do not delete it!)
 
-#Sgt. Borat#
-#borat@web.gov#
-#Greet!#
-#08/31#
-#0#
+#Chief Sun Wu#
+#wusun@gov.ch#
+#Submission Declined#
+#11/04#
+#2#
 #!#
 #!#
-#Mr. Boss Man,
+#Tongzhi Yao,
 
-Your submission did not cotains the correct evidence.
+Your submission did not contain the correct documents.
 
-You must do it again to check if the system works properly.
+I reiterate, print the first email titled "First Assignment"
+and submit it for the case labelled "Internal Training."
 
-Go print the first email I sent and file it into evidence for the case labelled "Internal Training"
-
-
+You are allowed to try again for this first case, but 
+don't expect any second chances for the following cases...
 
 From, 
-Borat#
+SC Sun#

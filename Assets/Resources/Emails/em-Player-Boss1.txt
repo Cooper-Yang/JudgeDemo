@@ -1,9 +1,9 @@
 // To PLAYER from BOSS --> Email 2
 
-#Boss#
-#theboss@web.com#
-#Xiao Wang has escaped!#
-#11/11#
+#Chief Sun Wu#
+#wusun@gov.ch#
+#A Delicate Matter#
+#11/05#
 #0#
 #!#
 #Xiao Wang instructions#
