@@ -13,7 +13,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private bool isComputerWindow;
 
     private Vector3 smallSize = new Vector3(1, 1, 1);
-    private Vector3 bigSize = new Vector3(1.5f, 1.5f, 1);
+    private Vector3 bigSize = new Vector3(3f, 3f, 1);
 
     private void Awake()
     {
