@@ -173,6 +173,7 @@ public class SubmitArea : MonoBehaviour
             crimeData.badend.Invoke();
         }
         SuspectList.Instance.RemoveSuspect(crimeData.gameObject);
+        
     }
 
 
@@ -182,6 +183,7 @@ public class SubmitArea : MonoBehaviour
         //print(collision.name);
         if (collision.gameObject.GetComponent<PrintDocument>()&&!inArea.Contains(collision.GetComponent<RectTransform>()))
         {
+            //SoundMan.me.EvidenceDropSound(Vector3.zero);
             MaterialArea.GetComponent<MatArea>().inArea.Remove(collision.GetComponent<RectTransform>());
             collision.transform.SetParent(this.transform);
             //this two line add the key to the current crinimal

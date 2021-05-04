@@ -84,7 +84,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         //transform.parent.SetAsFirstSibling();
         GameObject.Find("Submit Area").GetComponent<SubmitArea>().RectOverlaps();
         GameObject.Find("Material Area").GetComponent<MatArea>().RectOverlaps();
-        
+        SoundMan.me.EvidenceDropSound(Vector3.zero);
     }
 
     private void LerpScale(RectTransform dragTrans, bool makeBig)

@@ -21,6 +21,7 @@ public class SoundMan : MonoBehaviour
     public AudioClip book;
     public AudioClip computer;
     public AudioClip newspaper;
+    public AudioClip evidenceOnDrop;
     
     [Header("Other SFX")]
     public AudioClip ambience;
@@ -45,6 +46,8 @@ public class SoundMan : MonoBehaviour
 
         aPosition = transform.position;
         AmbienceSound();
+
+        DontDestroyOnLoad(transform.gameObject);
     }
 
     public void PrintingSound()
@@ -70,6 +73,11 @@ public class SoundMan : MonoBehaviour
     public void NewspaperSound(Vector3 pos)
     {
         PlaySoundAtPosition(newspaper,pos);
+    }
+
+    public void EvidenceDropSound(Vector3 pos)
+    {
+        PlaySoundAtPosition(evidenceOnDrop, pos);
     }
     public void AmbienceSound()
     {
