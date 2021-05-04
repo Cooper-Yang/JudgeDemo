@@ -386,6 +386,44 @@ MonoBehaviour:
   evidences: []
   MaterialArea: {fileID: 0}
   dropDown: {fileID: 111806431}
+  requireScore: 3
+  currentScore: 0
+  toTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 207027454}
+        m_MethodName: AddSuspect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1180305569}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 207027454}
+        m_MethodName: AddSuspect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1843396750}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 207027454}
+        m_MethodName: AddSuspect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 955226172}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &4649429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -746,6 +784,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &14045110
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3818,6 +3857,144 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119170361}
   m_CullTransparentMesh: 0
+--- !u!1 &123789183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 123789184}
+  - component: {fileID: 123789186}
+  - component: {fileID: 123789185}
+  - component: {fileID: 123789188}
+  - component: {fileID: 123789187}
+  - component: {fileID: 123789189}
+  m_Layer: 8
+  m_Name: TrashCan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &123789184
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123789183}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1443589164}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 551, y: -157.4}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &123789185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123789183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.745283, g: 0.2917853, b: 0.2917853, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &123789186
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123789183}
+  m_CullTransparentMesh: 0
+--- !u!61 &123789187
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123789183}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0009536743, y: 25.586077}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 97.20012, y: 149.05234}
+  m_EdgeRadius: 0
+--- !u!50 &123789188
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123789183}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &123789189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123789183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d4d742936f7484488132c65c8a64a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sub: {fileID: 0}
+  mat: {fileID: 0}
 --- !u!1 &128052463
 GameObject:
   m_ObjectHideFlags: 0
@@ -11158,7 +11335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   susList: []
   dropDown: {fileID: 111806431}
-  label: {fileID: 0}
+  label: {fileID: 1983702580}
 --- !u!1 &217498904
 GameObject:
   m_ObjectHideFlags: 0
@@ -19414,6 +19591,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 0
 --- !u!1 &386587752
 GameObject:
   m_ObjectHideFlags: 0
@@ -43190,7 +43368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.98742, y: 107.501945}
+  m_AnchoredPosition: {x: -79.98741, y: 107.50196}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &943935870
@@ -43658,6 +43836,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 1
 --- !u!1 &969247777
 GameObject:
   m_ObjectHideFlags: 0
@@ -45464,6 +45643,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1021654660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46853,6 +47033,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1082673306
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47452,6 +47633,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1114361517
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47859,7 +48041,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1413046306}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.49999985
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -49553,6 +49735,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 1
 --- !u!1 &1189142629
 GameObject:
   m_ObjectHideFlags: 0
@@ -56918,6 +57101,7 @@ RectTransform:
   - {fileID: 1537835881}
   - {fileID: 682646039}
   - {fileID: 1153487536}
+  - {fileID: 123789184}
   m_Father: {fileID: 892598491}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -69231,7 +69415,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1632979907}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.5000001
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -74710,6 +74894,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 1
 --- !u!1 &1843960827
 GameObject:
   m_ObjectHideFlags: 0
@@ -74890,6 +75075,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1854321538
 RectTransform:
   m_ObjectHideFlags: 0
@@ -75486,6 +75672,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1871793233
 RectTransform:
   m_ObjectHideFlags: 0
