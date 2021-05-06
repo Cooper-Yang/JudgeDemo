@@ -13,7 +13,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private bool isComputerWindow;
 
     private Vector3 smallSize = new Vector3(1, 1, 1);
-    private Vector3 bigSize = new Vector3(3f, 3f, 1);
+    private Vector3 bigSize = new Vector3(2.25f, 2.25f, 1);
 
     private void Awake()
     {
@@ -50,6 +50,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
     }
 
+    float currentLerpTime = 0;
+    private float lerpScaleDuration = 0.35f;
+    bool doLerp = false;
+    bool makeBig;
+
     public void OnBeginDrag(PointerEventData data)
     {
         Vector3 globalMousePos;
@@ -60,7 +65,27 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         if (!isComputerWindow)
         {
-            LerpScale(draggableTransform, true);
+            currentLerpTime = 0;
+            doLerp = true;
+            makeBig = true;
+        }
+    }
+
+    private void Update()
+    {
+        if (doLerp)
+        {
+            float t = currentLerpTime / lerpScaleDuration;
+            t = 1f - Mathf.Cos(t * Mathf.PI * 0.5f);
+
+            currentLerpTime += Time.deltaTime;
+            if (currentLerpTime > lerpScaleDuration)
+                currentLerpTime = lerpScaleDuration;
+
+            if (makeBig)
+                this.transform.localScale = Vector3.Lerp(smallSize, bigSize, t);
+            else
+                this.transform.localScale = Vector3.Lerp(this.transform.localScale, smallSize, t);
         }
     }
 
@@ -79,7 +104,10 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         if (!isComputerWindow)
         {
-            LerpScale(draggableTransform, false);
+            //LerpScale(draggableTransform, false, 1);
+            currentLerpTime = 0;
+            doLerp = true;
+            makeBig = false;
         }
         //transform.parent.SetAsFirstSibling();
         GameObject.Find("Submit Area").GetComponent<SubmitArea>().RectOverlaps();
@@ -87,12 +115,12 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         SoundMan.me.EvidenceDropSound(Vector3.zero);
     }
 
-    private void LerpScale(RectTransform dragTrans, bool makeBig)
-    {
-        if(makeBig)
-            dragTrans.localScale = Vector3.Lerp(smallSize, bigSize, 1);
+    private void LerpScale(RectTransform dragTrans, bool makeBig, float ts)
+    { 
+        if (makeBig)
+            dragTrans.localScale = Vector3.Lerp(smallSize, bigSize, ts);
         else
-            dragTrans.localScale = Vector3.Lerp(bigSize, smallSize, 1);
+            dragTrans.localScale = Vector3.Lerp(bigSize, smallSize, ts);
 
     }
 
