@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 using UnityEditor;
 
@@ -12,6 +13,12 @@ public class SubmitArea : MonoBehaviour
     public GameObject MaterialArea;
 
     public TMP_Dropdown dropDown;
+    [SerializeField]
+    int requireScore = 3;
+    [SerializeField]
+    int currentScore = 0;
+    [SerializeField]
+    UnityEvent toTrigger;
     //public List<GameObject> suspectList;
 
     // Start is called before the first frame update
@@ -130,6 +137,10 @@ public class SubmitArea : MonoBehaviour
 
     public void SubmitReport()
     {
+        if (SuspectList.Instance.dropDown.options.Count <= 0)
+        {
+            return;
+        }
         /*string caseID = suspectList[dropDown.value].name;
         Debug.Log(caseID);
         foreach (OneCase cm in FindObjectsOfType<OneCase>())
@@ -160,7 +171,13 @@ public class SubmitArea : MonoBehaviour
         }
         Debug.Log(score + " evidences matches !");
         inArea.Clear();
-        if (score >= 3)
+        currentScore += crimeData.score;
+        if (currentScore >= requireScore)
+        {
+            currentScore = 0;
+            toTrigger.Invoke();
+        }
+        if (score >= crimeData.theEvidenceComparedTo.Count)
         {
             crimeData.goodend.Invoke();
         }
@@ -169,6 +186,7 @@ public class SubmitArea : MonoBehaviour
             crimeData.badend.Invoke();
         }
         SuspectList.Instance.RemoveSuspect(crimeData.gameObject);
+        
     }
 
 
@@ -178,6 +196,7 @@ public class SubmitArea : MonoBehaviour
         //print(collision.name);
         if (collision.gameObject.GetComponent<PrintDocument>()&&!inArea.Contains(collision.GetComponent<RectTransform>()))
         {
+            //SoundMan.me.EvidenceDropSound(Vector3.zero);
             MaterialArea.GetComponent<MatArea>().inArea.Remove(collision.GetComponent<RectTransform>());
             collision.transform.SetParent(this.transform);
             //this two line add the key to the current crinimal

@@ -19,6 +19,7 @@ public class EmailManager : MonoBehaviour
     [SerializeField] List<TextAsset> HitchcockAllFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> XiaoWangAllFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> LeeAllFiles = new List<TextAsset>();
+    [SerializeField] List<TextAsset> FangZhouAllFiles = new List<TextAsset>();
 
     // INBOXES:
     [SerializeField] List<TextAsset> PlayerInboxFiles = new List<TextAsset>();
@@ -26,6 +27,7 @@ public class EmailManager : MonoBehaviour
     [SerializeField] List<TextAsset> HitchcockInboxFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> XiaoWangInboxFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> LeeInboxFiles = new List<TextAsset>();
+    [SerializeField] List<TextAsset> FangZhouInboxFiles = new List<TextAsset>();
 
 
     [SerializeField] List<Email> InboxEmails = new List<Email>();
@@ -75,7 +77,7 @@ public class EmailManager : MonoBehaviour
     public void SetSkeletonKey(string s)
     { skeletonKey = s; }
 
-    private enum EmailUsers { Player, Boss, Hitchcock, XiaoWang, Lee };
+    private enum EmailUsers { Player, Boss, Hitchcock, XiaoWang, Lee, FangZhou };
     [SerializeField] private EmailUsers currentUser;
 
     private void Awake()
@@ -113,6 +115,9 @@ public class EmailManager : MonoBehaviour
                 break;
             case "Lee":
                 userInbox = LeeInboxFiles;
+                break;
+            case "FangZhou":
+                userInbox = FangZhouInboxFiles;
                 break;
             default:
                 userInbox = new List<TextAsset>();
@@ -196,7 +201,7 @@ public class EmailManager : MonoBehaviour
             case "3":
                 statusTMP.color = doneStatusColor;
                 subjectTMP.margin = new Vector4(45, 0, 0, 0);
-                status = "Complete";
+                status = "Complete:";
                 break;
             default:
                 statusTMP.color = normalStatusColor;
@@ -238,6 +243,10 @@ public class EmailManager : MonoBehaviour
                 UserFiles = LeeAllFiles;
                 UserInbox = LeeInboxFiles;
                 break;
+            case "FangZhou":
+                UserFiles = FangZhouAllFiles;
+                UserInbox = FangZhouInboxFiles;
+                break;
             default:
                 UserFiles = new List<TextAsset>();
                 UserInbox = new List<TextAsset>();
@@ -246,7 +255,7 @@ public class EmailManager : MonoBehaviour
 
         if (emailCount < UserFiles.Count) // make sure there is a new email file available.
         {
-            if (emailCount < inboxCapacity) // check that there is room in the inbox
+            if (emailCount < inboxCapacity*10) // check that there is room in the inbox
             {
                 UserInbox.Add(UserFiles[emailCount]);
                 Email emailTemp = CreateEmailFromFile(UserFiles[emailCount]);
@@ -274,9 +283,12 @@ public class EmailManager : MonoBehaviour
     {
         SoundMan.me.EmailReceivedSound();
         PlayerInboxFiles.Add(textFile);
-        Email emailTemp = CreateEmailFromFile(textFile);
-        InboxEmails.Add(emailTemp);
-        emailCount++;
+        if (currentUser == EmailUsers.Player)
+        {
+            Email emailNew = CreateEmailFromFile(textFile);
+            InboxEmails.Add(emailNew);
+        }
+        //emailCount++;
     }
 
 
@@ -385,6 +397,10 @@ public class EmailManager : MonoBehaviour
             case "Lee":
                 currentUser = EmailUsers.Lee;
                 InitInbox("Lee");
+                break;
+            case "FangZhou":
+                currentUser = EmailUsers.FangZhou;
+                InitInbox("FangZhou");
                 break;
         }
     }
