@@ -26,6 +26,7 @@ public class ICAControl : MonoBehaviour
     public GameObject errorRequestText;
 
     public TMP_Dropdown outposts;
+    public TMP_Dropdown times;
     
     public FileWindow NewWindowPrefab;
     public GameObject ComputerPanel;
@@ -79,14 +80,14 @@ public class ICAControl : MonoBehaviour
             provinceWindow.SetActive(false);
             cityWindow.SetActive(false);
         }
-        public void mapInfo()
+        public void homePage()
         {
             aboutUsWindow.SetActive(false);
             nrcBorderWindow.SetActive(false);
-            mapWindow.SetActive(true);
+            mapWindow.SetActive(false);
             covidWindow.SetActive(false);
             joinWindow.SetActive(false);
-            homeWindow.SetActive(false);
+            homeWindow.SetActive(true);
             requestWindow.SetActive(false);
             loginWindow.SetActive(false);
             provinceWindow.SetActive(false);
@@ -150,10 +151,18 @@ public class ICAControl : MonoBehaviour
         }
         else if(outposts.value == 1)
         {
-            //do the thing
-            Debug.Log("printing");
-            OpenPassportWindows(Resources.LoadAll("Location3Passports", typeof(Sprite)));
-            errorRequestText.SetActive(false);
+            
+            if (times.value == 2)
+            {
+                //do the thing
+                Debug.Log("printing");
+                OpenPassportWindows(Resources.LoadAll("Location3Passports", typeof(Sprite)));
+                errorRequestText.SetActive(false);
+            }
+            else
+            {
+                errorRequestText.SetActive(true);
+            }
         }
         else
         {

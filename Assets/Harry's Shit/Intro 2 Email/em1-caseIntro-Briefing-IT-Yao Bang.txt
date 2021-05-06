@@ -1,0 +1,16 @@
+//Input information in between HASHTAG signs (Do not delete it!)
+
+#IT Department#
+#Yao Bang#
+#New Mission#
+#11/04#
+#1#
+#!#
+#Get used to switching email accounts#
+#Comrade Yao Bang,
+Your job might require investigating in another person's email account. Let's try to do that.
+BUT FIRST, USE THE PRINT BUTTON TO PRINT THIS EMAIL.
+Now, try to log into the below account:
+Account: test@gov.ch
+Password: test
+#

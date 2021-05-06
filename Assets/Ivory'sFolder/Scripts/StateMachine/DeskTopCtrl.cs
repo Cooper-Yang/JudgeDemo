@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DeskTopCtrl : MonoBehaviour
 {
@@ -75,7 +76,16 @@ public class DeskTopCtrl : MonoBehaviour
     void Start()
     {
         BoardHitbox.GetComponent<SpriteRenderer>().sortingOrder = 0;
-        ChangeState(DeskState);
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            CompCamSize = 130f;
+            ComputerCamPos = new Vector3(0, -5, -10);
+            ChangeState(ComputerState);
+        }
+        else
+        {
+            ChangeState(DeskState);
+        }
     }
 
     void Update()
