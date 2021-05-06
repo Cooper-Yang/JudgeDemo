@@ -38,6 +38,7 @@ public class DeskTopCtrl : MonoBehaviour
     public Button PC;
     public Button Board;
     public Button Note;
+    public Button Quit;
     public bool ImageAfterLerp = false;
     private bool isShown = false;
 
@@ -119,6 +120,7 @@ public class DeskTopCtrl : MonoBehaviour
             PC.gameObject.SetActive(true);
             Board.gameObject.SetActive(true);
             Note.gameObject.SetActive(true);
+            Quit.gameObject.SetActive(true);
             isShown = true;
 
         }
@@ -128,6 +130,7 @@ public class DeskTopCtrl : MonoBehaviour
             PC.gameObject.SetActive(false);
             Board.gameObject.SetActive(false);
             Note.gameObject.SetActive(false);
+            Quit.gameObject.SetActive(false);
             isShown = false;
         }
     }
