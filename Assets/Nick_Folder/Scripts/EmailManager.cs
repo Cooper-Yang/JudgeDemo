@@ -29,6 +29,13 @@ public class EmailManager : MonoBehaviour
     [SerializeField] List<TextAsset> LeeInboxFiles = new List<TextAsset>();
     [SerializeField] List<TextAsset> FangZhouInboxFiles = new List<TextAsset>();
 
+    // Inboxes - Read/Unread;
+    [SerializeField] List<bool> PlayerReadList = new List<bool>();
+    [SerializeField] List<bool> BossReadList = new List<bool>();
+    [SerializeField] List<bool> XiaoWangReadList = new List<bool>();
+    [SerializeField] List<bool> LeeReadList = new List<bool>();
+    [SerializeField] List<bool> FangZhouReadList = new List<bool>();
+
 
     [SerializeField] List<Email> InboxEmails = new List<Email>();
     [SerializeField] Email ActiveEmail;
@@ -82,6 +89,11 @@ public class EmailManager : MonoBehaviour
 
     private void Awake()
     {
+        PlayerReadList = InitReadLists(PlayerInboxFiles);
+        BossReadList = InitReadLists(BossInboxFiles);
+        XiaoWangReadList = InitReadLists(XiaoWangInboxFiles);
+        LeeReadList = InitReadLists(LeeInboxFiles);
+        FangZhouReadList = InitReadLists(FangZhouInboxFiles);
         InitInbox(currentUser.ToString());
     }
 
@@ -99,40 +111,70 @@ public class EmailManager : MonoBehaviour
     {
         UsernameText.text = username.ToString();
         List<TextAsset> userInbox;
+        List<bool> isRead = new List<bool>();
         switch (username)
         {
             case "Player":
                 userInbox = PlayerInboxFiles;
+                isRead = PlayerReadList;
                 break;
             case "Boss":
                 userInbox = BossInboxFiles;
+                isRead = BossReadList;
                 break;
             case "Hitchcock":
                 userInbox = HitchcockInboxFiles;
                 break;
             case "XiaoWang":
                 userInbox = XiaoWangInboxFiles;
+                isRead = XiaoWangReadList;
                 break;
             case "Lee":
                 userInbox = LeeInboxFiles;
+                isRead = LeeReadList;
                 break;
             case "FangZhou":
                 userInbox = FangZhouInboxFiles;
+                isRead = FangZhouReadList;
                 break;
             default:
                 userInbox = new List<TextAsset>();
+                isRead = PlayerReadList;
                 break;
         }
 
         // Create new Email object for each Email File in the inbox
+        int i = 0;
         foreach (TextAsset f in userInbox)
         {
-            InboxEmails.Add(CreateEmailFromFile(f));
+            /*bool hasbeenRead = false;
+            int spot = userInbox.IndexOf(f);
+            if (isRead != null && spot > -1)
+            {
+                hasbeenRead = isRead[i];
+            }
+            Debug.Log(hasbeenRead);*/
+
+
+            //InboxEmails.Add(CreateEmailFromFile(f, hasbeenRead));
+            InboxEmails.Add(CreateEmailFromFile(f, isRead[i]));
             emailCount++;
+            i++;
         }
     }
 
-    private Email CreateEmailFromFile(TextAsset file)
+    private List<bool> InitReadLists(List<TextAsset> files)
+    {
+        List<bool> bools = new List<bool>();
+        for (int i = 0; i < files.Count; i++)
+        {
+            bools.Add(false);
+        }
+
+        return bools;
+    }
+
+    private Email CreateEmailFromFile(TextAsset file, bool isRead)
     {
         string fullEmail = file.text;
 
@@ -157,7 +199,8 @@ public class EmailManager : MonoBehaviour
         email.SetAttachment(lines[11]);
         email.SetKey(lines[13]);
         email.SetBody(lines[15]);
-        email.SetUnread(true);
+        email.SetUnread(!isRead);
+        email.SetMyFile(file);
 
         return email;
     }
@@ -213,6 +256,41 @@ public class EmailManager : MonoBehaviour
 
         bodyTMP.text = email.GetBody();
 
+        // determine current user
+        List<TextAsset> thisList = new List<TextAsset>();
+        int spotInList = -1;
+        switch (currentUser)
+        {
+            case EmailUsers.Player:
+                spotInList = PlayerInboxFiles.IndexOf(email.GetMyFile());
+                PlayerReadList = UpdateReadList(spotInList, PlayerReadList);
+                break;
+            case EmailUsers.Boss:
+                spotInList = BossInboxFiles.IndexOf(email.GetMyFile());
+                PlayerReadList = UpdateReadList(spotInList, BossReadList);
+                break;
+            case EmailUsers.XiaoWang:
+                spotInList = XiaoWangInboxFiles.IndexOf(email.GetMyFile());
+                XiaoWangReadList = UpdateReadList(spotInList, XiaoWangReadList);
+                break;
+            case EmailUsers.Lee:
+                spotInList = LeeInboxFiles.IndexOf(email.GetMyFile());
+                LeeReadList = UpdateReadList(spotInList, LeeReadList);
+                break;
+            case EmailUsers.FangZhou:
+                spotInList = FangZhouInboxFiles.IndexOf(email.GetMyFile());
+                FangZhouReadList = UpdateReadList(spotInList, FangZhouReadList);
+                break;
+            default:
+                break;
+
+        }
+    }
+
+    private List<bool> UpdateReadList(int spot, List<bool> readList)
+    {
+        readList[spot] = true;
+        return readList;
     }
 
     public void CreateNewEmail()
@@ -258,7 +336,7 @@ public class EmailManager : MonoBehaviour
             if (emailCount < inboxCapacity*10) // check that there is room in the inbox
             {
                 UserInbox.Add(UserFiles[emailCount]);
-                Email emailTemp = CreateEmailFromFile(UserFiles[emailCount]);
+                Email emailTemp = CreateEmailFromFile(UserFiles[emailCount], false);
                 InboxEmails.Add(emailTemp);
                 //OrganizeInbox();
                 emailCount++;
@@ -285,8 +363,9 @@ public class EmailManager : MonoBehaviour
         PlayerInboxFiles.Add(textFile);
         if (currentUser == EmailUsers.Player)
         {
-            Email emailNew = CreateEmailFromFile(textFile);
+            Email emailNew = CreateEmailFromFile(textFile, false);
             InboxEmails.Add(emailNew);
+            PlayerReadList.Add(false);
         }
         //emailCount++;
     }
