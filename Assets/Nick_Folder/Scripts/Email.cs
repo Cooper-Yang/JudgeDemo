@@ -25,6 +25,7 @@ public class Email : MonoBehaviour
     [SerializeField] string[] body;
     [SerializeField] bool hasAttachment;
     [SerializeField] string AttachmentPath;
+    TextAsset myFile;
 
     public TextMeshProUGUI tempArea;
 
@@ -61,7 +62,6 @@ public class Email : MonoBehaviour
     private void Start()
     {
         DisplayEmailInfo();
-        background.color = unreadColor;
     }
 
     private void DisplayEmailInfo()
@@ -74,6 +74,12 @@ public class Email : MonoBehaviour
         // CONTACT PICTURE
         portrait_Image.sprite = portrait_sprite;
         background.sprite = blankSquare;
+
+        if (isUnread)
+            background.color = unreadColor;
+        else
+            background.color = readColor;
+        
 
         SetStatusColor();
     }
@@ -115,6 +121,7 @@ public class Email : MonoBehaviour
             AttachmentPath += path;
         }
     }
+    public void SetMyFile(TextAsset t) { myFile = t; }
 
     // Getters
     public Sprite GetPortrait() { return portrait_sprite; }
@@ -126,6 +133,7 @@ public class Email : MonoBehaviour
     public string GetBody() { return bodyString; }
     public bool HasAttachment() { return hasAttachment; }
     public string GetAttachmentPath() { return AttachmentPath; }
+    public TextAsset GetMyFile() { return myFile; }
 
     // Evidence Key
     private string evidenceKey;
