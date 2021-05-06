@@ -78,6 +78,7 @@ public class DeskTopCtrl : MonoBehaviour
         PC.gameObject.SetActive(false);
         Board.gameObject.SetActive(false);
         Note.gameObject.SetActive(false);
+        Quit.gameObject.SetActive(false);
         isShown = false;
     }
     
