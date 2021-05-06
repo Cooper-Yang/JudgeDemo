@@ -238,6 +238,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InnerButtons
       objectReference: {fileID: 0}
+    - target: {fileID: 3023908624739704046, guid: 1f736259b2ce23a438aa856b8acb6f75,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3023908624739704047, guid: 1f736259b2ce23a438aa856b8acb6f75,
         type: 3}
       propertyPath: m_Pivot.x
@@ -386,6 +391,11 @@ MonoBehaviour:
   evidences: []
   MaterialArea: {fileID: 0}
   dropDown: {fileID: 111806431}
+  requireScore: 3
+  currentScore: 0
+  toTrigger:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &4649429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -746,6 +756,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &14045110
 RectTransform:
   m_ObjectHideFlags: 0
@@ -831,7 +842,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 0, y: -30}
   m_Constraint: 1
   m_ConstraintCount: 3
 --- !u!1 &17601043
@@ -1949,7 +1960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &50809457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3196,7 +3207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: mapInfo
+      value: homePage
       objectReference: {fileID: 0}
     - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -4209,7 +4220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: mapInfo
+      value: homePage
       objectReference: {fileID: 0}
     - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -4428,7 +4439,7 @@ MonoBehaviour:
   m_text: "Yan is the province surrounding Ti King, located in the North East Chiu,
     where Liang Gang and Xing An is.\r"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf1f3b2794b3aa149bf199d97231c53f, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4492,7 +4503,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &138241384
@@ -11455,9 +11466,9 @@ RectTransform:
   m_Father: {fileID: 1927487191}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 60, y: -10}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236325480
@@ -19414,6 +19425,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 1
 --- !u!1 &386587752
 GameObject:
   m_ObjectHideFlags: 0
@@ -24041,7 +24053,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf1f3b2794b3aa149bf199d97231c53f, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -24105,7 +24117,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &538963837
@@ -25402,7 +25414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &593505656
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25817,7 +25829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: mapInfo
+      value: homePage
       objectReference: {fileID: 0}
     - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -26969,7 +26981,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dian is located in the South West Chiu, where Fatu and Bian Chui is.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf1f3b2794b3aa149bf199d97231c53f, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -27033,7 +27045,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &625581578
@@ -32097,8 +32109,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: None
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf1f3b2794b3aa149bf199d97231c53f, type: 2}
+  m_sharedMaterial: {fileID: 7085390481997581737, guid: bf1f3b2794b3aa149bf199d97231c53f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -39623,7 +39636,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Min is located in the South Chiu, where Chitu, Yawtu, and Kong Town is.\r"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf1f3b2794b3aa149bf199d97231c53f, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -39687,7 +39700,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &831468311
@@ -40865,7 +40878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 94, y: -23}
+  m_AnchoredPosition: {x: 94, y: -59.3}
   m_SizeDelta: {x: 40, y: -83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &865896102
@@ -40901,8 +40914,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: No Personnel Found...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf1f3b2794b3aa149bf199d97231c53f, type: 2}
+  m_sharedMaterial: {fileID: 7085390481997581737, guid: bf1f3b2794b3aa149bf199d97231c53f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -43190,7 +43204,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.98738, y: 107.501945}
+  m_AnchoredPosition: {x: -79.987434, y: 107.501945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &943935870
@@ -43658,6 +43672,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 1
 --- !u!1 &969247777
 GameObject:
   m_ObjectHideFlags: 0
@@ -44115,7 +44130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -150}
+  m_AnchoredPosition: {x: 250, y: -120}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &986466308
@@ -45307,7 +45322,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Click to Enter the Custom Database
+  m_text: Click here to Enter the Custom Database
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bf1f3b2794b3aa149bf199d97231c53f, type: 2}
   m_sharedMaterial: {fileID: 7085390481997581737, guid: bf1f3b2794b3aa149bf199d97231c53f,
@@ -45317,8 +45332,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4284377759
-  m_fontColor: {r: 0.6226415, g: 0.4150549, b: 0.36712354, a: 1}
+    rgba: 4279566591
+  m_fontColor: {r: 1, g: 0, b: 0.08203983, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -45464,6 +45479,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1021654660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45507,7 +45523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1023276561
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45556,6 +45572,7 @@ MonoBehaviour:
   errorText: {fileID: 918799346}
   errorRequestText: {fileID: 865896100}
   outposts: {fileID: 1274433519}
+  times: {fileID: 1082213270}
   NewWindowPrefab: {fileID: 836217817, guid: 313e5db4e571e3f428acce1e99bf0c3b, type: 3}
   ComputerPanel: {fileID: 1547384001}
   provOne: {fileID: 1963286480}
@@ -46712,7 +46729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -90, y: -50}
+  m_AnchoredPosition: {x: -90, y: -64.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1082213270
@@ -46853,6 +46870,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1082673306
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47452,6 +47470,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1114361517
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49553,6 +49572,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 1
 --- !u!1 &1189142629
 GameObject:
   m_ObjectHideFlags: 0
@@ -51423,7 +51443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -90, y: 9}
+  m_AnchoredPosition: {x: -90, y: -7.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1274433521
@@ -54269,7 +54289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -150}
+  m_AnchoredPosition: {x: 50, y: -120}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1376701715
@@ -55035,36 +55055,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 50809457}
     m_Modifications:
-    - target: {fileID: 3023908623745384080, guid: 1f736259b2ce23a438aa856b8acb6f75,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023908623745384080, guid: 1f736259b2ce23a438aa856b8acb6f75,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023908623745384080, guid: 1f736259b2ce23a438aa856b8acb6f75,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023908623745384080, guid: 1f736259b2ce23a438aa856b8acb6f75,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023908623745384080, guid: 1f736259b2ce23a438aa856b8acb6f75,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 205
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023908623745384080, guid: 1f736259b2ce23a438aa856b8acb6f75,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25
-      objectReference: {fileID: 0}
     - target: {fileID: 3023908623745384081, guid: 1f736259b2ce23a438aa856b8acb6f75,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -55093,7 +55083,7 @@ PrefabInstance:
     - target: {fileID: 3023908623836456492, guid: 1f736259b2ce23a438aa856b8acb6f75,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 329.89
+      value: 142.555
       objectReference: {fileID: 0}
     - target: {fileID: 3023908623836456492, guid: 1f736259b2ce23a438aa856b8acb6f75,
         type: 3}
@@ -55128,7 +55118,7 @@ PrefabInstance:
     - target: {fileID: 3023908624482156384, guid: 1f736259b2ce23a438aa856b8acb6f75,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 80.11
+      value: 267.445
       objectReference: {fileID: 0}
     - target: {fileID: 3023908624482156384, guid: 1f736259b2ce23a438aa856b8acb6f75,
         type: 3}
@@ -56796,7 +56786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: mapInfo
+      value: homePage
       objectReference: {fileID: 0}
     - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -58372,7 +58362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: mapInfo
+      value: homePage
       objectReference: {fileID: 0}
     - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -59591,8 +59581,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: None
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf1f3b2794b3aa149bf199d97231c53f, type: 2}
+  m_sharedMaterial: {fileID: 7085390481997581737, guid: bf1f3b2794b3aa149bf199d97231c53f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -64831,7 +64822,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -11, y: 0}
+  m_AnchoredPosition: {x: -1.5999985, y: -30.099998}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1513179499
@@ -64855,15 +64846,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: Request
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf1f3b2794b3aa149bf199d97231c53f, type: 2}
+  m_sharedMaterial: {fileID: 7085390481997581737, guid: bf1f3b2794b3aa149bf199d97231c53f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -64886,8 +64878,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 4
-  m_HorizontalAlignment: 2
+  m_fontStyle: 20
+  m_HorizontalAlignment: 16
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -64916,7 +64908,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 3.9301329, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -67676,7 +67668,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Which Outpost are you requesting for:'
+  m_text: Choose the correct location and time to request copies of the passports.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bf1f3b2794b3aa149bf199d97231c53f, type: 2}
   m_sharedMaterial: {fileID: 7085390481997581737, guid: bf1f3b2794b3aa149bf199d97231c53f,
@@ -67761,36 +67753,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1496945776}
     m_Modifications:
-    - target: {fileID: 3023908623745384080, guid: 1f736259b2ce23a438aa856b8acb6f75,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023908623745384080, guid: 1f736259b2ce23a438aa856b8acb6f75,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023908623745384080, guid: 1f736259b2ce23a438aa856b8acb6f75,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023908623745384080, guid: 1f736259b2ce23a438aa856b8acb6f75,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023908623745384080, guid: 1f736259b2ce23a438aa856b8acb6f75,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 205
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023908623745384080, guid: 1f736259b2ce23a438aa856b8acb6f75,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25
-      objectReference: {fileID: 0}
     - target: {fileID: 3023908623745384081, guid: 1f736259b2ce23a438aa856b8acb6f75,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -67819,7 +67781,7 @@ PrefabInstance:
     - target: {fileID: 3023908623836456492, guid: 1f736259b2ce23a438aa856b8acb6f75,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 329.89
+      value: 142.555
       objectReference: {fileID: 0}
     - target: {fileID: 3023908623836456492, guid: 1f736259b2ce23a438aa856b8acb6f75,
         type: 3}
@@ -67854,7 +67816,7 @@ PrefabInstance:
     - target: {fileID: 3023908624482156384, guid: 1f736259b2ce23a438aa856b8acb6f75,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 80.11
+      value: 267.445
       objectReference: {fileID: 0}
     - target: {fileID: 3023908624482156384, guid: 1f736259b2ce23a438aa856b8acb6f75,
         type: 3}
@@ -69231,7 +69193,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1632979907}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.49999982
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -69422,7 +69384,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -150}
+  m_AnchoredPosition: {x: 150, y: -120}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639599724
@@ -69574,7 +69536,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Cunnan is located in the South East Chiu, where Motu is.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf1f3b2794b3aa149bf199d97231c53f, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -69638,7 +69600,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1643410506
@@ -70905,7 +70867,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf1f3b2794b3aa149bf199d97231c53f, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -70969,7 +70931,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1694379187
@@ -73533,29 +73495,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 593505656}
     m_Modifications:
     - target: {fileID: 8480827390968192, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480827390968192, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480827390968192, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1023276562}
-    - target: {fileID: 8480827390968192, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480827390968192, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: borderInfo
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480827390968192, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8480827390968193, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -73581,29 +73523,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8480827945671296, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480827945671296, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480827945671296, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1023276562}
-    - target: {fileID: 8480827945671296, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480827945671296, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: covidInfo
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480827945671296, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8480827945671297, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -73629,29 +73551,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8480828120891964, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480828120891964, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480828120891964, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1023276562}
-    - target: {fileID: 8480828120891964, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480828120891964, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: aboutUS
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480828120891964, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8480828120891965, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -73765,29 +73667,9 @@ PrefabInstance:
       value: Buttons
       objectReference: {fileID: 0}
     - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1023276562}
-    - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: mapInfo
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480829118507174, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8480829118507175, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -73813,29 +73695,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8480829368998768, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480829368998768, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480829368998768, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1023276562}
-    - target: {fileID: 8480829368998768, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480829368998768, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: joinUs
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480829368998768, guid: 5d37663167f129d4193140db0b12a702, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8480829368998769, guid: 5d37663167f129d4193140db0b12a702, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -74248,7 +74110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 90, y: 8.999995}
+  m_AnchoredPosition: {x: 90, y: -5.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814382571
@@ -74271,7 +74133,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.1496529, g: 0.28888115, b: 0.5566038, a: 1}
+    m_NormalColor: {r: 1, g: 0.113484085, b: 0, a: 1}
     m_HighlightedColor: {r: 0, g: 0.090614244, b: 0.41509432, a: 1}
     m_PressedColor: {r: 0.3301887, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
@@ -74710,6 +74572,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 1
 --- !u!1 &1843960827
 GameObject:
   m_ObjectHideFlags: 0
@@ -74890,6 +74753,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1854321538
 RectTransform:
   m_ObjectHideFlags: 0
@@ -75486,6 +75350,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1871793233
 RectTransform:
   m_ObjectHideFlags: 0
