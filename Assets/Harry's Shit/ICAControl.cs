@@ -166,7 +166,17 @@ public class ICAControl : MonoBehaviour
         }
         else
         {
-            errorRequestText.SetActive(true);
+            if (times.value == 1)
+            {
+                //do the thing
+                Debug.Log("printing");
+                OpenPassportWindows(Resources.LoadAll("Location2Passports", typeof(Sprite)));
+                errorRequestText.SetActive(false);
+            }
+            else
+            {
+                errorRequestText.SetActive(true);
+            }
         }
     }
     
