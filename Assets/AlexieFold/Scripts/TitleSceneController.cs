@@ -81,7 +81,7 @@ public class TitleSceneController : MonoBehaviour
         warning.text = "";
     }
 
-    IEnumerator PlayTitle(float fadeSpeed = 0.2f)
+    IEnumerator PlayTitle(float fadeSpeed = 0.4f)
     {
         Color objectColor = blackOutSqure.GetComponent<Image>().color;
         Color titleColor = title.color;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DeskTopCtrl : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class DeskTopCtrl : MonoBehaviour
     public Button PC;
     public Button Board;
     public Button Note;
+    public Button Quit;
     public bool ImageAfterLerp = false;
     private bool isShown = false;
 
@@ -75,7 +77,16 @@ public class DeskTopCtrl : MonoBehaviour
     void Start()
     {
         BoardHitbox.GetComponent<SpriteRenderer>().sortingOrder = 0;
-        ChangeState(DeskState);
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            CompCamSize = 130f;
+            ComputerCamPos = new Vector3(0, -5, -10);
+            ChangeState(ComputerState);
+        }
+        else
+        {
+            ChangeState(DeskState);
+        }
     }
 
     void Update()
@@ -109,6 +120,7 @@ public class DeskTopCtrl : MonoBehaviour
             PC.gameObject.SetActive(true);
             Board.gameObject.SetActive(true);
             Note.gameObject.SetActive(true);
+            Quit.gameObject.SetActive(true);
             isShown = true;
 
         }
@@ -118,6 +130,7 @@ public class DeskTopCtrl : MonoBehaviour
             PC.gameObject.SetActive(false);
             Board.gameObject.SetActive(false);
             Note.gameObject.SetActive(false);
+            Quit.gameObject.SetActive(false);
             isShown = false;
         }
     }
