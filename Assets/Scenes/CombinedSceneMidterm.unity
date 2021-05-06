@@ -650,7 +650,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &33502977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1151,7 +1150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &74853403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1850,7 +1848,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &185594970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1944,6 +1941,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theEvidenceComparedTo: []
   theEvidenceContained: []
+  myMaterials: []
+  goodend:
+    m_PersistentCalls:
+      m_Calls: []
+  badend:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &185620034
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2737,6 +2741,8 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 478bf9ab98dd69446bf29b17d7f32358, type: 3}
   - {fileID: 4900000, guid: 846d3b7bf09907447985d82496c461f1, type: 3}
   XiaoWangAllFiles: []
+  LeeAllFiles: []
+  FangZhouAllFiles: []
   PlayerInboxFiles:
   - {fileID: 4900000, guid: 638bc80570742824da38d7214651d358, type: 3}
   BossInboxFiles:
@@ -2752,6 +2758,8 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 41cf80c2dd116c84ebb4525c9445c430, type: 3}
   - {fileID: 4900000, guid: 16dcc2e851861ad48bf0d263a6e44493, type: 3}
   - {fileID: 4900000, guid: e2cf5e2e6a2f72e4fb6ea77207b81f20, type: 3}
+  LeeInboxFiles: []
+  FangZhouInboxFiles: []
   InboxEmails: []
   ActiveEmail: {fileID: 5838394530521102446, guid: 0482fdbd4d079e945a68b16a2d981b2f,
     type: 3}
@@ -2855,7 +2863,7 @@ MonoBehaviour:
   PrinterSceneObject: {fileID: 1305222302}
   PrintDocumentPrefab: {fileID: 236581181047767870, guid: 6248fd41ff651b345b45c8865991cd9f,
     type: 3}
-  canvas: {fileID: 1064739303}
+  parent: {fileID: 0}
 --- !u!114 &346007971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3235,7 +3243,10 @@ MonoBehaviour:
   MonitorHitbox: {fileID: 1129288917}
   BoardHitbox: {fileID: 392573182}
   NotebookHitbox: {fileID: 1506340447}
-  Back: {fileID: 0}
+  Desk: {fileID: 0}
+  PC: {fileID: 0}
+  Board: {fileID: 0}
+  Note: {fileID: 0}
   ImageAfterLerp: 0
 --- !u!212 &369962879
 SpriteRenderer:
@@ -4558,9 +4569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99c8672a14b4cf48b9b0d28a56d9e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentToReturnTo: {fileID: 0}
-  placeHolderParent: {fileID: 0}
-  theOriginParent: {fileID: 0}
 --- !u!1 &489573276
 GameObject:
   m_ObjectHideFlags: 0
@@ -6221,9 +6229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99c8672a14b4cf48b9b0d28a56d9e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentToReturnTo: {fileID: 0}
-  placeHolderParent: {fileID: 0}
-  theOriginParent: {fileID: 0}
 --- !u!1 &644001208
 GameObject:
   m_ObjectHideFlags: 0
@@ -8855,7 +8860,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &876629472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8969,7 +8973,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &883841394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9834,7 +9837,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &940665774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10760,6 +10762,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theEvidenceComparedTo: []
   theEvidenceContained: []
+  myMaterials: []
+  goodend:
+    m_PersistentCalls:
+      m_Calls: []
+  badend:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &1021654660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11483,6 +11492,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theEvidenceComparedTo: []
   theEvidenceContained: []
+  myMaterials: []
+  goodend:
+    m_PersistentCalls:
+      m_Calls: []
+  badend:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &1082673306
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12511,7 +12527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &1174003940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14405,7 +14420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &1306499007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15492,7 +15506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &1435538112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15735,7 +15748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &1443784704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16039,6 +16051,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theEvidenceComparedTo: []
   theEvidenceContained: []
+  myMaterials: []
+  goodend:
+    m_PersistentCalls:
+      m_Calls: []
+  badend:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &1469348883
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18827,7 +18846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &1704860791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19785,7 +19803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &1865201064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19879,6 +19896,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theEvidenceComparedTo: []
   theEvidenceContained: []
+  myMaterials: []
+  goodend:
+    m_PersistentCalls:
+      m_Calls: []
+  badend:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &1871793233
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20849,7 +20873,10 @@ MonoBehaviour:
   MonitorHitbox: {fileID: 587575930}
   BoardHitbox: {fileID: 892598487}
   NotebookHitbox: {fileID: 582074417}
-  Back: {fileID: 1408212557}
+  Desk: {fileID: 0}
+  PC: {fileID: 0}
+  Board: {fileID: 0}
+  Note: {fileID: 0}
   ImageAfterLerp: 0
 --- !u!212 &1941114057
 SpriteRenderer:
@@ -20973,7 +21000,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &1964162854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21484,7 +21510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &1985535358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21598,7 +21623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d0f302d03343649aecc8f0189d181d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceKeyword: {fileID: 0}
 --- !u!114 &1992312650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21975,6 +21999,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theEvidenceComparedTo: []
   theEvidenceContained: []
+  myMaterials: []
+  goodend:
+    m_PersistentCalls:
+      m_Calls: []
+  badend:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &2025910653
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22854,6 +22885,7 @@ MonoBehaviour:
   book: {fileID: 8300000, guid: f8861856d0c1f1f4ca236545268246da, type: 3}
   computer: {fileID: 8300000, guid: 5870f667c8dbb044684041d90dad5e54, type: 3}
   newspaper: {fileID: 8300000, guid: 67a3118b48b392e418f3fb5805db9360, type: 3}
+  evidenceOnDrop: {fileID: 0}
   ambience: {fileID: 8300000, guid: ab137bc274f114f4fa1d6a48775f868d, type: 3}
   printing: {fileID: 8300000, guid: 1ac128dcd92cc8d4e976da2590322e8e, type: 3}
   bookTurnPage: {fileID: 8300000, guid: f8861856d0c1f1f4ca236545268246da, type: 3}
