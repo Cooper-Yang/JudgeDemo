@@ -17,7 +17,7 @@ public class BlackFadeOut : MonoBehaviour
         
     }
 
-    IEnumerator FadeOut(float fadeSpeed = 0.4f)
+    IEnumerator FadeOut(float fadeSpeed = 0.5f)
     {
         Color objectColor = blackOutSqure.GetComponent<Image>().color;
         float fadeAmount;
