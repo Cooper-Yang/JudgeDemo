@@ -81,7 +81,8 @@ public class ManualController : MonoBehaviour
             else
                 pgdw.gameObject.SetActive(true);
         }
-        leftPg.text = LeftList[pageNum];
+        if(pageNum < LeftList.Count)
+            leftPg.text = LeftList[pageNum];
     }
 
     public void BackToCata()
@@ -117,13 +118,13 @@ public class ManualController : MonoBehaviour
     }
     public void Computer()
     {
-        pageNum = 4;
+        pageNum = 3;
         clueText = index_3.GetComponentInChildren<ClueText>();
         clueText.changeColor();
     }
     public void Board()
     {
-        pageNum = 6;
+        pageNum = 4;
         clueText = index_4.GetComponentInChildren<ClueText>();
         clueText.changeColor();
     }

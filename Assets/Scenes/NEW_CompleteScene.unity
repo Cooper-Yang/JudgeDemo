@@ -18567,6 +18567,11 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 525c1e542a95187418f752a80af86080, type: 3}
   FangZhouInboxFiles:
   - {fileID: 4900000, guid: 7291ba8a2bb7f7c429467f104729618d, type: 3}
+  PlayerReadList: 
+  BossReadList: 
+  XiaoWangReadList: 
+  LeeReadList: 
+  FangZhouReadList: 
   InboxEmails: []
   ActiveEmail: {fileID: 5838394530521102446, guid: 0482fdbd4d079e945a68b16a2d981b2f,
     type: 3}
@@ -23591,7 +23596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &533837893
 MonoBehaviour:
   m_ObjectHideFlags: 0
