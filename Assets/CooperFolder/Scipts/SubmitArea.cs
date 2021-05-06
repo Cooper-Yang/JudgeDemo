@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 using UnityEditor;
 
@@ -12,6 +13,12 @@ public class SubmitArea : MonoBehaviour
     public GameObject MaterialArea;
 
     public TMP_Dropdown dropDown;
+    [SerializeField]
+    int requireScore = 3;
+    [SerializeField]
+    int currentScore = 0;
+    [SerializeField]
+    UnityEvent toTrigger;
     //public List<GameObject> suspectList;
 
     // Start is called before the first frame update
@@ -164,6 +171,12 @@ public class SubmitArea : MonoBehaviour
         }
         Debug.Log(score + " evidences matches !");
         inArea.Clear();
+        currentScore += crimeData.score;
+        if (currentScore >= requireScore)
+        {
+            currentScore = 0;
+            toTrigger.Invoke();
+        }
         if (score >= crimeData.theEvidenceComparedTo.Count)
         {
             crimeData.goodend.Invoke();
