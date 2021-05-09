@@ -84,7 +84,7 @@ public class EmailManager : MonoBehaviour
     public void SetSkeletonKey(string s)
     { skeletonKey = s; }
 
-    private enum EmailUsers { Player, Boss, Hitchcock, XiaoWang, Lee, FangZhou };
+    private enum EmailUsers { Yao, Boss, Hitchcock, XiaoWang, Lee, FangZhou };
     [SerializeField] private EmailUsers currentUser;
 
     private void Awake()
@@ -114,7 +114,7 @@ public class EmailManager : MonoBehaviour
         List<bool> isRead = new List<bool>();
         switch (username)
         {
-            case "Player":
+            case "Yao":
                 userInbox = PlayerInboxFiles;
                 isRead = PlayerReadList;
                 break;
@@ -261,7 +261,7 @@ public class EmailManager : MonoBehaviour
         int spotInList = -1;
         switch (currentUser)
         {
-            case EmailUsers.Player:
+            case EmailUsers.Yao:
                 spotInList = PlayerInboxFiles.IndexOf(email.GetMyFile());
                 PlayerReadList = UpdateReadList(spotInList, PlayerReadList);
                 break;
@@ -361,7 +361,7 @@ public class EmailManager : MonoBehaviour
     {
         SoundMan.me.EmailReceivedSound();
         PlayerInboxFiles.Add(textFile);
-        if (currentUser == EmailUsers.Player)
+        if (currentUser == EmailUsers.Yao)
         {
             Email emailNew = CreateEmailFromFile(textFile, false);
             InboxEmails.Add(emailNew);
@@ -457,11 +457,11 @@ public class EmailManager : MonoBehaviour
 
         switch (username)
         {
-            case "Player":
-                currentUser = EmailUsers.Player;
-                InitInbox("Player");
+            case "yaobang@gov.ch":
+                currentUser = EmailUsers.Yao;
+                InitInbox("Yao");
                 break;
-            case "Boss":
+            case "scsun@gov.ch":
                 currentUser = EmailUsers.Boss;
                 InitInbox("Boss");
                 break;
@@ -473,11 +473,11 @@ public class EmailManager : MonoBehaviour
                 currentUser = EmailUsers.XiaoWang;
                 InitInbox("XiaoWang");
                 break;
-            case "Lee":
+            case "sclee@gov.ch":
                 currentUser = EmailUsers.Lee;
                 InitInbox("Lee");
                 break;
-            case "FangZhou":
+            case "fangzhou@web.com":
                 currentUser = EmailUsers.FangZhou;
                 InitInbox("FangZhou");
                 break;

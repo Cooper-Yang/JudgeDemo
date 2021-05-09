@@ -86,7 +86,8 @@ public class FinancialControl : MonoBehaviour
         // Search through the listIDs using the Input word
         foreach (string[] arr in listIDs)
         {
-            if (input.ToLower() == arr[0].ToLower())
+            string search = input.ToLower();
+            if (arr[0].ToLower().Contains(search) && search.Length > 2)
             {
                 currentAccount = arr;
                 return arr;
