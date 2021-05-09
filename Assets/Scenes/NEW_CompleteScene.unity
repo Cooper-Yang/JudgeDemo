@@ -4406,7 +4406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 517, y: -202}
+  m_AnchoredPosition: {x: 550, y: 190}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &123789185
@@ -19255,12 +19255,12 @@ MonoBehaviour:
   usernameInput: {fileID: 1538405958}
   passwordInput: {fileID: 1491820135}
   usernameArray:
-  - Player
-  - Boss
+  - yaobang@gov.ch
+  - scsun@gov.ch
   - Hitchcock
   - xwang8@gov.ch
-  - Lee
-  - FangZhou
+  - sclee@gov.ch
+  - fangzhou@web.com
   passwordArray:
   - password
   - password
@@ -19642,7 +19642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 711.08984, y: 148.68709}
+  m_AnchoredPosition: {x: 628, y: 128}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359113925
@@ -57980,7 +57980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 506, y: 166.7001}
+  m_AnchoredPosition: {x: 458, y: 129}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1376617068
@@ -83474,7 +83474,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<color=#012456>\nEMAIL LOGIN:\n\nUsername: \"Player\"\n\nPassword:   \"password\"\t\n</color>\n\n"
+  m_text: "<color=#012456>\nEMAIL LOGIN:\n\nUsername: \"yaobang@gov.ch\"\n\nPassword:  
+    \"password\"\t\n</color>\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d0a5ea595fa917428721e6cd7a4fd19, type: 2}
   m_sharedMaterial: {fileID: 6084372786025151925, guid: 9d0a5ea595fa917428721e6cd7a4fd19,
@@ -83502,8 +83503,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 7
+  m_fontSizeBase: 7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
