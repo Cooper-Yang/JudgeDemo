@@ -11,6 +11,7 @@ public class SubmitArea : MonoBehaviour
     public List<RectTransform> inArea = new List<RectTransform>();
     public List<string> evidences = new List<string>();
     public GameObject MaterialArea;
+    public GameObject Button;
 
     public TMP_Dropdown dropDown;
     [SerializeField]
@@ -205,5 +206,10 @@ public class SubmitArea : MonoBehaviour
             //this line add the gameobject to the current crinimals
             SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>().myMaterials.Add(collision.gameObject);
         }
+    }
+
+    public void endButton()
+    {
+        Button.SetActive(true);
     }
 }
