@@ -42,6 +42,7 @@ public class DeskTopCtrl : MonoBehaviour
     public bool ImageAfterLerp = false;
     private bool isShown = false;
 
+
     private StateBase currentState;
 
     public StateBase CurrentState
@@ -72,6 +73,13 @@ public class DeskTopCtrl : MonoBehaviour
         {
             currentState.EnterState(this);
         }
+
+        Desk.gameObject.SetActive(false);
+        PC.gameObject.SetActive(false);
+        Board.gameObject.SetActive(false);
+        Note.gameObject.SetActive(false);
+        Quit.gameObject.SetActive(false);
+        isShown = false;
     }
     
     void Start()
@@ -91,30 +99,36 @@ public class DeskTopCtrl : MonoBehaviour
 
     void Update()
     {
+
         currentState.StayOnState(this);
     }
 
     public void ReturnDeskTop()
     {
+
         ChangeState(DeskState);
     }
 
     public void ChangeToPC()
     {
+
         ChangeState(ComputerState);
     }
     public void ChangeToBoard()
     {
+
         ChangeState(BulboardState);
     }
     public void ChangeToNote()
     {
+
         ChangeState(NotebookState);
+
     }
 
     public void ShowIcon()
     {
-        if(!isShown)
+        if (!isShown)
         {
             Desk.gameObject.SetActive(true);
             PC.gameObject.SetActive(true);
@@ -123,8 +137,9 @@ public class DeskTopCtrl : MonoBehaviour
             Quit.gameObject.SetActive(true);
             isShown = true;
 
+
         }
-        else if(isShown)
+        else if (isShown)
         {
             Desk.gameObject.SetActive(false);
             PC.gameObject.SetActive(false);
@@ -134,6 +149,9 @@ public class DeskTopCtrl : MonoBehaviour
             isShown = false;
         }
     }
+
+
+
 
     public IEnumerator LerpCamPos(Vector3 LerpGoal, float LerpCamSize)
     {

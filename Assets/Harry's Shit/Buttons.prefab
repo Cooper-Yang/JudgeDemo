@@ -590,7 +590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Covid-19
+  m_text: 'Covid-11
 
     Precaution'
   m_isRightToLeft: 0
