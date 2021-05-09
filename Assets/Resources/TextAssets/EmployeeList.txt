@@ -1,7 +1,5 @@
-NOT IMPLMENTED PROPERLY YET...
-lastname,firstname,section,contactinfo
-lastname,firstname,section,contactinfo
-lastname,firstname,section,contactinfo
-Xiao,Xin,Target,xinxiao@gov.ch
-lastname,firstname,section,contactinfo
-...NOT NECESSARY FOR THIS CASE
+Yao Bang, Justice Committee, yaobang@gov.ch
+Sector Chief Sun, Justice Comm., scsun@gov.ch
+Sector Chief Lee, Harmony Comm., sclee@gov.ch
+Xiao Wang, Sparrow Sublegion,    xwang8@gov.ch
+Fang Zhou, Civilian , fangzhou@web.com

@@ -98,10 +98,10 @@ public class Interpreter : MonoBehaviour
 
             case "help":
                 Output("** Basic Terminal Commands ****", colors["purple"]);
-                OutputSplitLine("Info", "Description of current directory.");
+                //OutputSplitLine("Info", "Description of current directory.");
                 OutputSplitLine("List", "Lists all tasks in current directory.");
-                OutputSplitLine("Directory", "Lists all accessible directories.");
-                OutputSplitLine("Access [directory]", "Access a directory.");
+                //OutputSplitLine("Directory", "Lists all accessible directories.");
+                OutputSplitLine("Access", "Access a directory.");
                 OutputSplitLine("Print", "Prints the current screen.");
                 OutputSplitLine("Back", "Return to the previous directory.");
                 OutputSplitLine("Home", "Return to original \"Home\" directory.");
@@ -202,7 +202,7 @@ public class Interpreter : MonoBehaviour
                                 control.ChangeDirectory(TerminalControl.Directory.EMP_SEARCH);
                                 control.AddDirectoryLine(control.GetCurrentDirectory(), "<color=#C19C00><Employee Look-Up>:</color>");
                                 Output("Type \"All\" for complete list of government employees.", colors["yellow"]);
-                                Output("Or enter \"Key\" followed by a known government ID.", colors["yellow"]);
+                                //Output("Or enter \"Key\" followed by a known government ID.", colors["yellow"]);
                                 break;
 
                             case "key":
@@ -401,8 +401,8 @@ public class Interpreter : MonoBehaviour
         control.ChangeDirectory(TerminalControl.Directory.DIR_ACCESS);
         OutputSplitLine(">#<", "", " Select Directory to Access:", colors["yellow"], colors["purple"]);
         OutputSplitLine(" 1", " - ", "Employee Personnel Database", colors["yellow"], colors["light"]);
-        OutputSplitLine(" 2", " - ", "Customs and Border Protection", colors["yellow"], colors["light"]);
-        OutputSplitLine(" 3", " - ", "Investigation Archives", colors["yellow"], colors["light"]);
+        OutputSplitLine(" 2", " - ", "Customs and Border Protection [redacted]", colors["yellow"], colors["red"]);
+        OutputSplitLine(" 3", " - ", "Investigation Archives [redacted]", colors["yellow"], colors["red"]);
     }
 
     private void WriteDirectoryInfo(TerminalControl.Directory dir)
