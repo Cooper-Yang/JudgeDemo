@@ -4,13 +4,13 @@
 #Yao Bang#
 #Introducing ICA Database#
 #11/04#
-#1#
+#0#
 #!#
 #Intro to ICA#
 #Comrade Yao Bang,
-You might be confused by the ICA Database. It's used for getting passport records from the borders.
+We need you to use the ICA database on your computer to get passport records from the customs office.
 
-Try it yourself, our operative just went to Xing An this morning, request a record for the passports of people who passed Xing An, find the operative and print out his passport for submission.
+Our operative just went to 'Xing An' this Morning. Launch the ICA database and Request a record for the passports that passed through Xing An. Find our operative and print out his passport for submission.
 
 Operative Name is: Song Xi Ye
 Passport ID: IYR-4

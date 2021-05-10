@@ -1,15 +1,19 @@
 //Input information in between HASHTAG signs (Do not delete it!)
 
-#The Sparrows#
+#Sparrow Command#
 #Xiao Wang#
-#PACKAGE STATUS#
+#Train Ticket#
 #10/26#
 #1#
 #Ticket - Zeng#
 #Train Ticket#
-#PACKAGE DELIVERED.
+#We've received your payment.
 
- DON'T MISS THE BUS.
+You'll be departing from the Zeng Outpost at 18:04,
+
+DON'T MISS THE BUS.
+
+You've got one shot to prove your allegience.
  
  -THE SPARROWS
  ----------------------------------------
