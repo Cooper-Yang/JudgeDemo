@@ -3,7 +3,7 @@
 #Chief Sun Wu#
 #wusun@gov.ch#
 #A Delicate Matter#
-#11/05#
+#11/04#
 #0#
 #!#
 #LeeIntro#
@@ -12,9 +12,10 @@
 I have a new request that requires immediate attention.
 It involves our Sector Chief Lee of the Harmony Committee.
 
-We believe he has embezzled funds from his committee's treasury
-and has stolen $5000 for unregistered, personal use.
+We believe he has embezzled funds from his committee's treasury for personal use. It may be tied to his connection with a woman named May Fae. 
 
-Although despicable, we must be sure before we convict a fellow officer. I'd start by searching the Financial Database.
+- Search the Financial Database for each of their income statements.
+- Access his email account to find proof of his theft.
+- We must find where that missing $5000 went. 
 
--SC Sun#
+We must be sure before we convict a fellow government officer.#

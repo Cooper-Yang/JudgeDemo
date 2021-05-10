@@ -35,8 +35,8 @@ public class RadioControl : MonoBehaviour
                 radioSource.Play();
             }
         }
-        if(Input.GetKeyDown(KeyCode.Space))
-            PauseOrResume();
+        /*if(Input.GetKeyDown(KeyCode.Space))
+            PauseOrResume();*/
     }
 
 

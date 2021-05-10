@@ -155,40 +155,31 @@ MonoBehaviour:
   inArea: []
   evidences: []
   MaterialArea: {fileID: 0}
+  Button: {fileID: 0}
   dropDown: {fileID: 111806431}
   requireScore: 3
   currentScore: 0
   toTrigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 207027454}
-        m_MethodName: AddSuspect
+      - m_Target: {fileID: 346007967}
+        m_MethodName: CreateNewEmailToPlayer
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1180305569}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 4900000, guid: 46f9e967ebc986c42b7836d837af532e,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 207027454}
-        m_MethodName: AddSuspect
-        m_Mode: 2
+      - m_Target: {fileID: 4649428}
+        m_MethodName: endButton
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1843396750}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 207027454}
-        m_MethodName: AddSuspect
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 955226172}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -209,6 +200,7 @@ RectTransform:
   - {fileID: 1180305570}
   - {fileID: 1843396751}
   - {fileID: 955226173}
+  - {fileID: 2114484077}
   - {fileID: 111806434}
   - {fileID: 207027453}
   - {fileID: 760368577}
@@ -3988,7 +3980,7 @@ RectTransform:
   - {fileID: 779174278}
   - {fileID: 1144490217}
   m_Father: {fileID: 4649429}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4406,7 +4398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 517, y: -202}
+  m_AnchoredPosition: {x: 535, y: -87}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &123789185
@@ -11565,7 +11557,7 @@ RectTransform:
   m_Children:
   - {fileID: 380518714}
   m_Father: {fileID: 4649429}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19208,24 +19200,27 @@ MonoBehaviour:
   FangZhouAllFiles: []
   PlayerInboxFiles:
   - {fileID: 4900000, guid: 638bc80570742824da38d7214651d358, type: 3}
+  - {fileID: 4900000, guid: d9fce1fca4fcb974b8600ffeda556cf1, type: 3}
   - {fileID: 4900000, guid: 20e0f5988ec680a43b51def604fdd3b9, type: 3}
   BossInboxFiles:
   - {fileID: 4900000, guid: 20e0f5988ec680a43b51def604fdd3b9, type: 3}
   HitchcockInboxFiles:
   - {fileID: 4900000, guid: 478bf9ab98dd69446bf29b17d7f32358, type: 3}
   XiaoWangInboxFiles:
-  - {fileID: 4900000, guid: 6327de8fb71c982458b9f9b63d9c92a2, type: 3}
-  - {fileID: 4900000, guid: c6d4d05ca4987c74b8e2826089d32ae2, type: 3}
-  - {fileID: 4900000, guid: c3119572260e99e4cb269088181aeac6, type: 3}
-  - {fileID: 4900000, guid: 5a071c5e3ceccb346b4bfef90c1c25e8, type: 3}
-  - {fileID: 4900000, guid: 351a1dbbf70b7574cbefb683abee98c7, type: 3}
-  - {fileID: 4900000, guid: 41cf80c2dd116c84ebb4525c9445c430, type: 3}
-  - {fileID: 4900000, guid: 16dcc2e851861ad48bf0d263a6e44493, type: 3}
-  - {fileID: 4900000, guid: e2cf5e2e6a2f72e4fb6ea77207b81f20, type: 3}
+  - {fileID: 4900000, guid: 20a65ccde07f097478b69955c43a4d0c, type: 3}
+  - {fileID: 4900000, guid: afd841da8e4d58142943228b8b310d0a, type: 3}
+  - {fileID: 4900000, guid: b02c520425936654eb0cf99a9494df8a, type: 3}
+  - {fileID: 4900000, guid: 5c4babb59c219624ba52e750b7050617, type: 3}
+  - {fileID: 4900000, guid: b865d63e3e8285b43a24b394d0211a6f, type: 3}
   LeeInboxFiles:
+  - {fileID: 4900000, guid: ba77621dfea66e344b299e79e1f5af63, type: 3}
+  - {fileID: 4900000, guid: a3df2583923b8534abf453afa3a82ef7, type: 3}
   - {fileID: 4900000, guid: 525c1e542a95187418f752a80af86080, type: 3}
+  - {fileID: 4900000, guid: 924d0c7062012484b92b655d823ad3d1, type: 3}
   FangZhouInboxFiles:
+  - {fileID: 4900000, guid: 1365d06f0d42aae48b2b7e1c1f091eb7, type: 3}
   - {fileID: 4900000, guid: 7291ba8a2bb7f7c429467f104729618d, type: 3}
+  - {fileID: 4900000, guid: 6ef456d5db960014e9cd866b43647dc9, type: 3}
   PlayerReadList: 
   BossReadList: 
   XiaoWangReadList: 
@@ -19255,12 +19250,12 @@ MonoBehaviour:
   usernameInput: {fileID: 1538405958}
   passwordInput: {fileID: 1491820135}
   usernameArray:
-  - Player
-  - Boss
+  - yaobang@gov.ch
+  - wusun@gov.ch
   - Hitchcock
   - xwang8@gov.ch
-  - Lee
-  - FangZhou
+  - sclee@gov.ch
+  - fangzhou@web.com
   passwordArray:
   - password
   - password
@@ -19642,7 +19637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 711.08984, y: 148.68709}
+  m_AnchoredPosition: {x: 628, y: 128}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359113925
@@ -20387,23 +20382,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 207027454}
-        m_MethodName: AddSuspect
+      - m_Target: {fileID: 346007967}
+        m_MethodName: CreateNewEmailToPlayer
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1180305569}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 207027454}
-        m_MethodName: AddSuspect
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 955226172}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 4900000, guid: 906429f44bfbe3a438a8ebcfd119ee3a,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -20413,44 +20398,8 @@ MonoBehaviour:
         m_MethodName: AddSuspect
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1843396750}
+          m_ObjectArgument: {fileID: 2114484076}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 346007967}
-        m_MethodName: CreateNewEmailToPlayer
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: 98fae897181205d4dbaa7c09729b586c,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 346007967}
-        m_MethodName: CreateNewEmailToPlayer
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: cbe44b3c83af05c4b843e621fb028a36,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 346007967}
-        m_MethodName: CreateNewEmailToPlayer
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: 24a5a26b6d9424744ae1e0a3a390c364,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -33327,7 +33276,7 @@ RectTransform:
   m_Children:
   - {fileID: 626756065}
   m_Father: {fileID: 4649429}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -45010,7 +44959,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.9874, y: 113.614174}
+  m_AnchoredPosition: {x: -79.98739, y: 113.614174}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &943935870
@@ -47964,7 +47913,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Day
+  m_text: End Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe54faa4efdc6844c85d9d46aa743079, type: 2}
   m_sharedMaterial: {fileID: -5858712772293843174, guid: fe54faa4efdc6844c85d9d46aa743079,
@@ -52218,7 +52167,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.252
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -57980,7 +57929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 506, y: 166.7001}
+  m_AnchoredPosition: {x: 458, y: 129}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1376617068
@@ -82269,32 +82218,35 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<color=#D24753>Instuctions</color>
+  m_text: '<color=#D24753>Email Instuctions</color>
 
 
-    You should be able to see the
-    "Email" software we installed on your computer.
+    You should be able to see
+    the "Email" software we installed on your computer.
 
 
-    It''s the first blue icon,
+    It''s the 2nd icon,
     you''ve probably tried it already.
 
 
+    1. All emails can be printed. Some are
+    necessary pieces of evidence for certain cases.
 
-    Just in case you don''t know how to
-    use it:
 
-    1. In the console window, left click the area to the right of the
-    colon.
-
-    2. Type "Help" or "help" to get all the commands. Upper case or lower
-    case don''t matter.
+    2. Some emails have photo
+    attachments, indicated by a paperclip icon. Click it.
 
 
 
-    I don''t expect you to master it soon, but the console
-    isn''t something hard, just keep playing around with it and you''ll know how
-    it works. '
+    3. You can log into
+    other email accounts by clicking "Log Out" then supplying a valid email address
+    and password (or serial key)
+
+
+    4. All valid email addresses can be found
+    in the Console, along with a serial key.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d0a5ea595fa917428721e6cd7a4fd19, type: 2}
   m_sharedMaterial: {fileID: 6084372786025151925, guid: 9d0a5ea595fa917428721e6cd7a4fd19,
@@ -83474,7 +83426,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<color=#012456>\nEMAIL LOGIN:\n\nUsername: \"Player\"\n\nPassword:   \"password\"\t\n</color>\n\n"
+  m_text: "<color=#012456>\nMY EMAIL LOGIN:\n\nUsername: \"yaobang@gov.ch\"\n\nPassword:  
+    \"password\"\t\n</color>\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d0a5ea595fa917428721e6cd7a4fd19, type: 2}
   m_sharedMaterial: {fileID: 6084372786025151925, guid: 9d0a5ea595fa917428721e6cd7a4fd19,
@@ -83502,8 +83455,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 7
+  m_fontSizeBase: 7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -86081,6 +86034,7 @@ MonoBehaviour:
   computer: {fileID: 8300000, guid: 5870f667c8dbb044684041d90dad5e54, type: 3}
   newspaper: {fileID: 8300000, guid: 67a3118b48b392e418f3fb5805db9360, type: 3}
   evidenceOnDrop: {fileID: 8300000, guid: 30a4e52484d934af280f2f058dec62b8, type: 3}
+  submit: {fileID: 8300000, guid: 71e958284a6c14070881ab3c81a619d6, type: 3}
   ambience: {fileID: 8300000, guid: ab137bc274f114f4fa1d6a48775f868d, type: 3}
   printing: {fileID: 8300000, guid: 1bc6a9241d24c194d8bdb6b78e1c1788, type: 3}
   bookTurnPage: {fileID: 8300000, guid: f8861856d0c1f1f4ca236545268246da, type: 3}
@@ -87181,6 +87135,169 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108884342}
   m_CullTransparentMesh: 0
+--- !u!1 &2114484076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2114484077}
+  - component: {fileID: 2114484078}
+  m_Layer: 8
+  m_Name: Intro ICA
+  m_TagString: Criminal
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2114484077
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114484076}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 252.40947}
+  m_LocalScale: {x: 0.5194415, y: 0.5944058, z: 0.6688846}
+  m_Children: []
+  m_Father: {fileID: 4649429}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 385.9999, y: 15.246575}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2114484078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114484076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 684f1a5088cd63e4884dde56082a4af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theEvidenceComparedTo:
+  - Song Xi Ye
+  theEvidenceContained: []
+  myMaterials: []
+  goodend:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 346007967}
+        m_MethodName: CreateNewEmailToPlayer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: d76b28ffb0503b441a8358e60d16d226,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 207027454}
+        m_MethodName: AddSuspect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1180305569}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 207027454}
+        m_MethodName: AddSuspect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 955226172}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 207027454}
+        m_MethodName: AddSuspect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1843396750}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 346007967}
+        m_MethodName: CreateNewEmailToPlayer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: 98fae897181205d4dbaa7c09729b586c,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 346007967}
+        m_MethodName: CreateNewEmailToPlayer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: cbe44b3c83af05c4b843e621fb028a36,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 346007967}
+        m_MethodName: CreateNewEmailToPlayer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: 24a5a26b6d9424744ae1e0a3a390c364,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  badend:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 207027454}
+        m_MethodName: AddSuspect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2114484076}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 346007967}
+        m_MethodName: CreateNewEmailToPlayer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: 38fb3b5fcd335ec4f9637f8bd02ed44c,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  score: 0
 --- !u!1 &2114786937
 GameObject:
   m_ObjectHideFlags: 0
