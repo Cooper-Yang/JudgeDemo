@@ -3,7 +3,7 @@
 #Customs Sergeant Zeng#
 #cptzeng@gov.ch#
 #On the Run#
-#11/05#
+#11/04#
 #0#
 #!#
 #XiaoWangIntro#
@@ -13,8 +13,11 @@ A secretary of mine, Xiao Wang, hasn't shown up for a couple weeks.
 We suspect he has betrayed our fatherland and intends to flee.
 
 Start by investigating his goverment email "xwang8@gov.ch"
-and look for any suspicious information in the ICA database.
+If he is trying to flee, he must have bought a train ticket. 
 
-We believe he is fleeing under a fake identity. We must find his whereabouts.
+We believe he is hiding under a fake name. Search the ICA Database
+to compare information from his train ticket. 
+
+This is a tricky one, good luck!
 
 Sgt. Major Zeng#

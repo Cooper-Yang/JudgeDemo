@@ -3,17 +3,18 @@
 #Lt. Chu Mari#
 #chumari@gov.ch#
 #A Little Grizzly#
-#11/05#
+#11/04#
 #0#
 #!#
 #FangZhouIntro#
 #Tongzhi Yao,
 
 On behalf of the Chiu's Armed Police Force,
-
 We ask you investigate the suspected insurrectionist Fang Zhou.
-
 He is known to be violent, with likely ties to the Sparrow rebellion.
+
+- Gain access to his email account
+- Investigate recent Crime Scenes for his biological evidence.
 
 Submit a case that showcases your findings.
 
