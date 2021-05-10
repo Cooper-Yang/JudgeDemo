@@ -155,7 +155,7 @@ MonoBehaviour:
   inArea: []
   evidences: []
   MaterialArea: {fileID: 0}
-  Button: {fileID: 292526438}
+  Button: {fileID: 0}
   dropDown: {fileID: 111806431}
   requireScore: 3
   currentScore: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
         m_MethodName: CreateNewEmailToPlayer
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: 436d3238803e9d2419f017caefdf07c7,
+          m_ObjectArgument: {fileID: 4900000, guid: 46f9e967ebc986c42b7836d837af532e,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
@@ -19200,6 +19200,7 @@ MonoBehaviour:
   FangZhouAllFiles: []
   PlayerInboxFiles:
   - {fileID: 4900000, guid: 638bc80570742824da38d7214651d358, type: 3}
+  - {fileID: 4900000, guid: d9fce1fca4fcb974b8600ffeda556cf1, type: 3}
   - {fileID: 4900000, guid: 20e0f5988ec680a43b51def604fdd3b9, type: 3}
   BossInboxFiles:
   - {fileID: 4900000, guid: 20e0f5988ec680a43b51def604fdd3b9, type: 3}
@@ -44956,7 +44957,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.98743, y: 113.61415}
+  m_AnchoredPosition: {x: -79.98739, y: 113.614174}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &943935870
@@ -73010,7 +73011,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1632979907}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.5
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
