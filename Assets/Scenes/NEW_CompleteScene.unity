@@ -155,40 +155,31 @@ MonoBehaviour:
   inArea: []
   evidences: []
   MaterialArea: {fileID: 0}
+  Button: {fileID: 292526438}
   dropDown: {fileID: 111806431}
   requireScore: 3
   currentScore: 0
   toTrigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 207027454}
-        m_MethodName: AddSuspect
+      - m_Target: {fileID: 346007967}
+        m_MethodName: CreateNewEmailToPlayer
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1180305569}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 4900000, guid: 436d3238803e9d2419f017caefdf07c7,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 207027454}
-        m_MethodName: AddSuspect
-        m_Mode: 2
+      - m_Target: {fileID: 4649428}
+        m_MethodName: endButton
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1843396750}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 207027454}
-        m_MethodName: AddSuspect
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 955226172}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -47919,7 +47910,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Day
+  m_text: End Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe54faa4efdc6844c85d9d46aa743079, type: 2}
   m_sharedMaterial: {fileID: -5858712772293843174, guid: fe54faa4efdc6844c85d9d46aa743079,
@@ -87196,7 +87187,7 @@ MonoBehaviour:
         m_MethodName: CreateNewEmailToPlayer
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: f527ab4b6c34a084e873919b0783fef1,
+          m_ObjectArgument: {fileID: 4900000, guid: d76b28ffb0503b441a8358e60d16d226,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
@@ -87291,7 +87282,7 @@ MonoBehaviour:
         m_MethodName: CreateNewEmailToPlayer
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: b25129b811ca1be46a3158bb6b53da16,
+          m_ObjectArgument: {fileID: 4900000, guid: 38fb3b5fcd335ec4f9637f8bd02ed44c,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
