@@ -49,7 +49,7 @@ public class TitleSceneController : MonoBehaviour
 
     public void StartButton()
     {
-        if (password.text == "1104")
+        if (password.text == "judge")
         {
             playTitle = true;
             StopAllCoroutines();
