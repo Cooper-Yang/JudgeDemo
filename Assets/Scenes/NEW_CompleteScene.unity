@@ -19207,18 +19207,20 @@ MonoBehaviour:
   HitchcockInboxFiles:
   - {fileID: 4900000, guid: 478bf9ab98dd69446bf29b17d7f32358, type: 3}
   XiaoWangInboxFiles:
-  - {fileID: 4900000, guid: 6327de8fb71c982458b9f9b63d9c92a2, type: 3}
-  - {fileID: 4900000, guid: c6d4d05ca4987c74b8e2826089d32ae2, type: 3}
-  - {fileID: 4900000, guid: c3119572260e99e4cb269088181aeac6, type: 3}
-  - {fileID: 4900000, guid: 5a071c5e3ceccb346b4bfef90c1c25e8, type: 3}
-  - {fileID: 4900000, guid: 351a1dbbf70b7574cbefb683abee98c7, type: 3}
-  - {fileID: 4900000, guid: 41cf80c2dd116c84ebb4525c9445c430, type: 3}
-  - {fileID: 4900000, guid: 16dcc2e851861ad48bf0d263a6e44493, type: 3}
-  - {fileID: 4900000, guid: e2cf5e2e6a2f72e4fb6ea77207b81f20, type: 3}
+  - {fileID: 4900000, guid: 20a65ccde07f097478b69955c43a4d0c, type: 3}
+  - {fileID: 4900000, guid: afd841da8e4d58142943228b8b310d0a, type: 3}
+  - {fileID: 4900000, guid: b02c520425936654eb0cf99a9494df8a, type: 3}
+  - {fileID: 4900000, guid: 5c4babb59c219624ba52e750b7050617, type: 3}
+  - {fileID: 4900000, guid: b865d63e3e8285b43a24b394d0211a6f, type: 3}
   LeeInboxFiles:
+  - {fileID: 4900000, guid: ba77621dfea66e344b299e79e1f5af63, type: 3}
+  - {fileID: 4900000, guid: a3df2583923b8534abf453afa3a82ef7, type: 3}
   - {fileID: 4900000, guid: 525c1e542a95187418f752a80af86080, type: 3}
+  - {fileID: 4900000, guid: 924d0c7062012484b92b655d823ad3d1, type: 3}
   FangZhouInboxFiles:
+  - {fileID: 4900000, guid: 1365d06f0d42aae48b2b7e1c1f091eb7, type: 3}
   - {fileID: 4900000, guid: 7291ba8a2bb7f7c429467f104729618d, type: 3}
+  - {fileID: 4900000, guid: 6ef456d5db960014e9cd866b43647dc9, type: 3}
   PlayerReadList: 
   BossReadList: 
   XiaoWangReadList: 
@@ -52165,7 +52167,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.252
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -82216,32 +82218,35 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<color=#D24753>Instuctions</color>
+  m_text: '<color=#D24753>Email Instuctions</color>
 
 
-    You should be able to see the
-    "Email" software we installed on your computer.
+    You should be able to see
+    the "Email" software we installed on your computer.
 
 
-    It''s the first blue icon,
+    It''s the 2nd icon,
     you''ve probably tried it already.
 
 
+    1. All emails can be printed. Some are
+    necessary pieces of evidence for certain cases.
 
-    Just in case you don''t know how to
-    use it:
 
-    1. In the console window, left click the area to the right of the
-    colon.
-
-    2. Type "Help" or "help" to get all the commands. Upper case or lower
-    case don''t matter.
+    2. Some emails have photo
+    attachments, indicated by a paperclip icon. Click it.
 
 
 
-    I don''t expect you to master it soon, but the console
-    isn''t something hard, just keep playing around with it and you''ll know how
-    it works. '
+    3. You can log into
+    other email accounts by clicking "Log Out" then supplying a valid email address
+    and password (or serial key)
+
+
+    4. All valid email addresses can be found
+    in the Console, along with a serial key.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d0a5ea595fa917428721e6cd7a4fd19, type: 2}
   m_sharedMaterial: {fileID: 6084372786025151925, guid: 9d0a5ea595fa917428721e6cd7a4fd19,
@@ -83421,7 +83426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<color=#012456>\nEMAIL LOGIN:\n\nUsername: \"yaobang@gov.ch\"\n\nPassword:  
+  m_text: "<color=#012456>\nMY EMAIL LOGIN:\n\nUsername: \"yaobang@gov.ch\"\n\nPassword:  
     \"password\"\t\n</color>\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d0a5ea595fa917428721e6cd7a4fd19, type: 2}
