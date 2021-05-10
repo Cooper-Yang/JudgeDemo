@@ -1,0 +1,22 @@
+// To PLAYER from BOSS --> Email 2
+
+#[SYSTEM: Internal]#
+#noreply@gov.ch#
+#How to use Console#
+#11/03#
+#1#
+#!#
+#ConsoleInfo#
+#ATTENTION: Yao Bang ,
+
+Your state of the art personal computer is equipped with a Console Terminal used to access information about government employees.
+
+In the console, you can:
+- Receive a list of all available E-Mail addresses:
+- - Type "Access" -> "Personnel" -> "Search" -> "All"
+
+- Generate a Key to use as a One-Time Password for any email acc.
+- - Type "Access" -> "Personnel" -> "Key"
+
+Other Terminal operations are not available to you at this time.
+Use this information to serve your [Justice Committee]#
