@@ -158,6 +158,7 @@ public class SubmitArea : MonoBehaviour
                 break;
             }
         }*/
+        SoundMan.me.SumbitSound();
         CrimialEvidence crimeData = SuspectList.Instance.susList[dropDown.value].GetComponent<CrimialEvidence>();
         int score = 0;
         foreach (string sub in crimeData.theEvidenceContained)
