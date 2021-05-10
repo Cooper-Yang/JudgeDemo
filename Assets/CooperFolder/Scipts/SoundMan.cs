@@ -22,6 +22,7 @@ public class SoundMan : MonoBehaviour
     public AudioClip computer;
     public AudioClip newspaper;
     public AudioClip evidenceOnDrop;
+    public AudioClip submit;
     
     [Header("Other SFX")]
     public AudioClip ambience;
@@ -116,6 +117,11 @@ public class SoundMan : MonoBehaviour
     public void ConsoleSound()
     {
         lastConsole = PlaySoundAtPosition(console, lastConsole, aPosition);
+    }
+
+    public void SumbitSound()
+    {
+        PlaySoundAtPosition(submit, aPosition);
     }
     
     public void ClickSound()
