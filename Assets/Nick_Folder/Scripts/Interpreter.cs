@@ -233,7 +233,7 @@ public class Interpreter : MonoBehaviour
                                     string[] eInfo = e.Split(',');
                                     foreach (string s in eInfo)
                                     {
-                                        output += (s + ", ");
+                                        output += (s + " - ");
                                     }
                                     //output = eInfo[0] + ", " + eInfo[1] + " -- " + eInfo[2] + " -- " + eInfo[3];
                                     Output(output, colors["light"]);
@@ -245,7 +245,8 @@ public class Interpreter : MonoBehaviour
                                 // If match, return corresponding Employee Report
                                 // GenerateEmployee(string lastname, string firstname, string section, string contact, string ID?)
                                 // generate random ID?
-                                Output("Not implemented yet", colors["purple"]);
+                                Output("Return to 'Personnel' to generate a key.", colors["purple"]);
+                                Output("Type 'Back' to return, or 'Access Personnel'", colors["purple"]);
                                 break;
 
                             case "test":

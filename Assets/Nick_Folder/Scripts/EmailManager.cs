@@ -461,7 +461,7 @@ public class EmailManager : MonoBehaviour
                 currentUser = EmailUsers.Yao;
                 InitInbox("Yao");
                 break;
-            case "scsun@gov.ch":
+            case "wusun@gov.ch":
                 currentUser = EmailUsers.Boss;
                 InitInbox("Boss");
                 break;
