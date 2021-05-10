@@ -166,7 +166,7 @@ MonoBehaviour:
         m_MethodName: CreateNewEmailToPlayer
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: 7ff3cd262bf5c5e47a1ede3f24b27cf8,
+          m_ObjectArgument: {fileID: 4900000, guid: 436d3238803e9d2419f017caefdf07c7,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
@@ -73010,7 +73010,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1632979907}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.5
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -87187,7 +87187,7 @@ MonoBehaviour:
         m_MethodName: CreateNewEmailToPlayer
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: f527ab4b6c34a084e873919b0783fef1,
+          m_ObjectArgument: {fileID: 4900000, guid: d76b28ffb0503b441a8358e60d16d226,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
@@ -87282,7 +87282,7 @@ MonoBehaviour:
         m_MethodName: CreateNewEmailToPlayer
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: b25129b811ca1be46a3158bb6b53da16,
+          m_ObjectArgument: {fileID: 4900000, guid: 38fb3b5fcd335ec4f9637f8bd02ed44c,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0

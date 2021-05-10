@@ -173,11 +173,7 @@ public class SubmitArea : MonoBehaviour
         Debug.Log(score + " evidences matches !");
         inArea.Clear();
         currentScore += crimeData.score;
-        if (currentScore >= requireScore)
-        {
-            currentScore = 0;
-            toTrigger.Invoke();
-        }
+
         if (score >= crimeData.theEvidenceComparedTo.Count)
         {
             crimeData.goodend.Invoke();
@@ -187,7 +183,13 @@ public class SubmitArea : MonoBehaviour
             crimeData.badend.Invoke();
         }
         SuspectList.Instance.RemoveSuspect(crimeData.gameObject);
-        
+
+        if (currentScore >= requireScore)
+        {
+            currentScore = 0;
+            toTrigger.Invoke();
+        }
+
     }
 
 
