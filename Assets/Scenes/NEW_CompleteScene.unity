@@ -24148,17 +24148,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2090364320}
-        m_MethodName: BookTurnSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &479934456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70658,17 +70647,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2090364320}
-        m_MethodName: BookTurnSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1559383909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73017,7 +72995,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1632979907}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.5
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -78896,12 +78874,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Submission Board Guide:\nWhenever you finish printing information or evidence,
-    you can sort it out on the board on the right and drag the evidence you need
-    to the board on the left.\n\nOn the Report board on the left, you can select
-    the case you want to work on (click the rectangular bbutton on the left of the
-    submit case to select).\n\nClick the submit button to submit. Please consider
-    carefully before submitting something, there is no turning back.
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aaaad5d6bb08dbc41a4f158d429fe276, type: 2}
   m_sharedMaterial: {fileID: -4272040396395860296, guid: aaaad5d6bb08dbc41a4f158d429fe276,

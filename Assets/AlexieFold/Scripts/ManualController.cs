@@ -96,12 +96,14 @@ public class ManualController : MonoBehaviour
     {
         if(pageNum > 0)
             pageNum -= 1;
+        SoundMan.me.BookTurnSound();
     }
 
     public void PageDown()
     {
         if(pageNum < LeftList.Count - 1)
             pageNum += 1;
+        SoundMan.me.BookTurnSound();
     }
 
     public void Introduction()

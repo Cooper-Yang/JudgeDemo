@@ -365,8 +365,9 @@ public class EmailManager : MonoBehaviour
         {
             Email emailNew = CreateEmailFromFile(textFile, false);
             InboxEmails.Add(emailNew);
-            PlayerReadList.Add(false);
+           
         }
+        PlayerReadList.Add(false);
         //emailCount++;
     }
 
