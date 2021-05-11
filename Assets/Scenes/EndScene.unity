@@ -1052,10 +1052,8 @@ MonoBehaviour:
 
 
 
-    <color=#BE363C>The
-    Judge: 2017 owner</color>
-
-    Cooper Yang
+    <color=#BE363C>Adapted
+    from The Judge: 2017 </color>
 
 
     <color=#BE363C>Team Members</color>
@@ -1071,7 +1069,10 @@ MonoBehaviour:
 
     Harry Gao
 
-    Alex Guo'
+    Alex Guo
+
+    Cooper
+    Yang'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe54faa4efdc6844c85d9d46aa743079, type: 2}
   m_sharedMaterial: {fileID: -5858712772293843174, guid: fe54faa4efdc6844c85d9d46aa743079,
