@@ -385,7 +385,13 @@ MonoBehaviour:
   inArea: []
   evidences: []
   MaterialArea: {fileID: 0}
+  Button: {fileID: 0}
   dropDown: {fileID: 111806431}
+  requireScore: 3
+  currentScore: 0
+  toTrigger:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &4649429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -746,6 +752,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &14045110
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13694,6 +13701,11 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 525c1e542a95187418f752a80af86080, type: 3}
   FangZhouInboxFiles:
   - {fileID: 4900000, guid: 7291ba8a2bb7f7c429467f104729618d, type: 3}
+  PlayerReadList: 
+  BossReadList: 
+  XiaoWangReadList: 
+  LeeReadList: 
+  FangZhouReadList: 
   InboxEmails: []
   ActiveEmail: {fileID: 5838394530521102446, guid: 0482fdbd4d079e945a68b16a2d981b2f,
     type: 3}
@@ -14719,6 +14731,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 1
 --- !u!1 &386587752
 GameObject:
   m_ObjectHideFlags: 0
@@ -33566,6 +33579,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 1
 --- !u!1 &969247777
 GameObject:
   m_ObjectHideFlags: 0
@@ -35238,6 +35252,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1021654660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35330,6 +35345,7 @@ MonoBehaviour:
   errorText: {fileID: 918799346}
   errorRequestText: {fileID: 865896100}
   outposts: {fileID: 1274433519}
+  times: {fileID: 0}
   NewWindowPrefab: {fileID: 836217817, guid: 313e5db4e571e3f428acce1e99bf0c3b, type: 3}
   ComputerPanel: {fileID: 1547384001}
   provOne: {fileID: 1963286480}
@@ -37027,6 +37043,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1082673306
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37567,6 +37584,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1114361517
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39505,6 +39523,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 1
 --- !u!1 &1189142629
 GameObject:
   m_ObjectHideFlags: 0
@@ -69652,6 +69671,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  score: 1
 --- !u!1 &1843960827
 GameObject:
   m_ObjectHideFlags: 0
@@ -69832,6 +69852,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1854321538
 RectTransform:
   m_ObjectHideFlags: 0
@@ -70289,6 +70310,7 @@ MonoBehaviour:
   badend:
     m_PersistentCalls:
       m_Calls: []
+  score: 1
 --- !u!224 &1871793233
 RectTransform:
   m_ObjectHideFlags: 0
@@ -71835,6 +71857,7 @@ MonoBehaviour:
   PC: {fileID: 1804781035}
   Board: {fileID: 1574576693}
   Note: {fileID: 1124913745}
+  Quit: {fileID: 0}
   ImageAfterLerp: 0
 --- !u!212 &1941114057
 SpriteRenderer:
@@ -72707,7 +72730,7 @@ MonoBehaviour:
 
 
     Our system is updated. The
-    password is reset to 1104.
+    password is reset to judge.
 
 
     Your Boss,
@@ -80295,6 +80318,7 @@ MonoBehaviour:
   computer: {fileID: 8300000, guid: 5870f667c8dbb044684041d90dad5e54, type: 3}
   newspaper: {fileID: 8300000, guid: 67a3118b48b392e418f3fb5805db9360, type: 3}
   evidenceOnDrop: {fileID: 0}
+  submit: {fileID: 0}
   ambience: {fileID: 8300000, guid: ab137bc274f114f4fa1d6a48775f868d, type: 3}
   printing: {fileID: 8300000, guid: 1bc6a9241d24c194d8bdb6b78e1c1788, type: 3}
   bookTurnPage: {fileID: 8300000, guid: f8861856d0c1f1f4ca236545268246da, type: 3}
