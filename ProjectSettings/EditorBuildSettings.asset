@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NEW_CompleteScene.unity
     guid: 3f8e1e310e4caf04f89c59af5fb533ed
+  - enabled: 1
+    path: Assets/AlexieFold/Scripts/EndScene.unity
+    guid: 7a78a1881ad382141b24fd624a1963f9
   m_configObjects: {}
